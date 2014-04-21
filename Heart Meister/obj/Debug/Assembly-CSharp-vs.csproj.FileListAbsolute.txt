@@ -10,3 +10,15 @@ C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\ICSharp
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.dll
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\IFacebook.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp.pdb

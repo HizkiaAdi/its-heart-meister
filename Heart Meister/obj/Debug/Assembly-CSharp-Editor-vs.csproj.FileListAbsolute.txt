@@ -17,3 +17,22 @@ C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\Assembl
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Nabila Dhia\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\IFacebook.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.Graphs.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor.dll
+C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor.pdb
