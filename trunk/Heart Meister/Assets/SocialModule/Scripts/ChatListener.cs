@@ -34,7 +34,7 @@ namespace SocialModule
 		
 		public void ReceivedMessage(string jsonString)
 		{
-			ChatGUI chatGUI = GameObject.Find("GUI").GetComponent<ChatGUI>();
+			ChatGUI chatGUI = GameObject.Find("ChatGUI").GetComponent<ChatGUI>();
 			chatGUI.AddChatItem(JSONToChatItem(jsonString));
 		}
 		
