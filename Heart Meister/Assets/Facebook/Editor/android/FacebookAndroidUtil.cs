@@ -56,12 +56,18 @@ namespace UnityEditor.FacebookEditor
 
         private static string DebugKeyStorePath
         {
-            get
+            /*get
             {
                 return (Application.platform == RuntimePlatform.WindowsEditor) ? 
                     System.Environment.GetEnvironmentVariable("HOMEPATH") + @"\.android\debug.keystore" : 
                     System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) + @"/.android/debug.keystore";
-            }
+            }*/
+			get
+			{
+				return (Application.platform == RuntimePlatform.WindowsEditor) ?
+					System.Environment.GetEnvironmentVariable("HOMEDRIVE") + System.Environment.GetEnvironmentVariable("HOMEPATH") + @"\.android\debug.keystore" :
+						System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal) + @"/.android/debug.keystore";
+			}
         }
 
         private static string GetKeyHash(string alias, string keyStore, string password)
