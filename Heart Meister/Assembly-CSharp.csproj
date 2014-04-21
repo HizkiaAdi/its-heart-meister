@@ -70,6 +70,10 @@
      <Compile Include="Assets\Mini Game\SceneDefense\DefenseEnemyBullet.cs" />
      <Compile Include="Assets\Mini Game\SceneDefense\DefenseGameManager.cs" />
      <Compile Include="Assets\Mini Game\SceneDefense\DefensePlayer.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemy.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemySpawner.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpeed\SpeedGameManager.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpeed\SpeedOtherObject.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
