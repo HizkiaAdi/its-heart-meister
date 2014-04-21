@@ -17,17 +17,17 @@ public class MiniGameMenu : MonoBehaviour {
     {
         if (GUI.Button(new Rect(10, 45, Screen.width / 3 - 10, Screen.height / 3 - 10), "Attack"))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel("AttackScene");
         }
 
         if (GUI.Button(new Rect(Screen.width / 3 + 5, 45, Screen.width / 3 - 10, Screen.height / 3 - 10), "Defense"))
         {
-            Application.LoadLevel(2);
+            Application.LoadLevel("DefenseScene");
         }
 
         if (GUI.Button(new Rect(2 * Screen.width / 3, 45, Screen.width / 3 - 10, Screen.height / 3 - 10), "Speed"))
         {
-
+			Application.LoadLevel("SpeedScene");
         }
 
         if (GUI.Button(new Rect(10, Screen.height / 2 + 20, Screen.width / 3 - 10, Screen.height / 3 - 10), "Special Attack"))
@@ -44,5 +44,9 @@ public class MiniGameMenu : MonoBehaviour {
         {
 
         }
+		if (GUI.Button (new Rect (Screen.width * 0.01f * 10, Screen.height * 0.01f * 90, Screen.width * 0.01f * 80, Screen.height * 0.01f * 8), "Home"))
+		{
+			Application.LoadLevel("Home");
+		}
     }
 }

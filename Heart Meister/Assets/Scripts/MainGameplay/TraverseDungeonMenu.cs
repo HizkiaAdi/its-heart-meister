@@ -19,15 +19,15 @@ public class TraverseDungeonMenu : MonoBehaviour {
     {
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 1 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Home"))
         {
-            Application.LoadLevel(0);
+            Application.LoadLevel("Home");
         }
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 2 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Social Area"))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel("SocialArea");
         }
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 3 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Shop"))
         {
-            Application.LoadLevel(3);
+            Application.LoadLevel("Shop");
         }
     }
 }

@@ -17,20 +17,20 @@ public class TraverseHome : MonoBehaviour {
     {
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 1 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Social Area"))
         {
-            Application.LoadLevel(1);
+            Application.LoadLevel("SocialArea");
         }
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 2 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Dungeon"))
         {
-            Application.LoadLevel(2);
+            Application.LoadLevel("DungeonMenu");
         }
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 3 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Shop"))
         {
-            Application.LoadLevel(3);
+            Application.LoadLevel("Shop");
         }
 
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 6 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "To Training Menu"))
         {
-            Application.LoadLevel(4);
+            Application.LoadLevel("MiniGameMenu");
         }
     }
 }
