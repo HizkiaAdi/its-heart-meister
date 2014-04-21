@@ -66,6 +66,10 @@
      <Compile Include="Assets\Mini Game\SceneAttack\AttackShoot.cs" />
      <Compile Include="Assets\Mini Game\SceneAttack\AttackTarget.cs" />
      <Compile Include="Assets\Mini Game\SceneAttack\AttackTargetSpawner.cs" />
+     <Compile Include="Assets\Mini Game\SceneDefense\DefenseEnemy.cs" />
+     <Compile Include="Assets\Mini Game\SceneDefense\DefenseEnemyBullet.cs" />
+     <Compile Include="Assets\Mini Game\SceneDefense\DefenseGameManager.cs" />
+     <Compile Include="Assets\Mini Game\SceneDefense\DefensePlayer.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
