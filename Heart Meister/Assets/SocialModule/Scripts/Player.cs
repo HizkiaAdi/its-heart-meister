@@ -9,6 +9,7 @@ namespace SocialModule
 		private Vector2 vector;
 		private Vector2 position;
 		private int state;
+		private GameObject gameObject;
 		
 		public Player()
 		{
@@ -16,15 +17,17 @@ namespace SocialModule
 			this.name = "name";
 			this.vector = Vector2.zero;
 			this.position = new Vector2(-0, -100);
+			this.gameObject = null;
 		}
 		
-		public Player(string id, string name, Vector2 vector, Vector2 position, int state)
+		public Player(string id, string name, Vector2 vector, Vector2 position, int state, GameObject gameObject)
 		{
 			this.id = id;
 			this.name = name;
 			this.vector = vector;
 			this.position = position;
 			this.state = state;
+			this.gameObject = gameObject;
 		}
 		
 		public string ID {get{return this.id;} set{this.id = value;}}
@@ -36,5 +39,7 @@ namespace SocialModule
 		public Vector2 Position {get{return this.position;} set{this.position = value;}}
 		
 		public int State {get{return this.state;} set{this.state = value;}}
+
+		public GameObject GameObject {get{return this.gameObject;}}
 	}
 }

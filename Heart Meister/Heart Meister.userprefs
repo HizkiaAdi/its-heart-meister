@@ -1,11 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Mini Game\MiniGameMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SocialModule\Scripts\PlayerManager.cs">
     <Files>
+      <File FileName="Assets\SocialModule\Scripts\PlayerSocketListener.cs" Line="32" Column="88" />
       <File FileName="Assets\SocialModule\Scripts\ChatListener.cs" Line="1" Column="1" />
-      <File FileName="..\..\Unity Project\Coba2D\Assets\Script\PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="..\..\Unity Project\Coba2D\Assets\Script\PlayerMovement.cs" Line="47" Column="4" />
       <File FileName="Assets\SocialModule\Scripts\ChatGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Mini Game\MiniGameMenu.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\ResizeSprite.cs" Line="1" Column="1" />
+      <File FileName="Assets\SocialModule\Scripts\PlayerController.cs" Line="19" Column="39" />
+      <File FileName="Assets\SocialModule\Scripts\PlayerManager.cs" Line="3" Column="16" />
+      <File FileName="Assets\SocialModule\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\SocialModule\Scripts\CobaJSON.cs" Line="27" Column="4" />
+      <File FileName="..\..\Unity Project\Coba2D\Assets\Script\ChatSocketListener.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
