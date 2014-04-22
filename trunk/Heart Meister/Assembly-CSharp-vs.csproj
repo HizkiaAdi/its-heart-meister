@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
+     <Compile Include="Assets\Scripts\ResizeSprite.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ChatItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ChatListener.cs" />
