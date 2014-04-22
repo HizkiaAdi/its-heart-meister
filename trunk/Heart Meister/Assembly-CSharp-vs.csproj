@@ -83,11 +83,14 @@
      <Compile Include="Assets\SocialModule\Scripts\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ChatItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ChatListener.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
      <Compile Include="Assets\SocialModule\Scripts\MiniJSON.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Player.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\PlayerController.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\PlayerSocketListener.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
