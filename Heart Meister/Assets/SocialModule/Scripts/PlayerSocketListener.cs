@@ -29,7 +29,7 @@ namespace SocialModule
 		
 		public void ReceivedMessage(string message)
 		{
-			GameObject.Find("PlayerListener").GetComponent<PlayerManager>().NewMessage(message);
+			GameObject.Find("PlayerManager").GetComponent<PlayerManager>().NewMessage(message);
 		}
 		
 		void FixedUpdate ()
@@ -46,8 +46,8 @@ namespace SocialModule
 		private string PlayerDataToJSON(Transform transform)
 		{
 			Dictionary<string,string> dict = new Dictionary<string, string>();
-			dict["x"] = transform.localPosition.x.ToString();
-			dict["y"] = transform.localPosition.y.ToString();
+			dict["x"] = transform.position.x.ToString();
+			dict["y"] = transform.position.y.ToString();
 			dict["id"] = PlayerData.id;
 			dict["name"] = PlayerData.playerName;
 			dict["state"] = "0";

@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358a135e1fed5984ab1a515ed2754838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: 10.151.43.206
+  host: 192.168.0.104
   port: 8015
 --- !u!1 &542381028
 GameObject:
@@ -631,7 +631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 55e4b3c16ae961c4d8dbb3e9821a0f68, type: 2}
       propertyPath: host
-      value: 10.151.43.206
+      value: 192.168.0.104
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 55e4b3c16ae961c4d8dbb3e9821a0f68, type: 2}
       propertyPath: port
@@ -711,6 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf4da2c9ddde0e4b8224a9e1fec5bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObject: {fileID: 100000, guid: fd7257f14ad9c7e4489549c74f6017ae, type: 2}
 --- !u!1 &952318600
 GameObject:
   m_ObjectHideFlags: 0
