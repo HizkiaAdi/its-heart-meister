@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIButton.cs" />
+     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIContainner.cs" />
+     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
+     <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
@@ -90,7 +94,6 @@
      <Compile Include="Assets\SocialModule\Scripts\PlayerController.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerManager.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerSocketListener.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />

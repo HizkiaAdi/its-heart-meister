@@ -32,14 +32,14 @@ namespace SocialModule
 				if(players.ContainsKey(resultDict["id"].ToString()))
 				{
 					player = players[(string)resultDict["id"]];
-					player.Vector = new Vector2(float.Parse(resultDict["vectorX"].ToString()), float.Parse(resultDict["vectorY"].ToString()));
-					player.Position = new Vector2(float.Parse(resultDict["x"].ToString()), float.Parse(resultDict["y"].ToString()));
+					player.Vector = new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"]));
+					player.Position = new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"]));
 				}
 				else
 				{
-					player = new Player(resultDict["id"].ToString(), resultDict["name"].ToString(),
-					                    new Vector2(float.Parse(resultDict["vectorX"].ToString()), float.Parse(resultDict["vectorY"].ToString())),
-					                    new Vector2(float.Parse(resultDict["x"].ToString()), float.Parse(resultDict["y"].ToString())),
+					player = new Player((string)resultDict["id"], (string)resultDict["name"],
+					                    new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"])),
+					                    new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"])),
 					                    0);
 					players.Add((string)resultDict["id"], player);
 					AddPlayer(player);
