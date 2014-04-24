@@ -17,33 +17,31 @@ namespace SocialModule
 			playersKey = new List<string> ();
 		}
 
-		void Update()
 		
 		public void NewMessage(string jsonString)
 		{
 			List<System.Object> resultList;
-			List<System.Object> tempList;
-			Dictionary<string, System.Object> tempDict;
+			Dictionary<string, System.Object> resultDict;
 			Player player;
 
-			tempDict = (Dictionary<string, System.Object>)Json.Deserialize(jsonString);
-			tempList = (List<System.Object>)tempDict["data"];
-			foreach (System.Object o in tempList)
+			resultDict = (Dictionary<string, System.Object>)Json.Deserialize(jsonString);
+			resultList = (List<System.Object>)resultDict["data"];
+			foreach (System.Object o in resultList)
 			{
-				tempDict = (Dictionary<string, System.Object>)o;
-				if(players.ContainsKey(tempDict["id"].ToString()))
+				resultDict = (Dictionary<string, System.Object>)o;
+				if(players.ContainsKey(resultDict["id"].ToString()))
 				{
-					player = players[(string)tempDict["id"]];
-					player.Vector = new Vector2(float.Parse(tempDict["vectorX"].ToString()), float.Parse(tempDict["vectorY"].ToString()));
-					player.Position = new Vector2(float.Parse(tempDict["x"].ToString()), float.Parse(tempDict["y"].ToString()));
+					player = players[(string)resultDict["id"]];
+					player.Vector = new Vector2(float.Parse(resultDict["vectorX"].ToString()), float.Parse(resultDict["vectorY"].ToString()));
+					player.Position = new Vector2(float.Parse(resultDict["x"].ToString()), float.Parse(resultDict["y"].ToString()));
 				}
 				else
 				{
-					player = new Player(tempDict["id"].ToString(), tempDict["name"].ToString(),
-					                    new Vector2(float.Parse(tempDict["vectorX"].ToString()), float.Parse(tempDict["vectorY"].ToString())),
-					                    new Vector2(float.Parse(tempDict["x"].ToString()), float.Parse(tempDict["y"].ToString())),
+					player = new Player(resultDict["id"].ToString(), resultDict["name"].ToString(),
+					                    new Vector2(float.Parse(resultDict["vectorX"].ToString()), float.Parse(resultDict["vectorY"].ToString())),
+					                    new Vector2(float.Parse(resultDict["x"].ToString()), float.Parse(resultDict["y"].ToString())),
 					                    0);
-					players.Add((string)tempDict["id"], player);
+					players.Add((string)resultDict["id"], player);
 					AddPlayer(player);
 				}
 			}
