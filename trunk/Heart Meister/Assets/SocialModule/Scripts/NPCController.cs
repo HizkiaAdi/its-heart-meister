@@ -18,7 +18,13 @@ namespace SocialModule
 		{
 			if(player != null)
 			{
+				position = transform.position;
+				position.x = Time.deltaTime * player.Position.x;
+				position.y = Time.deltaTime * player.Position.y;
+				if(position.magnitude - player.Position.magnitude > 1)
+					position = player.Position;
 				this.transform.position = player.Position;
+				Debug.Log(player.Vector);
 			}
 		}
 
