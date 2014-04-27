@@ -4,7 +4,7 @@ using System.Collections;
 public class HealthObjectSpawner : MonoBehaviour {
 
     public GameObject ground, health;
-    public float interval;
+    float interval;
     float delay, previousY, nextY;
     // Use this for initialization
     void Start()
@@ -18,6 +18,7 @@ public class HealthObjectSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        interval = Random.Range(1.0f, 2.5f);
         delay += Time.deltaTime;
         if (delay > interval)
         {
@@ -41,8 +42,8 @@ public class HealthObjectSpawner : MonoBehaviour {
 
     void SpawnHealth(float x, float y)
     {
-        int rand = Random.Range(0, 5);
-        if (rand == 4)
+        int rand = Random.Range(0, 4);
+        if (rand == 3)
             Instantiate(health, new Vector2(x, y), transform.rotation);
     }
 }
