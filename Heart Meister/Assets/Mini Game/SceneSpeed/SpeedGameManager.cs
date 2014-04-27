@@ -78,7 +78,7 @@ public class SpeedGameManager : MonoBehaviour {
         {
             if (GUI.Button(new Rect(Screen.width / 2 - 20, Screen.height / 2 + 20, 40, 30), "OK"))
             {
-                Application.LoadLevel(0);
+                Application.LoadLevel("Home");
             }
         }
     }
