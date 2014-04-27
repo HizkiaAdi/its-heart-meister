@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SpeedOtherObject : MonoBehaviour {
+public class HealthGround : MonoBehaviour {
 
+    public float speed;
     // Use this for initialization
     void Start()
     {
@@ -12,12 +13,9 @@ public class SpeedOtherObject : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector2(transform.position.x - 0.08f, transform.position.y);
-    }
+        transform.Translate(Vector2.right * speed);
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Boundary")
+        if (transform.localPosition.x < -11f)
         {
             Destroy(gameObject);
         }
