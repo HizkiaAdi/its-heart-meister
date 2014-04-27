@@ -11,6 +11,7 @@ public class HealthObjectSpawner : MonoBehaviour {
     {
         delay = 0.8f;
         previousY = -4.5f;
+        interval = 1.0f;
         Instantiate(ground, new Vector2(-5.8f, -4.5f), transform.rotation);
         Instantiate(ground, new Vector2(2.5f, -4.5f), transform.rotation);
     }
@@ -18,7 +19,6 @@ public class HealthObjectSpawner : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        interval = Random.Range(1.0f, 2.5f);
         delay += Time.deltaTime;
         if (delay > interval)
         {
@@ -30,6 +30,8 @@ public class HealthObjectSpawner : MonoBehaviour {
 
             SpawnGround(transform.position.x, nextY);
             SpawnHealth(transform.position.x, nextY + 2.5f);
+
+            interval = Random.Range(1.0f, 2.0f);
         }
     }
 
@@ -42,8 +44,8 @@ public class HealthObjectSpawner : MonoBehaviour {
 
     void SpawnHealth(float x, float y)
     {
-        int rand = Random.Range(0, 4);
-        if (rand == 3)
+        int rand = Random.Range(0, 3);
+        if (rand == 2)
             Instantiate(health, new Vector2(x, y), transform.rotation);
     }
 }

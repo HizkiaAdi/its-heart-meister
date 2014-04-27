@@ -26,21 +26,21 @@ public class AttackPlayer : MonoBehaviour {
 
     void OnGUI()
     {
-        //GUI.Box(new Rect(0, 0, 100, 50), (1 / Time.deltaTime).ToString());
+        float buttonSize = Screen.height / 9;
 
-        if (GUI.RepeatButton(new Rect(5, Screen.height - 50, 50, 50), "<"))
+        if (GUI.RepeatButton(new Rect(5, Screen.height - buttonSize - 5, buttonSize, buttonSize), "<"))
         {
             if (transform.position.x > -(Screen.width / 2))
                 transform.Translate(Vector2.right * -speed);
         }
 
-        if (GUI.RepeatButton(new Rect(60, Screen.height - 50, 50, 50), ">"))
+        if (GUI.RepeatButton(new Rect(buttonSize + 10, Screen.height - buttonSize - 5, buttonSize, buttonSize), ">"))
         {
             if (transform.right.x < Screen.width / 2)
                 transform.Translate(Vector2.right * speed);
         }
 
-        if (GUI.Button(new Rect(Screen.width - 55, Screen.height - 50, 50, 50), "O") && canShoot >= 30)
+        if (GUI.Button(new Rect(Screen.width - buttonSize - 5, Screen.height - buttonSize - 5, buttonSize, buttonSize), "O") && canShoot >= 30)
         {
             canShoot = 0;
             Vector2 target;

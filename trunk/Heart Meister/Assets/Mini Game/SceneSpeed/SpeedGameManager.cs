@@ -16,7 +16,7 @@ public class SpeedGameManager : MonoBehaviour {
         isComplete = false;
         isGameOver = false;
 
-        GameEventManager.GameOver += GameOver;
+        //GameEventManager.GameOver += GameOver;
     }
 
     // Update is called once per frame
@@ -39,7 +39,8 @@ public class SpeedGameManager : MonoBehaviour {
         if (score == 10 || chance == 0)
         {
             isGameOver = true;
-            GameEventManager.TriggerGameOver();
+            GameOver();
+            //GameEventManager.TriggerGameOver();
         }
 
         RaycastHit2D tapEnemy = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -74,9 +75,10 @@ public class SpeedGameManager : MonoBehaviour {
 
     void OnGUI()
     {
+        float buttonSize = Screen.height / 10;
         if (isGameOver)
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 20, Screen.height / 2 + 20, 40, 30), "OK"))
+            if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
             {
                 Application.LoadLevel("Home");
             }

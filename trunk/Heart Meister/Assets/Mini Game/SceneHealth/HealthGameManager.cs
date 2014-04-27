@@ -11,14 +11,15 @@ public class HealthGameManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        completeText.enabled = false;
-        failedText.enabled = false;
         score = 0;
         isGameOver = false;
         isComplete = false;
         playerFall = false;
+        //GameEventManager.GameStart += GameStart;
+        //GameEventManager.GameOver += GameOver;
 
-        GameEventManager.GameOver += GameOver;
+        //GameEventManager.TriggerGameStart();
+        GameStart();
     }
 
     // Update is called once per frame
@@ -37,8 +38,15 @@ public class HealthGameManager : MonoBehaviour {
         if (score == 10 || playerFall)
         {
             isGameOver = true;
-            GameEventManager.TriggerGameOver();
+            //GameEventManager.TriggerGameOver();
+            GameOver();
         }
+    }
+
+    void GameStart()
+    {
+        completeText.enabled = false;
+        failedText.enabled = false;
     }
 
     void GameOver()

@@ -17,7 +17,9 @@ public class DefensePlayer : MonoBehaviour {
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(Screen.width / 2 - 25, Screen.height - 52, 50, 50), ">"))
+        float buttonSize = Screen.height / 9;
+
+        if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height - buttonSize - 5, buttonSize, buttonSize), ">"))
         {
             transform.position = new Vector2(transform.position.x + 0.15f, transform.position.y);
         }

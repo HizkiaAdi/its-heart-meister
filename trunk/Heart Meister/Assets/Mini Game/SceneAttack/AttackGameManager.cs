@@ -19,7 +19,7 @@ public class AttackGameManager : MonoBehaviour {
         finishTime = (int)Time.time + 30;
         //InvokeRepeating("SpawnEnemy", spawnDelay, spawnTime);
 
-        GameEventManager.GameOver += GameOver;
+        //GameEventManager.GameOver += GameOver;
     }
 
     // Update is called once per frame
@@ -35,20 +35,23 @@ public class AttackGameManager : MonoBehaviour {
             else
             {
                 timerText.text = "0";
-                GameEventManager.TriggerGameOver();
+                //GameEventManager.TriggerGameOver();
+                GameOver();
             }
 
             chanceText.text = "Chance: " + AttackPlayer.lives.ToString();
             if (AttackPlayer.lives == 0)
             {
-                GameEventManager.TriggerGameOver();
+                //GameEventManager.TriggerGameOver();
+                GameOver();
             }
 
             scoreText.text = AttackPlayer.points + "/10";
             if (AttackPlayer.points == 10)
             {
                 isCompleted = true;
-                GameEventManager.TriggerGameOver();
+                GameOver();
+                //GameEventManager.TriggerGameOver();
             }
         }
     }
@@ -65,9 +68,10 @@ public class AttackGameManager : MonoBehaviour {
 
     void OnGUI()
     {
+        float buttonSize = Screen.height / 10;
         if (isGameOver)
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 20, Screen.height / 2 + 20, 40, 30), "OK"))
+            if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
             {
                 Application.LoadLevel("Home");
             }
