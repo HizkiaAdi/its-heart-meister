@@ -18,6 +18,7 @@ namespace SocialModule
 		private GUITextField textField2;
 		private GUILabel label;
 		private GUILabel label2;
+		private GUIButton backButton;
 		
 		void Start ()
 		{
@@ -26,6 +27,7 @@ namespace SocialModule
 			label2 = new GUILabel(55, 15, 14, 8, "Server IP");
 			textField2 = new GUITextField(2, 70, 15, 25, 8, host, CallbackMethod);
 			button = new GUIButton(0, 70, 25, 25, 8, "Connect", CallbackMethod);
+			backButton = new GUIButton(3, 80, 90, 18, 8, "Back", CallbackMethod);
 		}
 
 		void ConnectToServer()
@@ -60,6 +62,9 @@ namespace SocialModule
 					break;
 				case 2:
 					host = callbackRes["text"];
+					break;
+				case 3:
+					Application.LoadLevel("Home");
 					break;
 			}
 		}
