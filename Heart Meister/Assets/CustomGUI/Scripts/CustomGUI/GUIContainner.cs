@@ -6,6 +6,7 @@ namespace CustomGUI
 	public class GUIContainner : MonoBehaviour
 	{
 		private List<IGUIElement> GUIElements;
+		public GUISkin skin;
 
 		void Awake()
 		{
@@ -14,6 +15,7 @@ namespace CustomGUI
 
 		void OnGUI()
 		{
+			GUI.skin = skin;
 			foreach(IGUIElement i in GUIElements)
 				i.Draw();
 		}

@@ -19,12 +19,11 @@ namespace SocialModule
 			if(player != null)
 			{
 				position = transform.position;
-				position.x = Time.deltaTime * player.Position.x;
-				position.y = Time.deltaTime * player.Position.y;
-				if(position.magnitude - player.Position.magnitude > 1)
+				position.x = Time.deltaTime * player.Vector.x;
+				if(position.x - player.Position.x > 2)
 					position = player.Position;
 				this.transform.position = player.Position;
-				Debug.Log(player.Vector);
+				//Debug.Log("Game object pos: " + this.transform.position);
 			}
 		}
 

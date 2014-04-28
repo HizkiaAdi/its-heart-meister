@@ -24,6 +24,7 @@ namespace SocialModule
 			Dictionary<string, System.Object> resultDict;
 			Player player;
 
+			Debug.Log("Parsing jsonstring: " + jsonString);
 			resultDict = (Dictionary<string, System.Object>)Json.Deserialize(jsonString);
 			resultList = (List<System.Object>)resultDict["data"];
 			foreach (System.Object o in resultList)

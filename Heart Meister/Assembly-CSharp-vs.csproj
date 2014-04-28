@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIButton.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIContainner.cs" />
+     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUILabel.cs" />
+     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUITextField.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
