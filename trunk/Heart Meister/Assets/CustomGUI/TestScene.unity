@@ -85,7 +85,7 @@ GameObject:
   - 114: {fileID: 248196583}
   - 114: {fileID: 248196582}
   m_Layer: 0
-  m_Name: GUIContainer
+  m_Name: GUIContainner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214864ab5b9a4d04a93d4a428fe81003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skin: {fileID: 0}
 --- !u!1 &819097648
 GameObject:
   m_ObjectHideFlags: 0
