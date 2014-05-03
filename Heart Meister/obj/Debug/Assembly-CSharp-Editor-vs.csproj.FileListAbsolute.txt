@@ -36,3 +36,22 @@ C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\Assembly-CS
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-Editor.pdb
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\IFacebook.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.Graphs.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEngine.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.framework.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp-Editor.dll
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp-Editor.pdb

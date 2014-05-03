@@ -9,6 +9,7 @@ public class GUIScript : MonoBehaviour
 	void Start () 
 	{
 		TheButton = new GUIButton(1, 1, 1, 15, 10, "Hello World", CallbackFunction);
+		TheButton.Visible = true;
 	}
 
 	void CallbackFunction(int id, Dictionary<string, string> callbackResult)
