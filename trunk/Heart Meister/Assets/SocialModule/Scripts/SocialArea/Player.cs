@@ -41,4 +41,4 @@ namespace SocialModule
 
 		public GameObject GameObject {get{return this.gameObject;}set{this.gameObject = value;}}
 	}
-}
+//}
