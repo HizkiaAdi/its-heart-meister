@@ -55,7 +55,6 @@ namespace SocialModule.Avatar
 				selectedItem = Raycast(Input.mousePosition);
 				if(selectedItem != null && selectedItem.CompareTag("AvatarItem"))
 				{
-					Debug.Log(0);
 					AvatarIconScript iconScript = selectedItem.gameObject.GetComponent<AvatarIconScript>();
 					if(iconScript.avatarData is HeadAvatar)
 					{
@@ -84,7 +83,6 @@ namespace SocialModule.Avatar
 				}
 				else if(selectedItem != null)
 				{
-					Debug.Log(1);
 					if(selectedItem.CompareTag("HeadAvatar"))
 					{
 						data.headAvatar = null;

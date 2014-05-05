@@ -124,7 +124,7 @@ GameObject:
   - 65: {fileID: 184988779}
   m_Layer: 10
   m_Name: ItemView
-  m_TagString: AvatarView
+  m_TagString: ItemView
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,7 +568,7 @@ GameObject:
   - 4: {fileID: 1315484807}
   - 212: {fileID: 1315484809}
   - 65: {fileID: 1315484808}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: HeadSlot
   m_TagString: HeadAvatar
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ Transform:
   m_GameObject: {fileID: 1315484806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.09020615, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1563907353}
 --- !u!65 &1315484808
@@ -596,7 +596,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55999994, y: 2.55999994, z: .200000003}
+  m_Size: {x: 1.27999997, y: 1.27999997, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1315484809
 SpriteRenderer:
@@ -619,7 +619,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: dd6a8534657a4a44399d79227e152ec0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa790bc8ae3d9df469d4d6f58e3ec752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1385583415
 GameObject:
@@ -631,7 +631,7 @@ GameObject:
   - 4: {fileID: 1385583416}
   - 212: {fileID: 1385583418}
   - 65: {fileID: 1385583417}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: BottomSlot
   m_TagString: BottomAvatar
   m_Icon: {fileID: 0}
@@ -646,7 +646,7 @@ Transform:
   m_GameObject: {fileID: 1385583415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.09020615, y: -3, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1563907353}
 --- !u!65 &1385583417
@@ -659,7 +659,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55999994, y: 2.55999994, z: .200000003}
+  m_Size: {x: 1.27999997, y: 1.27999997, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &1385583418
 SpriteRenderer:
@@ -682,7 +682,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: dd6a8534657a4a44399d79227e152ec0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa790bc8ae3d9df469d4d6f58e3ec752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1563907352
 GameObject:
@@ -798,7 +798,7 @@ GameObject:
   - 4: {fileID: 1671280880}
   - 212: {fileID: 1671280879}
   - 65: {fileID: 1671280881}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: TopSlot
   m_TagString: TopAvatar
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: dd6a8534657a4a44399d79227e152ec0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa790bc8ae3d9df469d4d6f58e3ec752, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1671280880
 Transform:
@@ -836,7 +836,7 @@ Transform:
   m_GameObject: {fileID: 1671280878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.09020615, y: -1.5, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1563907353}
 --- !u!65 &1671280881
@@ -849,7 +849,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.55999994, y: 2.55999994, z: .200000003}
+  m_Size: {x: 1.27999997, y: 1.27999997, z: .200000003}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1704115134
 GameObject:

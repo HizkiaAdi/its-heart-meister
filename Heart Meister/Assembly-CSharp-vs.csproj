@@ -81,6 +81,12 @@
      <Compile Include="Assets\Mini Game\SceneHealth\HealthItem.cs" />
      <Compile Include="Assets\Mini Game\SceneHealth\HealthObjectSpawner.cs" />
      <Compile Include="Assets\Mini Game\SceneHealth\HealthPlayer.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseBall.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefensePlayer.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseShield.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseWall.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemy.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemySpawner.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedGameManager.cs" />
@@ -100,7 +106,6 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\BottomAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\IAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\IMaleAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
