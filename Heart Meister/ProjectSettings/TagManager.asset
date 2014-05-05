@@ -7,8 +7,11 @@ TagManager:
   - Shoot
   - Enemy
   - OtherObject
-  - Ball
-  - 
+  - Ball  - HeadAvatar
+  - TopAvatar
+  - BottomAvatar
+  - AvatarView
+  - AvatarItem  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -20,7 +23,7 @@ TagManager:
   User Layer 8: Player
   User Layer 9: Boundary
   User Layer 10: GUI
-  User Layer 11: 
+  User Layer 11: AvatarIcon
   User Layer 12: 
   User Layer 13: 
   User Layer 14: 
