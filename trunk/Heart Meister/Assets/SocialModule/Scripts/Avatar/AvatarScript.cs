@@ -1,26 +1,58 @@
 ﻿using UnityEngine;
 using System.Collections;
-using SocialModule.Avatar;
 
-public class AvatarScript : MonoBehaviour
+namespace SocialModule.Avatar
 {
-    PlayerAvatarData avatarData;
-	BaseAvatar baseAvatar;
-	HeadAvatar headAvatar;
-	TopAvatar topAvatar;
-	BottomAvatar bottomAvatar;
+	public class AvatarScript : MonoBehaviour
+	{
+		PlayerAvatarData avatarData;
+		IAvatar baseAvatar;
+		IAvatar headAvatar;
+		IAvatar topAvatar;
+		IAvatar bottomAvatar;
+		SpriteRenderer baseSprite;
+		SpriteRenderer headSprite;
+		SpriteRenderer topSprite;
+		SpriteRenderer bottomSprite;
+		
+		void Awake () 
+		{
+			
+		}
+		
+		void Start()
+		{
+			avatarData = GameObject.Find("DataContainer").GetComponent<PlayerAvatarData>();
+			baseAvatar = avatarData.baseAvatar;
+			headAvatar = avatarData.headAvatar;
+			topAvatar = avatarData.topAvatar;
+			bottomAvatar = avatarData.bottomAvatar;
 
-    void Start () 
-    {
-        avatarData = GameObject.Find("DataContainer").GetComponent<PlayerAvatarData>();
-		baseAvatar = avatarData.baseAvatar;
-		headAvatar = avatarData.headAvatar;
-		topAvatar = avatarData.topAvatar;
-		bottomAvatar = avatarData.bottomAvatar;
+			baseSprite = this.transform.FindChild("BaseAvatar").gameObject.GetComponent<SpriteRenderer>();
+			headSprite = this.transform.FindChild("HeadAvatar").gameObject.GetComponent<SpriteRenderer>();
+			topSprite = this.transform.FindChild("TopAvatar").gameObject.GetComponent<SpriteRenderer>();
+			bottomSprite = this.transform.FindChild("BottomAvatar").gameObject.GetComponent<SpriteRenderer>();
 
-		this.transform.FindChild("BaseAvatar").gameObject.GetComponent<SpriteRenderer>().sprite = baseAvatar.GetEditorSprite();
-		this.transform.FindChild("HeadAvatar").gameObject.GetComponent<SpriteRenderer>().sprite = headAvatar.GetEditorSprite();
-		this.transform.FindChild("TopAvatar").gameObject.GetComponent<SpriteRenderer>().sprite = topAvatar.GetEditorSprite();
-		this.transform.FindChild("BottomAvatar").gameObject.GetComponent<SpriteRenderer>().sprite = bottomAvatar.GetEditorSprite();
+			baseSprite.sprite = baseAvatar.GetEditorSprite();
+			headSprite.sprite = headAvatar.GetEditorSprite();
+			topSprite.sprite = topAvatar.GetEditorSprite();
+			bottomSprite.sprite = bottomAvatar.GetEditorSprite();
+		}
+
+		public void setHeadSprite(Sprite sprite)
+		{
+			this.headSprite.sprite = sprite;
+		}
+
+		public void setTopSprite(Sprite sprite)
+		{
+			this.topSprite.sprite = sprite;
+		}
+
+		public void setBottomSprite(Sprite sprite)
+		{
+			this.bottomSprite.sprite = sprite;
+		}
 	}
-}
+
+}	

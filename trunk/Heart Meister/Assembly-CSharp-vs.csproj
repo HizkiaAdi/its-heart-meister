@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_0;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -81,12 +81,6 @@
      <Compile Include="Assets\Mini Game\SceneHealth\HealthItem.cs" />
      <Compile Include="Assets\Mini Game\SceneHealth\HealthObjectSpawner.cs" />
      <Compile Include="Assets\Mini Game\SceneHealth\HealthPlayer.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseBall.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefensePlayer.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseShield.cs" />
-     <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseWall.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemy.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemySpawner.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedGameManager.cs" />
@@ -98,8 +92,10 @@
      <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
      <Compile Include="Assets\Scripts\MiniJSON.cs" />
      <Compile Include="Assets\Scripts\ResizeSprite.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\Avatar.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\Avatar\Avatars.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\BaseAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\BottomAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
@@ -107,6 +103,13 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\IMaleAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\DungeonNode.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenu.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleResult.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\GeneratedDungeonData.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\MapGenerator.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />

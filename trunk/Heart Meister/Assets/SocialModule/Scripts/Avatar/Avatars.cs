@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace SocialModule.Avatar
 {
-    public abstract class Avatar : IAvatar
+    public abstract class Avatars : IAvatar
     {
 		protected Sprite sprite;
         protected Sprite editorSprite;
@@ -11,7 +11,7 @@ namespace SocialModule.Avatar
         protected int id;
         protected string avatarName;
 
-        public Avatar(Sprite sprite, Sprite editorSprite, Sprite iconSprite, int id, string avatarName)
+        public Avatars(Sprite sprite, Sprite editorSprite, Sprite iconSprite, int id, string avatarName)
         {
 			this.sprite = sprite;
             this.editorSprite = editorSprite;
