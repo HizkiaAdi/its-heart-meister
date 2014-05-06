@@ -176,5 +176,13 @@ namespace SocialModule.Avatar
 			}
 			return null;
 		}
+
+        void OnGUI()
+        {
+            if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 7 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Home"))
+            {
+                Application.LoadLevel("Home");
+            }
+        }
 	}
 }
