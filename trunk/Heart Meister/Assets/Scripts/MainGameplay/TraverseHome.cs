@@ -32,5 +32,9 @@ public class TraverseHome : MonoBehaviour {
         {
             Application.LoadLevel("MiniGameMenu");
         }
+        if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 7 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "To Avatar Menu"))
+        {
+            Application.LoadLevel("Avatar");
+        }
     }
 }
