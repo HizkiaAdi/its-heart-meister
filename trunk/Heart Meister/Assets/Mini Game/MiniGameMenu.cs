@@ -39,7 +39,7 @@ public class MiniGameMenu : MonoBehaviour {
 
         if (GUI.Button(new Rect(Screen.width / 3 + 5, Screen.height / 2 + 20, Screen.width / 3 - 10, Screen.height / 3 - 10), "Special Defense"))
         {
-
+            Application.LoadLevel("SpecialDefenseScene");
         }
 
         if (GUI.Button(new Rect(2 * Screen.width / 3, Screen.height / 2 + 20, Screen.width / 3 - 10, Screen.height / 3 - 10), "Health"))
