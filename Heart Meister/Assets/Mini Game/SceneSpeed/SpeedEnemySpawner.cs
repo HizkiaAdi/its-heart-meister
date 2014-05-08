@@ -18,7 +18,7 @@ public class SpeedEnemySpawner : MonoBehaviour {
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnDelay;
-            int maxSpawn = Random.Range(1, 3);
+            int maxSpawn = Random.Range(1, 5);
             for (int i = 0; i < maxSpawn; i++)
             {
                 int rand = Random.Range(0, 7);

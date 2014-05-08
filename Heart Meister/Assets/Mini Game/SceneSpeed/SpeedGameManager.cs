@@ -22,13 +22,13 @@ public class SpeedGameManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (score < 10)
+        if (score < 30)
         {
-            scoreText.text = score.ToString() + "/10";
+            scoreText.text = score.ToString() + "/30";
         }
         else
         {
-            scoreText.text = "10/10";
+            scoreText.text = "30/30";
             isComplete = true;
         }
 
@@ -36,7 +36,7 @@ public class SpeedGameManager : MonoBehaviour {
             chanceText.text = "Chance: " + chance.ToString();
         else chanceText.text = "Chance: 0";
 
-        if (score == 10 || chance == 0)
+        if (score == 30 || chance <= 0)
         {
             isGameOver = true;
             GameOver();

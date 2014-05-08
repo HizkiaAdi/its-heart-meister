@@ -67,7 +67,7 @@ public class SpecialAttackGameManager : MonoBehaviour {
         {
             if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
             {
-                Application.LoadLevel("MiniGames");
+                Application.LoadLevel("Home");
             }
         }
     }
