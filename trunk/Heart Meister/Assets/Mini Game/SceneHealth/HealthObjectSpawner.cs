@@ -44,8 +44,8 @@ public class HealthObjectSpawner : MonoBehaviour {
 
     void SpawnHealth(float x, float y)
     {
-        int rand = Random.Range(0, 3);
-        if (rand == 2)
+        int rand = Random.Range(0, 2);
+        if (rand == 1)
             Instantiate(health, new Vector2(x, y), transform.rotation);
     }
 }
