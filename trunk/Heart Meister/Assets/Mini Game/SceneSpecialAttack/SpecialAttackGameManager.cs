@@ -4,14 +4,16 @@ using System.Collections;
 public class SpecialAttackGameManager : MonoBehaviour {
 
     public GUIText progressText, timeText, completeText, failedText;
+    public GameObject target, specialAttack;
     public static int progress;
     int finishTime, restTime;
-    bool isGameOver, isComplete;
+    bool isGameOver, isComplete, attackRelease;
 
     // Use this for initialization
     void Start()
     {
         isGameOver = isComplete = false;
+        attackRelease = false;
         completeText.enabled = failedText.enabled = false;
         progress = 0;
         finishTime = (int)Time.time + 60;
@@ -27,8 +29,10 @@ public class SpecialAttackGameManager : MonoBehaviour {
             if (progress >= 30)
             {
                 progressText.text = "S. Attack: 100%";
-                isComplete = true;
-                GameOver();
+                //isComplete = true;
+                //GameOver();
+                
+                CheckTarget();
             }
         }
     }
@@ -43,6 +47,17 @@ public class SpecialAttackGameManager : MonoBehaviour {
         else
         {
             timeText.text = "0";
+            GameOver();
+        }
+    }
+
+    void CheckTarget()
+    {
+        RaycastHit2D targetPoint = Physics2D.Raycast(new Vector2(4.3f, 4.2f), Vector2.zero);
+
+        if (targetPoint.collider == null)
+        {
+            isComplete = true;
             GameOver();
         }
     }
@@ -62,12 +77,21 @@ public class SpecialAttackGameManager : MonoBehaviour {
 
     void OnGUI()
     {
-        float buttonSize = Screen.height / 10;
+        float buttonSize = Screen.height / 9;
         if (isGameOver)
         {
             if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
             {
                 Application.LoadLevel("Home");
+            }
+        }
+
+        if (GUI.Button(new Rect(Screen.width - buttonSize, Screen.height - buttonSize, buttonSize, buttonSize), "O"))
+        {
+            if (!attackRelease && progress >= 30)
+            {
+                Instantiate(specialAttack, new Vector2(4.5f, -2.5f), transform.rotation);
+                attackRelease = true;
             }
         }
     }

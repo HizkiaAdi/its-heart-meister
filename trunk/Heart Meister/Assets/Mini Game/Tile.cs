@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Tile : MonoBehaviour {
+public class Tile {
 
     static readonly float[] xPos = { -7.3f, -6.0f, -4.7f, -3.4f, -2.1f, -0.85f, 0.4f };
     static readonly float[] yPos = { 2.18f, 0.9f, -0.35f, -1.6f, -2.9f, -4.2f };

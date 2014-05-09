@@ -83,6 +83,7 @@
      <Compile Include="Assets\Mini Game\SceneHealth\HealthPlayer.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialAttack\MatchThree.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialAttack\SpecialAttackGameManager.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialAttack\SpecialAttackMagic.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseBall.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
