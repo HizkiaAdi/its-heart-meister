@@ -29,8 +29,11 @@ public class SpecialAttackGameManager : MonoBehaviour {
             if (progress >= 30)
             {
                 progressText.text = "S. Attack: 100%";
-                //isComplete = true;
-                //GameOver();
+                if (!attackRelease)
+                {
+                    Instantiate(specialAttack, new Vector2(4.5f, -2.5f), transform.rotation);
+                    attackRelease = true;
+                }
                 
                 CheckTarget();
             }
@@ -83,15 +86,6 @@ public class SpecialAttackGameManager : MonoBehaviour {
             if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
             {
                 Application.LoadLevel("Home");
-            }
-        }
-
-        if (GUI.Button(new Rect(Screen.width - buttonSize, Screen.height - buttonSize, buttonSize, buttonSize), "O"))
-        {
-            if (!attackRelease && progress >= 30)
-            {
-                Instantiate(specialAttack, new Vector2(4.5f, -2.5f), transform.rotation);
-                attackRelease = true;
             }
         }
     }
