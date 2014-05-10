@@ -84,6 +84,7 @@
      <Compile Include="Assets\Mini Game\SceneSpecialAttack\MatchThree.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialAttack\SpecialAttackGameManager.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialAttack\SpecialAttackMagic.cs" />
+     <Compile Include="Assets\Mini Game\SceneSpecialAttack\Tile.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseBall.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
      <Compile Include="Assets\Mini Game\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
@@ -94,7 +95,6 @@
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedEnemySpawner.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedGameManager.cs" />
      <Compile Include="Assets\Mini Game\SceneSpeed\SpeedOtherObject.cs" />
-     <Compile Include="Assets\Mini Game\Tile.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
@@ -113,6 +113,9 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatListener.cs" />
