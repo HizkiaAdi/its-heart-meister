@@ -1,32 +1,36 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthItem : MonoBehaviour {
-
-    public float speed;
-    // Use this for initialization
-    void Start()
+namespace MiniGame
+{
+    public class HealthItem : MonoBehaviour
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(Vector2.right * speed);
-
-        if (transform.localPosition.x < -11f)
+        public float speed;
+        // Use this for initialization
+        void Start()
         {
-            Destroy(gameObject);
+
         }
-    }
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Player")
+        // Update is called once per frame
+        void Update()
         {
-            HealthGameManager.score++;
-            Destroy(gameObject);
+            transform.Translate(Vector2.right * speed);
+
+            if (transform.localPosition.x < -11f)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.tag == "Player")
+            {
+                HealthGameManager.score++;
+                Destroy(gameObject);
+            }
         }
     }
 }

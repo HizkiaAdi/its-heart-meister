@@ -1,33 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthPlayer : MonoBehaviour {
-
-    bool onGround;
-    // Use this for initialization
-    void Start()
+namespace MiniGame
+{
+    public class HealthPlayer : MonoBehaviour
     {
-        onGround = true;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && onGround)
+        bool onGround;
+        // Use this for initialization
+        void Start()
         {
-            rigidbody2D.velocity = Vector2.zero;
-            rigidbody2D.AddForce(new Vector2(0, 300f));
-            onGround = false;
+            onGround = true;
         }
 
-        if (transform.localPosition.y < -5.5f)
+        // Update is called once per frame
+        void Update()
         {
-            HealthGameManager.playerFall = true;
-        }
-    }
+            if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && onGround)
+            {
+                rigidbody2D.velocity = Vector2.zero;
+                rigidbody2D.AddForce(new Vector2(0, 300f));
+                onGround = false;
+            }
 
-    void OnCollisionEnter2D()
-    {
-        onGround = true;
+            if (transform.localPosition.y < -5.5f)
+            {
+                HealthGameManager.playerFall = true;
+            }
+        }
+
+        void OnCollisionEnter2D()
+        {
+            onGround = true;
+        }
     }
 }

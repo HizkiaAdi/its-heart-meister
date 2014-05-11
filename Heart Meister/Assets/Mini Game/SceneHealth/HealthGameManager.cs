@@ -1,73 +1,77 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthGameManager : MonoBehaviour {
-
-    public GUIText completeText, failedText, scoreText;
-    public static int score;
-    bool isComplete, isGameOver;
-    public static bool playerFall;
-
-    // Use this for initialization
-    void Start()
+namespace MiniGame
+{
+    public class HealthGameManager : MonoBehaviour
     {
-        score = 0;
-        isGameOver = false;
-        isComplete = false;
-        playerFall = false;
-        //GameEventManager.GameStart += GameStart;
-        //GameEventManager.GameOver += GameOver;
 
-        //GameEventManager.TriggerGameStart();
-        GameStart();
-    }
+        public GUIText completeText, failedText, scoreText;
+        public static int score;
+        bool isComplete, isGameOver;
+        public static bool playerFall;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (score < 10)
+        // Use this for initialization
+        void Start()
         {
-            scoreText.text = score.ToString() + "/10";
-        }
-        else
-        {
-            scoreText.text = "10/10";
-            isComplete = true;
+            score = 0;
+            isGameOver = false;
+            isComplete = false;
+            playerFall = false;
+            //GameEventManager.GameStart += GameStart;
+            //GameEventManager.GameOver += GameOver;
+
+            //GameEventManager.TriggerGameStart();
+            GameStart();
         }
 
-        if (score == 10 || playerFall)
+        // Update is called once per frame
+        void Update()
         {
-            isGameOver = true;
-            //GameEventManager.TriggerGameOver();
-            GameOver();
-        }
-    }
-
-    void GameStart()
-    {
-        completeText.enabled = false;
-        failedText.enabled = false;
-    }
-
-    void GameOver()
-    {
-        if (isComplete)
-        {
-            completeText.enabled = true;
-        }
-        else
-        {
-            failedText.enabled = true;
-        }
-    }
-
-    void OnGUI()
-    {
-        if (isGameOver)
-        {
-            if (GUI.Button(new Rect(Screen.width / 2 - 20, Screen.height / 2 + 20, 40, 30), "OK"))
+            if (score < 10)
             {
-                Application.LoadLevel("Home");
+                scoreText.text = score.ToString() + "/10";
+            }
+            else
+            {
+                scoreText.text = "10/10";
+                isComplete = true;
+            }
+
+            if (score == 10 || playerFall)
+            {
+                isGameOver = true;
+                //GameEventManager.TriggerGameOver();
+                GameOver();
+            }
+        }
+
+        void GameStart()
+        {
+            completeText.enabled = false;
+            failedText.enabled = false;
+        }
+
+        void GameOver()
+        {
+            if (isComplete)
+            {
+                completeText.enabled = true;
+            }
+            else
+            {
+                failedText.enabled = true;
+            }
+        }
+
+        void OnGUI()
+        {
+            if (isGameOver)
+            {
+                if (GUI.Button(new Rect(Screen.width / 2 - 20, Screen.height / 2 + 20, 40, 30), "OK"))
+                {
+                    Application.LoadLevel("Home");
+                }
             }
         }
     }
