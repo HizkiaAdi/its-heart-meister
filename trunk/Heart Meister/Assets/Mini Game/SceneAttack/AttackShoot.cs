@@ -1,32 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackShoot : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () 
+namespace MiniGame
+{
+    public class AttackShoot : MonoBehaviour
     {
-        //transform.Translate(Vector2.up * 0.2f);
-        transform.position = new Vector2(transform.position.x, transform.position.y + 0.15f);
-	}
 
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.tag == "Enemy")
+        // Use this for initialization
+        void Start()
         {
-            AttackPlayer.points++;
+
         }
 
-        if (collider.tag == "OtherObject")
+        // Update is called once per frame
+        void Update()
         {
-            AttackPlayer.lives--;
+            //transform.Translate(Vector2.up * 0.2f);
+            transform.position = new Vector2(transform.position.x, transform.position.y + 0.15f);
         }
 
-        Destroy(gameObject);
+        void OnTriggerEnter2D(Collider2D collider)
+        {
+            if (collider.tag == "Enemy")
+            {
+                AttackPlayer.points++;
+            }
+
+            if (collider.tag == "OtherObject")
+            {
+                AttackPlayer.lives--;
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

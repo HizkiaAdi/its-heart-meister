@@ -1,25 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameEventManager {
-
-    public delegate void GameEvent();
-
-    public static GameEvent GameStart, GameOver;
-
-    public static void TriggerGameStart()
+namespace MiniGame
+{
+    public class GameEventManager
     {
-        if (GameStart != null)
+
+        public delegate void GameEvent();
+
+        public static GameEvent GameStart, GameOver;
+
+        public static void TriggerGameStart()
         {
-            GameStart();
+            if (GameStart != null)
+            {
+                GameStart();
+            }
         }
-    }
 
-    public static void TriggerGameOver()
-    {
-        if (GameOver != null)
+        public static void TriggerGameOver()
         {
-            GameOver();
+            if (GameOver != null)
+            {
+                GameOver();
+            }
         }
     }
 }
