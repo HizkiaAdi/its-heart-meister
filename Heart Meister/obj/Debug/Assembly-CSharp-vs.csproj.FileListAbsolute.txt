@@ -34,3 +34,15 @@ F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.framework.dll
 F:\SVN Repo\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
 F:\SVN Repo\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp.pdb
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Assembly-CSharp.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\IFacebook.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\UnityEditor.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\UnityEngine.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\nunit.framework.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\ResolveAssemblyReference.cache
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.dll
+E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.pdb
