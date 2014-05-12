@@ -32,16 +32,15 @@ namespace SocialModule
 		float xUnit;
 		float yUnit;
 		float rowHeight;
-		float scrollVelocity;
-		float timeTouchPhaseEnded;
-		float inertiaDuration;
-		Message selectedMessage;
+		int selectedIndex;
+		Message lastSellectedMessage;
 		string senderString;
 		string dateString;
 		string messageString;
 		string receiverString;
 		string sentMessageString;
 		bool drawModal;
+		Touch touch;
 		
 		void Awake ()
 		{
@@ -84,8 +83,6 @@ namespace SocialModule
 			sentMessageFieldRect = new Rect (2 * xUnit, 21 * yUnit, 26 * xUnit, 20 * yUnit);
 			modalSendRect = new Rect (2 * xUnit, 42 * yUnit, 12 * xUnit, 5 * yUnit);
 			modalCancelRect = new Rect (16 * xUnit, 42 * yUnit, 12 * xUnit, 5 * yUnit);
-
-			inertiaDuration = 5f;
 		}
 		
 		void Start ()
@@ -93,7 +90,7 @@ namespace SocialModule
 			//Get message from container object
 			container.GetComponent<MessageChecker> ().GetMessageList (out messageList);
 		}
-		
+
 		void OnGUI ()
 		{
 			DrawMessageList ();
@@ -115,61 +112,41 @@ namespace SocialModule
 
 			if(!drawModal)
 			{
-				if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
+				/*if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
 				{
 					int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
 					selectedMessage = messageList [index];
 					senderString = selectedMessage.SenderName;
 					dateString = selectedMessage.Date;
 					messageString = selectedMessage.MessageString;
-				}
+				}*/
 
-				if (Input.touchCount > 0)
+				if (Input.touchCount > 0 && scrollViewRect.Contains(new Vector2(Input.GetTouch(0).position.x, screenHeight - Input.GetTouch(0).position.y)))
 				{
-					Touch touch = Input.GetTouch(0);
+					touch = Input.GetTouch(0);
+
 					if(touch.phase == TouchPhase.Began)
 					{
-						int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
-						selectedMessage = messageList [index];
+						selectedIndex = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
 					}
 					else if(touch.phase == TouchPhase.Moved)
 					{
-						scrollPos.y += Input.GetTouch(0).position.x;
-						selectedMessage = null;
+						if(Mathf.Abs(touch.deltaPosition.y) > 1)
+						{
+							scrollPos.y += touch.deltaPosition.y;
+							selectedIndex = -1;
+						}
 					}
 					else if(touch.phase == TouchPhase.Canceled)
 					{
-						selectedMessage = null;
+						selectedIndex = -1;
 					}
-					else if(touch.phase == TouchPhase.Ended)
+					else if(touch.phase == TouchPhase.Ended && selectedIndex != -1)
 					{
-						if(selectedMessage != null)
-						{
-							senderString = selectedMessage.SenderName;
-							dateString = selectedMessage.Date;
-							messageString = selectedMessage.MessageString;
-						}
-						else
-						{
-							if(Mathf.Abs(touch.deltaPosition.y) > 10)
-								scrollVelocity = (int)(touch.deltaPosition.y / touch.deltaTime);
-							timeTouchPhaseEnded = Time.time;
-						}
-					}
-				}
-
-				if(Input.touchCount != -1)
-				{
-					selectedMessage = null;
-
-					if(scrollVelocity != 0.0f)
-					{
-						float t = (Time.time - timeTouchPhaseEnded) / inertiaDuration;
-						float frameVelocity = Mathf.Lerp(scrollVelocity, 0, t);
-						scrollPos.y += frameVelocity * Time.deltaTime;
-
-						if(t >= inertiaDuration)
-							scrollVelocity = 0.0f;
+						lastSellectedMessage = messageList[selectedIndex];
+						senderString = lastSellectedMessage.SenderName;
+						dateString = lastSellectedMessage.Date;
+						messageString = lastSellectedMessage.MessageString;
 					}
 				}
 			}
@@ -199,12 +176,12 @@ namespace SocialModule
 				drawModal = true;
 			}
 			
-			if (selectedMessage == null)
+			if (lastSellectedMessage == null)
 				GUI.enabled = false;
 			
 			if (GUI.Button (replyButtonRect, "Reply")) 
 			{
-				receiverString = selectedMessage.SenderName;
+				receiverString = lastSellectedMessage.SenderName;
 				drawModal = true;
 			}
 			
@@ -218,8 +195,8 @@ namespace SocialModule
 		
 		void DeleteSelectedMessage ()
 		{
-			messageList.Remove (selectedMessage);
-			selectedMessage = null;
+			messageList.Remove (lastSellectedMessage);
+			lastSellectedMessage = null;
 		}
 		
 		void DrawModalWindow ()
