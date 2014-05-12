@@ -97,6 +97,10 @@ namespace SocialModule
 			DrawDescriptionWindow ();
 			if (drawModal)
 				DrawModalWindow ();
+			if(GUI.Button(new Rect(0*xUnit,0*yUnit,10*xUnit,5*yUnit),"Home"))
+			{
+				Application.LoadLevel("Home");
+			}
 		}
 		
 		void DrawMessageList ()
