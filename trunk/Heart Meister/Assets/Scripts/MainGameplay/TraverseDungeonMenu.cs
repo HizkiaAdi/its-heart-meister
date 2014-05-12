@@ -29,9 +29,9 @@ public class TraverseDungeonMenu : MonoBehaviour {
         {
             Application.LoadLevel("Shop");
         }
-        if (GUI.Button(new Rect(Screen.width * 1 / 4, Screen.height * 3 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Battle Test"))
+        if (GUI.Button(new Rect(Screen.width * 1 / 4, Screen.height * 3 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Hootun Forest"))
         {
-            Application.LoadLevel("Dungeon-HootunForestBATTLE");
+            Application.LoadLevel("Dungeon-HootunForest");
         }
     }
 }

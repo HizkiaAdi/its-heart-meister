@@ -36,5 +36,9 @@ public class TraverseHome : MonoBehaviour {
         {
             Application.LoadLevel("Avatar");
         }
+        if (GUI.Button(new Rect(Screen.width * 2 / 4, Screen.height * 7 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Private Messages"))
+        {
+            Application.LoadLevel("PrivateMessage");
+        }
     }
 }
