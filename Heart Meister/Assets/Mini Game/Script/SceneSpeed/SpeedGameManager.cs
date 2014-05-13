@@ -48,7 +48,7 @@ namespace MiniGame
 
             RaycastHit2D tapEnemy = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
-            if (Input.GetMouseButtonUp(0) && tapEnemy.collider != null)
+            if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && tapEnemy.collider != null)
             {
                 if (tapEnemy.collider.tag == "Enemy")
                 {

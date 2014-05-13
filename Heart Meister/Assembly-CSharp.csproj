@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_0;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -52,8 +52,6 @@
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUITextField.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
-     <Compile Include="Assets\EpicMap\Script\TileMap.cs" />
-     <Compile Include="Assets\EpicMap\Script\mapgenerator.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
@@ -68,6 +66,8 @@
      <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Mini Game\GameEventManager.cs" />
+     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
+     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
      <Compile Include="Assets\Mini Game\Model\GameEventManager.cs" />
      <Compile Include="Assets\Mini Game\Model\GameManager.cs" />
      <Compile Include="Assets\Mini Game\Model\MiniGamePlayer.cs" />
@@ -103,14 +103,15 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
      <Compile Include="Assets\Mini Game\Tile.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversing.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
      <Compile Include="Assets\Scripts\MiniJSON.cs" />
      <Compile Include="Assets\Scripts\ResizeSprite.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
@@ -125,7 +126,6 @@
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SlerpTest.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatListener.cs" />
