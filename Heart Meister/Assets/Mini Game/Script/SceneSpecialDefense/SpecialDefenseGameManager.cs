@@ -95,7 +95,7 @@ namespace MiniGame
 
         void OnGUI()
         {
-            float buttonSize = Screen.height / 10;
+            float buttonSize = Screen.height / 9;
             if (isGameOver)
             {
                 if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))

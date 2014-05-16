@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using MiniGameModel;
+using System.Collections.Generic;
+using AttackGameLevel;
 
 namespace MiniGame
 {
@@ -15,6 +16,26 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
+            //Instantiate(Resources.Load("/MiniGamePrefabs/Obstacle1") as GameObject);
+            Object o = Resources.Load("/MiniGamePrefabs/Ball");
+            if (o == null) Debug.Log("Load failed");
+
+            // Create Director
+            AttackLevelManufacturer newManufacturer = new AttackLevelManufacturer();
+            // Lets have the Builder class ready
+            AttackLevelBuilder levelBuilder = null;
+
+            // Create level
+            
+            levelBuilder = new AttackLevel2();
+            newManufacturer.Construct(levelBuilder);
+            List<GameObject> obstacles = levelBuilder.Level.CreateLevel();
+
+            foreach(GameObject i in obstacles)
+            {
+                Instantiate(i, i.transform.position, i.transform.rotation);
+            }
+
             GameStart();
         }
 
@@ -70,7 +91,7 @@ namespace MiniGame
 
         void OnGUI()
         {
-            float buttonSize = Screen.height / 10;
+            float buttonSize = Screen.height / 9;
             if (isGameOver)
             {
                 if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
