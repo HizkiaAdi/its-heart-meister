@@ -24,7 +24,7 @@ namespace MiniGame
 
             if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height - buttonSize - 5, buttonSize, buttonSize), ">"))
             {
-                transform.position = new Vector2(transform.position.x + 0.15f, transform.position.y);
+                transform.position = new Vector2(transform.position.x + 0.25f, transform.position.y);
             }
         }
 

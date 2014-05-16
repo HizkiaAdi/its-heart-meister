@@ -67,6 +67,8 @@
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Mini Game\GameEventManager.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
+     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel2.cs" />
+     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelBuilder.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
      <Compile Include="Assets\Mini Game\Model\GameEventManager.cs" />
      <Compile Include="Assets\Mini Game\Model\GameManager.cs" />
@@ -74,6 +76,7 @@
      <Compile Include="Assets\Mini Game\Model\MovingObject.cs" />
      <Compile Include="Assets\Mini Game\Script\MiniGameMenu.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackGameManager.cs" />
+     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackObstacle1.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackPlayer.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackShoot.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackTarget.cs" />
