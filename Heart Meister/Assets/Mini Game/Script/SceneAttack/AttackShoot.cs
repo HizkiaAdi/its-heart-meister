@@ -21,17 +21,25 @@ namespace MiniGame
 
         void OnTriggerEnter2D(Collider2D collider)
         {
-            if (collider.tag == "Enemy")
+            if (collider.tag == "BlackHole")
             {
-                AttackPlayer.points++;
+                transform.position = new Vector2(Random.Range(-5f, 5f), transform.position.y + 1f);
             }
 
-            if (collider.tag == "OtherObject")
+            else
             {
-                AttackPlayer.lives--;
-            }
+                if (collider.tag == "Enemy")
+                {
+                    AttackPlayer.points++;
+                }
 
-            Destroy(gameObject);
+                if (collider.tag == "OtherObject")
+                {
+                    AttackPlayer.lives--;
+                }
+
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -15,10 +15,24 @@ namespace MiniGame
         // Update is called once per frame
         void Update()
         {
+            RaycastHit2D click = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
+            if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)) && click.collider != null)
+            {
+                switch (click.collider.name)
+                {
+                    case "AttackButton": Application.LoadLevel("AttackScene"); break;
+                    case "DefenseButton": Application.LoadLevel("DefenseScene"); break;
+                    case "SpeedButton": Application.LoadLevel("SpeedScene"); break;
+                    case "SpecialAttackButton": Application.LoadLevel("SpecialAttackScene"); break;
+                    case "SpecialDefenseButton": Application.LoadLevel("SpecialDefenseScene"); break;
+                    case "HealthButton": Application.LoadLevel("HealthScene"); break;
+                    case "HomeButton": Application.LoadLevel("Home"); break;
+                }
+            }
         }
 
-        void OnGUI()
+        /*void OnGUI()
         {
             float buttonHeight = Screen.height / 4, buttonWidth = Screen.width / 4;
 
@@ -56,6 +70,6 @@ namespace MiniGame
             {
                 Application.LoadLevel("Home");
             }
-        }
+        }*/
     }
 }

@@ -2,13 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using AttackGameLevel;
+using MiniGameModel;
 
 namespace MiniGame
 {
     public class AttackGameManager : MonoBehaviour
     {
-
-        public GameObject[] target;
         public GUIText completeText, failedText, timerText, chanceText, scoreText;
         int finishTime, restTime;
         bool isCompleted, isGameOver;
@@ -16,24 +15,26 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
-            //Instantiate(Resources.Load("/MiniGamePrefabs/Obstacle1") as GameObject);
-            Object o = Resources.Load("/MiniGamePrefabs/Ball");
-            if (o == null) Debug.Log("Load failed");
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
 
-            // Create Director
-            AttackLevelManufacturer newManufacturer = new AttackLevelManufacturer();
-            // Lets have the Builder class ready
-            AttackLevelBuilder levelBuilder = null;
-
-            // Create level
-            
-            levelBuilder = new AttackLevel2();
-            newManufacturer.Construct(levelBuilder);
-            List<GameObject> obstacles = levelBuilder.Level.CreateLevel();
-
-            foreach(GameObject i in obstacles)
+            if (level.Level != 1)
             {
-                Instantiate(i, i.transform.position, i.transform.rotation);
+                // Create Director
+                AttackLevelManufacturer newManufacturer = new AttackLevelManufacturer();
+                // Lets have the Builder class ready
+                AttackLevelBuilder levelBuilder = null;
+
+                // Create level
+                if (level.Level == 2)
+                    levelBuilder = new Level2();
+                else levelBuilder = new Level3();
+
+                newManufacturer.Construct(levelBuilder);
+
+                foreach (GameObject i in levelBuilder.Level.Obstacle)
+                {
+                    Instantiate(i, i.transform.position, i.transform.rotation);
+                }
             }
 
             GameStart();

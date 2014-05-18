@@ -18,9 +18,9 @@ namespace MiniGame
             transform.position = new Vector2(transform.position.x - 0.08f, transform.position.y + Random.Range(-0.1f, 0.1f));
         }
 
-        void OnTriggerEnter2D(Collider2D collider)
+        void OnCollisionEnter2D(Collision2D collider)
         {
-            if (collider.tag == "Boundary")
+            if (collider.collider.tag == "Boundary")
             {
                 SpeedGameManager.chance--;
                 Destroy(gameObject);
