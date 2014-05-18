@@ -5,10 +5,13 @@ namespace AttackGameLevel
 {
     public abstract class AttackLevelBuilder
     {
-        public virtual void BuildObstacle() { }
-        public AttackLevel Level 
-        { 
-            get { return Level; } 
+       public virtual void BuildObstacle() { }
+       
+       public AttackLevel level;
+
+        public AttackLevel Level
+        {
+            get { return level; }
         }
     }
 }

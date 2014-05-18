@@ -16,6 +16,7 @@ namespace AttackGameLevel
 
         public List<GameObject> CreateLevel()
         {
+            if (obstacle != null) Debug.Log("Attack Level not null");
             return obstacle;
         }
 
