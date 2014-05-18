@@ -88,6 +88,9 @@
      <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemy.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemyBullet.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseGameManager.cs" />
+     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseMagicBall.cs" />
+     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle1.cs" />
+     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle2.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneDefense\DefensePlayer.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGameManager.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGround.cs" />
