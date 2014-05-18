@@ -67,6 +67,7 @@
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Mini Game\GameEventManager.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
+     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel2.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelBuilder.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level2.cs" />
@@ -107,6 +108,7 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedEnemySpawner.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
+     <Compile Include="Assets\Mini Game\Tile.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
