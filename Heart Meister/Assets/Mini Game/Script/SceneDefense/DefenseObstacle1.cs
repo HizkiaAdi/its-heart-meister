@@ -6,8 +6,7 @@ namespace MiniGame
     public class DefenseObstacle1 : MonoBehaviour
     {
         public GameObject magicBall;
-        float speed = 0.05f;
-        float nextShoot, shootDelay = 2;
+        float nextShoot, shootDelay = 2.7f;
         // Use this for initialization
         void Start()
         {
