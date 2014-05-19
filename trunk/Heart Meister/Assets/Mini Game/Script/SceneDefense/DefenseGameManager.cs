@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DefenseGameLevel;
+using MiniGameModel;
 
 namespace MiniGame
 {
@@ -11,12 +13,26 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
-            isGameOver = false;
-            isComplete = false;
-            completeText.enabled = false;
-            failedText.enabled = false;
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
 
-            //GameEventManager.GameOver += GameOver;
+            if(level.Level!=1)
+            {
+                DefenseLevelManufacturer newManufacturer = new DefenseLevelManufacturer();
+                DefenseLevelBuilder levelBuilder = null;
+
+                if (level.Level == 2)
+                    levelBuilder = new Level2();
+                else levelBuilder = new Level3();
+
+                newManufacturer.Construct(levelBuilder);
+
+                foreach(GameObject i in levelBuilder.Level.Obstacle)
+                {
+                    Instantiate(i, i.transform.position, i.transform.rotation);
+                }
+            }
+
+            GameStart();
         }
 
         // Update is called once per frame
@@ -25,8 +41,15 @@ namespace MiniGame
             if (isGameOver)
             {
                 GameOver();
-                //GameEventManager.TriggerGameOver();
             }
+        }
+
+        void GameStart()
+        {
+            isGameOver = false;
+            isComplete = false;
+            completeText.enabled = false;
+            failedText.enabled = false;
         }
 
         void GameOver()

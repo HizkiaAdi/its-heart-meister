@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using SpeedGameLevel;
+using MiniGameModel;
 
 namespace MiniGame
 {
@@ -9,17 +12,30 @@ namespace MiniGame
         public GUIText completeText, failedText, chanceText, scoreText;
         public static int score, chance;
         bool isComplete, isGameOver;
+
         // Use this for initialization
         void Start()
         {
-            completeText.enabled = false;
-            failedText.enabled = false;
-            score = 0;
-            chance = 3;
-            isComplete = false;
-            isGameOver = false;
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
 
-            //GameEventManager.GameOver += GameOver;
+            if(level.Level != 1)
+            {
+                SpeedLevelManufacturer newManufacturer = new SpeedLevelManufacturer();
+                SpeedLevelBuilder levelBuilder = null;
+
+                if (level.Level == 2)
+                    levelBuilder = new Level2();
+                else levelBuilder = new Level3();
+
+                newManufacturer.Construct(levelBuilder);
+
+                foreach(GameObject i in levelBuilder.level.Spawner)
+                {
+                    Instantiate(i, i.transform.position, i.transform.rotation);
+                }
+            }
+
+            GameStart();
         }
 
         // Update is called once per frame
@@ -62,6 +78,16 @@ namespace MiniGame
                     chance--;
                 }
             }
+        }
+
+        void GameStart()
+        {
+            completeText.enabled = false;
+            failedText.enabled = false;
+            score = 0;
+            chance = 3;
+            isComplete = false;
+            isGameOver = false;
         }
 
         void GameOver()

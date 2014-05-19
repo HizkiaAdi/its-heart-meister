@@ -3,17 +3,16 @@ using System.Collections;
 
 namespace MiniGame
 {
-    public class SpeedEnemySpawner : MonoBehaviour
+    public class SpeedOtherObjectSpawner : MonoBehaviour
     {
-
-        GameObject enemy;
-        float spawnDelay = 1.5f;
+        GameObject otherObject;
+        float spawnDelay = 2.0f;
         float nextSpawn = 0f;
 
         // Use this for initialization
         void Start()
         {
-            enemy = Resources.Load("MiniGamePrefabs/SpeedEnemy") as GameObject;
+            otherObject = Resources.Load("MiniGamePrefabs/SpeedOtherObject") as GameObject;
         }
 
         // Update is called once per frame
@@ -22,11 +21,11 @@ namespace MiniGame
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnDelay;
-                int maxSpawn = Random.Range(1, 5);
+                int maxSpawn = Random.Range(1, 4);
 
                 for (int i = 0; i < maxSpawn; i++)
                 {
-                    Instantiate(enemy, new Vector2(transform.position.x, transform.position.y + Random.Range(-3f, 3f)), transform.rotation);
+                    Instantiate(otherObject, new Vector2(transform.position.x, transform.position.y + Random.Range(-3f, 3f)), transform.rotation);
                 }
             }
         }
