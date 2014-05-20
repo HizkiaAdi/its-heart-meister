@@ -22,7 +22,7 @@ namespace MiniGame
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnDelay;
-                int maxSpawn = Random.Range(1, 5);
+                int maxSpawn = Random.Range(1, 4);
 
                 for (int i = 0; i < maxSpawn; i++)
                 {

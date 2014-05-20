@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using MiniGameModel;
+using SAttackGameLevel;
 
 namespace MiniGame
 {

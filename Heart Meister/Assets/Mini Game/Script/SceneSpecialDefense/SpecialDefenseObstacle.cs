@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace MiniGame
 {
-    public class SpecialDefenseEnemy : MonoBehaviour
+    public class SpecialDefenseObstacle : MonoBehaviour
     {
-
-        float speed;
-        Transform ball;
+        float speed = 0.05f;
         // Use this for initialization
         void Start()
         {
@@ -18,25 +15,10 @@ namespace MiniGame
         // Update is called once per frame
         void Update()
         {
-            Move(transform.position.x, transform.position.y);
-        }
+            transform.Translate(Vector2.up * speed);
 
-        void Move(float x, float y)
-        {
-            if (GameObject.FindWithTag("Ball"))
-            {
-                ball = GameObject.FindWithTag("Ball").transform;
-
-                if (ball.position.x > 0)
-                {
-                    speed = Random.Range(0.01f, 0.1f);
-
-                    if (y < ball.position.y && Mathf.Abs(y - ball.position.y) > 0.1f)
-                        transform.position = new Vector2(x, y + speed);
-                    if (y > ball.position.y && Mathf.Abs(y - ball.position.y) > 0.1f)
-                        transform.position = new Vector2(x, y - speed);
-                }
-            }
+            if (transform.localPosition.y > 3f || transform.localPosition.y < -3)
+                speed *= -1;
         }
 
         void OnCollisionEnter2D(Collision2D collision)

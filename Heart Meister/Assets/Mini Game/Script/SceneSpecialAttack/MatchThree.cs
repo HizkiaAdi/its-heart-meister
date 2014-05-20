@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using MiniGameModel;
+using SAttackGameLevel;
 
 namespace MiniGame
 {
@@ -23,6 +26,23 @@ namespace MiniGame
             UpdatePresentTile();
             Tile.SolveTheGrid();
             UpdateGrid();
+
+            SAttackLevelManufacturer newManufacturer = new SAttackLevelManufacturer();
+            SAttackLevelBuilder levelBuilder = null;
+
+            levelBuilder = new Level2();
+
+            newManufacturer.Construct(levelBuilder);
+
+            foreach(GameObject i in levelBuilder.level.Obstacle)
+            {
+                int x = Random.Range(0, 7);
+                int y = Random.Range(0, 6);
+                Vector2 pos = Tile.GetPosition(x, y);
+
+                Instantiate(i, new Vector3(pos.x, pos.y, -1), i.transform.rotation);
+                Tile.SetTileNumber(y, x, 99);
+            }
         }
 
         // Update is called once per frame
@@ -31,6 +51,7 @@ namespace MiniGame
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
                 RaycastHit2D click = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                Debug.Log(click.collider.tag);
                 if (click.collider != null && click.collider.tag == "Grid")
                 {
                     selectedGrid = click.collider.gameObject.transform.position;

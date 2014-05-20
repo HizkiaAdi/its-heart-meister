@@ -9,7 +9,7 @@ namespace MiniGame
         {
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
             {
-                transform.position = new Vector2(transform.position.x + 0.25f, transform.position.y);
+                transform.position = new Vector2(transform.position.x + 0.15f, transform.position.y);
             }
         }
 
@@ -17,7 +17,7 @@ namespace MiniGame
         {
             if (collider.tag == "Shoot")
             {
-                transform.position = new Vector2(transform.position.x - 0.35f, transform.position.y);
+                transform.position = new Vector2(transform.position.x - 0.4f, transform.position.y);
             }
 
             if (collider.tag == "Enemy")
