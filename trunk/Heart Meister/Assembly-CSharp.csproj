@@ -82,6 +82,15 @@
      <Compile Include="Assets\Mini Game\Model\MiniGameLevel.cs" />
      <Compile Include="Assets\Mini Game\Model\MiniGamePlayer.cs" />
      <Compile Include="Assets\Mini Game\Model\MovingObject.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\Level2.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevel.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelBuilder.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelManufacturer.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level2.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level3.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevel.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelBuilder.cs" />
+     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelManufacturer.cs" />
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level2.cs" />
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level3.cs" />
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevel.cs" />
@@ -114,6 +123,7 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseBall.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
+     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseObstacle.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefensePlayer.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseShield.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseWall.cs" />
@@ -122,7 +132,6 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObjectSpawner.cs" />
-     <Compile Include="Assets\Mini Game\Tile.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />

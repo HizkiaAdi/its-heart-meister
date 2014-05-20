@@ -6,7 +6,7 @@ namespace MiniGame
     public class SpeedOtherObjectSpawner : MonoBehaviour
     {
         GameObject otherObject;
-        float spawnDelay = 2.0f;
+        float spawnDelay = 2.5f;
         float nextSpawn = 0f;
 
         // Use this for initialization
@@ -21,7 +21,7 @@ namespace MiniGame
             if (Time.time > nextSpawn)
             {
                 nextSpawn = Time.time + spawnDelay;
-                int maxSpawn = Random.Range(1, 4);
+                int maxSpawn = Random.Range(1, 3);
 
                 for (int i = 0; i < maxSpawn; i++)
                 {

@@ -24,19 +24,19 @@ namespace MiniGame
             float buttonHeight = Screen.height / 5;
             float buttonWidth = Screen.width / 4;
 
-            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5, buttonWidth, buttonHeight), "Level 1 - 10"))
+            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5, buttonWidth, buttonHeight), "Level 1 - 15"))
             {
                 gameLevel.Level = 1;
                 Application.LoadLevel("MiniGameMenu");
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5 + buttonHeight, buttonWidth, buttonHeight), "Level 11 - 20"))
+            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5 + buttonHeight, buttonWidth, buttonHeight), "Level 16 - 30"))
             {
                 gameLevel.Level = 2;
                 Application.LoadLevel("MiniGameMenu");
             }
 
-            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5 + 2 * buttonHeight, buttonWidth, buttonHeight), "Level 21 - 30"))
+            if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, Screen.height / 5 + 2 * buttonHeight, buttonWidth, buttonHeight), "Level 31 - 50"))
             {
                 gameLevel.Level = 3;
                 Application.LoadLevel("MiniGameMenu");

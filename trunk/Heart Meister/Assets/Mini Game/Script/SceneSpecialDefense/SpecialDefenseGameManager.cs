@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using SDefenseGameLevel;
+using MiniGameModel;
 
 namespace MiniGame
 {
@@ -17,13 +20,27 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
-            playerScore = enemyScore = 0;
-            specialDefense = 3;
-            isComplete = isGameOver = false;
-            releaseBall = true;
-            completetext.enabled = failedText.enabled = false;
-            delay = 0f;
-            maxDelay = 1.0f;
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+
+            if (level.Level != 1)
+            {
+                SDefenseLevelManufacturer newManufacturer = new SDefenseLevelManufacturer();
+                SDefenseLevelBuilder levelBuilder = null;
+
+                if (level.Level == 2)
+                    levelBuilder = new Level2();
+                else
+                    levelBuilder = new Level3();
+
+                newManufacturer.Construct(levelBuilder);
+
+                foreach (GameObject i in levelBuilder.level.Obstacle)
+                {
+                    Instantiate(i, i.transform.position, i.transform.rotation);
+                }
+            }
+
+            Init();
         }
 
         // Update is called once per frame
@@ -77,6 +94,17 @@ namespace MiniGame
                     releaseBall = true;
                 }
             }
+        }
+
+        void Init()
+        {
+            playerScore = enemyScore = 0;
+            specialDefense = 3;
+            isComplete = isGameOver = false;
+            releaseBall = true;
+            completetext.enabled = failedText.enabled = false;
+            delay = 0f;
+            maxDelay = 1.0f;
         }
 
         void GameOver()
