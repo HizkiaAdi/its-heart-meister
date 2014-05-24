@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using MiniGameModel;
+using HealthGameLevel;
 
 namespace MiniGame
 {
     public class HealthGameManager : MonoBehaviour
     {
-
         public GUIText completeText, failedText, scoreText;
         public static int score;
         bool isComplete, isGameOver;
@@ -14,15 +16,25 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
-            score = 0;
-            isGameOver = false;
-            isComplete = false;
-            playerFall = false;
-            //GameEventManager.GameStart += GameStart;
-            //GameEventManager.GameOver += GameOver;
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
 
-            //GameEventManager.TriggerGameStart();
-            GameStart();
+            HealthlevelManufacturer newManufacturer = new HealthlevelManufacturer();
+            HealthLevelBuilder levelBuilder = null;
+
+            switch(level.Level)
+            {
+                case 1: levelBuilder = new Level1(); break;
+                case 2: levelBuilder = new Level2(); break;
+                case 3: levelBuilder = new Level3(); break;
+            }
+
+            newManufacturer.Construct(levelBuilder);
+            foreach(GameObject i in levelBuilder.level.Obstacle)
+            {
+                Instantiate(i, i.transform.position, i.transform.rotation);
+            }
+
+            Init();
         }
 
         // Update is called once per frame
@@ -46,8 +58,13 @@ namespace MiniGame
             }
         }
 
-        void GameStart()
+        void Init()
         {
+            score = 0;
+            isGameOver = false;
+            isComplete = false;
+            playerFall = false;
+
             completeText.enabled = false;
             failedText.enabled = false;
         }

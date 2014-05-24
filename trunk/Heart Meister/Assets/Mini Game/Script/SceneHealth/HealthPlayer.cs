@@ -23,15 +23,19 @@ namespace MiniGame
                 onGround = false;
             }
 
-            if (transform.localPosition.y < -5.5f)
+            if (transform.localPosition.y < -5.5f || transform.localPosition.x < -9f)
             {
                 HealthGameManager.playerFall = true;
             }
         }
 
-        void OnCollisionEnter2D()
+        void OnCollisionEnter2D(Collision2D collision)
         {
             onGround = true;
+            if(collision.collider.tag=="FragileGround")
+            {
+                collision.collider.rigidbody2D.gravityScale = 1;
+            }
         }
     }
 }
