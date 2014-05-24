@@ -3,10 +3,10 @@ using System.Collections;
 
 namespace MiniGame
 {
-    public class HealthObjectSpawner : MonoBehaviour
+    public class HealthObjectSpawner2 : MonoBehaviour
     {
 
-        public GameObject ground, health;
+        public GameObject ground, fragileGround, health;
         float interval;
         float delay, previousY, nextY;
         // Use this for initialization
@@ -40,16 +40,17 @@ namespace MiniGame
 
         void SpawnGround(float x, float y)
         {
-            Instantiate(ground, new Vector2(x, y), transform.rotation);
+            if (Random.Range(0, 4) != 3)
+                Instantiate(ground, new Vector2(x, y), transform.rotation);
+            else Instantiate(fragileGround, new Vector2(x, y), transform.rotation);
+
             previousY = nextY;
             delay = 0;
         }
 
         void SpawnHealth(float x, float y)
         {
-            int rand = Random.Range(0, 2);
-            if (rand == 1)
-                Instantiate(health, new Vector2(x, y), transform.rotation);
+            Instantiate(health, new Vector2(x, y), transform.rotation);
         }
     }
 }

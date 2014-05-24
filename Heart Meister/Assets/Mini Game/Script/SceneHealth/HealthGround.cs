@@ -18,7 +18,7 @@ namespace MiniGame
         {
             transform.Translate(Vector2.right * speed);
 
-            if (transform.localPosition.x < -11f)
+            if (transform.localPosition.x < -11f || transform.localPosition.y < -8f)
             {
                 Destroy(gameObject);
             }

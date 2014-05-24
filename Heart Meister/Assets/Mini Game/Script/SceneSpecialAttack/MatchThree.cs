@@ -8,11 +8,9 @@ namespace MiniGame
 {
     public class MatchThree : MonoBehaviour
     {
-
         public GameObject grid;
         public Sprite[] spriteTile;
         Vector2 selectedGrid;
-        public GUIText checkGrid;
         int tileNow;
         SpriteRenderer tileSprite;
 
@@ -27,21 +25,28 @@ namespace MiniGame
             Tile.SolveTheGrid();
             UpdateGrid();
 
-            SAttackLevelManufacturer newManufacturer = new SAttackLevelManufacturer();
-            SAttackLevelBuilder levelBuilder = null;
+            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
 
-            levelBuilder = new Level2();
-
-            newManufacturer.Construct(levelBuilder);
-
-            foreach(GameObject i in levelBuilder.level.Obstacle)
+            if (level.Level != 1)
             {
-                int x = Random.Range(0, 7);
-                int y = Random.Range(0, 6);
-                Vector2 pos = Tile.GetPosition(x, y);
+                SAttackLevelManufacturer newManufacturer = new SAttackLevelManufacturer();
+                SAttackLevelBuilder levelBuilder = null;
 
-                Instantiate(i, new Vector3(pos.x, pos.y, -1), i.transform.rotation);
-                Tile.SetTileNumber(y, x, 99);
+                if (level.Level == 2)
+                    levelBuilder = new Level2();
+                else levelBuilder = new Level3();
+
+                newManufacturer.Construct(levelBuilder);
+
+                foreach (GameObject i in levelBuilder.level.Obstacle)
+                {
+                    int x = Random.Range(0, 7);
+                    int y = Random.Range(0, 6);
+                    Vector2 pos = Tile.GetPosition(x, y);
+
+                    Instantiate(i, new Vector3(pos.x, pos.y, -1), i.transform.rotation);
+                    Tile.SetTileNumber(y, x, 99);
+                }
             }
         }
 
@@ -60,18 +65,15 @@ namespace MiniGame
 
                     if (tileSprite.sprite == null)
                     {
-                        Debug.Log("sprite = null");
                         tileSprite.sprite = spriteTile[tileNow];
 
                         Vector2 tileIndex = Tile.GetTileIndex(selectedGrid.x, selectedGrid.y);
                         Tile.SetTileNumber((int)tileIndex.x, (int)tileIndex.y, tileNow);
 
-                        checkGrid.text = "";
                         UpdatePresentTile();
                         Tile.SolveTheGrid();
                         UpdateGrid();
                     }
-                    else Debug.Log("sprite != null");
                 }
             }
         }
@@ -95,7 +97,6 @@ namespace MiniGame
                 for (int j = 0; j < 7; j++)
                 {
                     int tileNumber = Tile.GetTileNumber(i, j);
-                    checkGrid.text += tileNumber.ToString() + " ";
 
                     Vector2 tilePosition = Tile.GetPosition(j, i);
                     RaycastHit2D selectedTile = Physics2D.Raycast(tilePosition, Vector2.zero);
@@ -107,7 +108,6 @@ namespace MiniGame
                     }
                     else tileSprite.sprite = null;
                 }
-                checkGrid.text += "\n";
             }
         }
 
@@ -118,7 +118,6 @@ namespace MiniGame
                 for (int j = 0; j < 7; j++)
                 {
                     int tileNumber = Tile.GetTileNumber(i, j);
-                    checkGrid.text += tileNumber.ToString() + " ";
 
                     if (tileNumber == 99)
                     {
@@ -136,7 +135,6 @@ namespace MiniGame
                         }
                     }
                 }
-                checkGrid.text += "\n";
             }
         }
 
