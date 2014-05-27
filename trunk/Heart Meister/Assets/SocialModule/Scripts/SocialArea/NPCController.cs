@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 namespace SocialModule
 {
 	public class NPCController : MonoBehaviour 
 	{
-		Player player;
+		Players player;
 		Vector2 position;
 
 		void Start () 
@@ -27,7 +27,7 @@ namespace SocialModule
 			}
 		}
 
-		public Player SetPlayerData
+		public Players SetPlayerData
 		{
 			set{this.player = value;}
 		}
