@@ -5,7 +5,7 @@ namespace SocialModule.Avatar
 {
 	public class AvatarIconScript : MonoBehaviour
 	{
-		public IAvatar avatarData;
+		public Avatars avatarData;
 		//public Transform selected;
 
 		/*void OnTriggerEnter(Collider other)

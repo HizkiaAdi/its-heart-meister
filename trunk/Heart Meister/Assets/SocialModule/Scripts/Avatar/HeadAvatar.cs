@@ -5,8 +5,8 @@ namespace SocialModule.Avatar
 {
     public class HeadAvatar : Avatars
     {
-		public HeadAvatar(Sprite sprite, Sprite editorSprite, Sprite iconSprite, int id, string avatarName)
-            : base(sprite, editorSprite, iconSprite, id, avatarName)
+		public HeadAvatar(int ownershipID, string avatarName, Sprite sprite, Sprite editorSprite, Texture2D iconSprite, int gender, int isEquiped)
+			: base(ownershipID, avatarName, sprite, editorSprite, iconSprite, gender, isEquiped)
         {
            
         }

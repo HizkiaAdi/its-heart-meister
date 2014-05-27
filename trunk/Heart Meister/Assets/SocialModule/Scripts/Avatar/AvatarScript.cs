@@ -6,10 +6,10 @@ namespace SocialModule.Avatar
 	public class AvatarScript : MonoBehaviour
 	{
 		PlayerAvatarData avatarData;
-		IAvatar baseAvatar;
-		IAvatar headAvatar;
-		IAvatar topAvatar;
-		IAvatar bottomAvatar;
+		Avatars baseAvatar;
+		Avatars headAvatar;
+		Avatars topAvatar;
+		Avatars bottomAvatar;
 		SpriteRenderer baseSprite;
 		SpriteRenderer headSprite;
 		SpriteRenderer topSprite;

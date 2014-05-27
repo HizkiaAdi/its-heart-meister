@@ -13,7 +13,7 @@ namespace SocialModule.Avatar
 		public GameObject avatar;
 		public GameObject avatarIcon;
 
-		private List<IAvatar> ownedAvatar;
+		private List<Avatars> ownedAvatar;
 		private List<GameObject> avatarObjList;
 		private PlayerAvatarData data;
 		private Transform selectedItem;
