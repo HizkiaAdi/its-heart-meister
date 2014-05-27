@@ -1,246 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{E5E49D79-8F76-7D8B-CF09-B5ADC37FE5EC}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5E49D79-8F76-7D8B-CF09-B5ADC37FE5EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
-    <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>C:\Program Files %28x86%29\Unity\Editor\Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>C:\Program Files %28x86%29\Unity\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIButton.cs" />
-     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIContainner.cs" />
-     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUILabel.cs" />
-     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUITextField.cs" />
-     <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
-     <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
-     <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
-     <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\CanvasFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebookAccessToken.cs" />
-     <Compile Include="Assets\Facebook\Scripts\EditorFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FB.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FBScreen.cs" />
-     <Compile Include="Assets\Facebook\Scripts\FBSettings.cs" />
-     <Compile Include="Assets\Facebook\Scripts\IOSFacebook.cs" />
-     <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
-     <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
-     <Compile Include="Assets\Mini Game\GameEventManager.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel2.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\GameEventManager.cs" />
-     <Compile Include="Assets\Mini Game\Model\GameManager.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthlevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level1.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\MiniGameLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\MiniGamePlayer.cs" />
-     <Compile Include="Assets\Mini Game\Model\MiniGameResult.cs" />
-     <Compile Include="Assets\Mini Game\Model\MovingObject.cs" />
-     <Compile Include="Assets\Mini Game\Model\ResultCalculator.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level2.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level3.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelBuilder.cs" />
-     <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelManufacturer.cs" />
-     <Compile Include="Assets\Mini Game\Script\LevelOption.cs" />
-     <Compile Include="Assets\Mini Game\Script\MiniGameMenu.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackObstacle1.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackPlayer.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackShoot.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackTarget.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackTargetSpawner.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemy.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemyBullet.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseMagicBall.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle1.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle2.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneDefense\DefensePlayer.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthBirdSpawner.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGround.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthItem.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthObjectSpawner.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthObjectSpawner2.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthPlayer.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\MatchThree.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\SpecialAttackGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\SpecialAttackMagic.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\Tile.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseBall.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseObstacle.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefensePlayer.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseShield.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseWall.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedEnemy.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedEnemySpawner.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
-     <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObjectSpawner.cs" />
-     <Compile Include="Assets\Players.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversing.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
-     <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
-     <Compile Include="Assets\Scripts\MiniJSON.cs" />
-     <Compile Include="Assets\Scripts\ResizeSprite.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionItem.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionListGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionWindow.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\BidItem.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\BidListGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\ComboBox.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\ModalGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\PlaceAuctionGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Auction\SearchGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\Avatars.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\BaseAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\BottomAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\IAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\DungeonNode.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenu.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleResult.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\GeneratedDungeonData.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\MapGenerator.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SlerpTest.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatListener.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\NPCController.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\Player.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerController.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerManager.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerSocketListener.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\Players.cs" />
-     <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_search_box.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-ldpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values\colors.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_friendpickerfragment.xml" />
-     <None Include="Assets\Plugins\Android\facebook\bin\proguard.txt" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_button.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_checkbox.xml" />
-     <None Include="Assets\Plugins\Android\facebook\bin\R.txt" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar_stub.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\facebook\build.xml" />
-     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_blue.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_search_bar_layout.xml" />
-     <None Include="Assets\Plugins\Android\facebook\bin\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-mdpi\dimens.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_section_header.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values\drawables.xml" />
-     <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_loginbutton_silver.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
-     <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-es\strings.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_check.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_row.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values\styles.xml" />
-     <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
- <Reference Include="IFacebook">
- <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIButton.cs" />
+    <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUIContainner.cs" />
+    <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUILabel.cs" />
+    <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUITextField.cs" />
+    <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
+    <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
+    <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
+    <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
+    <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
+    <Compile Include="Assets\Facebook\Scripts\CanvasFacebookLoader.cs" />
+    <Compile Include="Assets\Facebook\Scripts\EditorFacebook.cs" />
+    <Compile Include="Assets\Facebook\Scripts\EditorFacebookAccessToken.cs" />
+    <Compile Include="Assets\Facebook\Scripts\EditorFacebookLoader.cs" />
+    <Compile Include="Assets\Facebook\Scripts\FB.cs" />
+    <Compile Include="Assets\Facebook\Scripts\FBScreen.cs" />
+    <Compile Include="Assets\Facebook\Scripts\FBSettings.cs" />
+    <Compile Include="Assets\Facebook\Scripts\IOSFacebook.cs" />
+    <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
+    <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
+    <Compile Include="Assets\Mini Game\GameEventManager.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel2.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\DefenseLevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\DefenseGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\GameEventManager.cs" />
+    <Compile Include="Assets\Mini Game\Model\GameManager.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\HealthlevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level1.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\HealthGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\MiniGameLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\MiniGamePlayer.cs" />
+    <Compile Include="Assets\Mini Game\Model\MiniGameResult.cs" />
+    <Compile Include="Assets\Mini Game\Model\MovingObject.cs" />
+    <Compile Include="Assets\Mini Game\Model\ResultCalculator.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialAttackGameLevel\SAttackLevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpecialDefenseGameLevel\SDefenseLevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level2.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\Level3.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevel.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelBuilder.cs" />
+    <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelManufacturer.cs" />
+    <Compile Include="Assets\Mini Game\Script\LevelOption.cs" />
+    <Compile Include="Assets\Mini Game\Script\MiniGameMenu.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackObstacle1.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackPlayer.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackShoot.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackTarget.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackTargetSpawner.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemy.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseEnemyBullet.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseMagicBall.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle1.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefenseObstacle2.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneDefense\DefensePlayer.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthBirdSpawner.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthGround.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthItem.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthObjectSpawner.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthObjectSpawner2.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneHealth\HealthPlayer.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\MatchThree.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\SpecialAttackGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\SpecialAttackMagic.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialAttack\Tile.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseBall.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseEnemy.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseObstacle.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefensePlayer.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseShield.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpecialDefense\SpecialDefenseWall.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedEnemy.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedEnemySpawner.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
+    <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObjectSpawner.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversing.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
+    <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
+    <Compile Include="Assets\Scripts\MiniJSON.cs" />
+    <Compile Include="Assets\Scripts\ResizeSprite.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionItem.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionListGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionWindow.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\BidItem.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\BidListGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\ComboBox.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\ModalGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\PlaceAuctionGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Auction\SearchGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\Avatars.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\BaseAvatar.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\BottomAvatar.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\IAvatar.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\EpicBattle\DungeonNode.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenu.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleResult.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\EpicBattle\GeneratedDungeonData.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\EpicBattle\MapGenerator.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SlerpTest.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatListener.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\NPCController.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\Player.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerController.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerManager.cs" />
+    <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerSocketListener.cs" />
+    <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_search_box.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-ldpi\dimens.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values\colors.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_friendpickerfragment.xml" />
+    <None Include="Assets\Plugins\Android\facebook\bin\proguard.txt" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_button.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_checkbox.xml" />
+    <None Include="Assets\Plugins\Android\facebook\bin\R.txt" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar_stub.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_item_background.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
+    <None Include="Assets\Plugins\Android\facebook\build.xml" />
+    <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_blue.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_search_bar_layout.xml" />
+    <None Include="Assets\Plugins\Android\facebook\bin\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-mdpi\dimens.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_section_header.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values\drawables.xml" />
+    <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_loginbutton_silver.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
+    <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-es\strings.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_check.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_list_row.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values\styles.xml" />
+    <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
+    <Reference Include="IFacebook">
+      <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -250,5 +247,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>
