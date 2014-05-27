@@ -143,7 +143,6 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObjectSpawner.cs" />
-     <Compile Include="Assets\Players.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
@@ -194,7 +193,6 @@
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerController.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerManager.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\PlayerSocketListener.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SocialArea\Players.cs" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />

@@ -5,7 +5,7 @@ namespace SocialModule
 {
 	public class NPCController : MonoBehaviour 
 	{
-		Players player;
+		Player player;
 		Vector2 position;
 
 		void Start () 
@@ -27,7 +27,7 @@ namespace SocialModule
 			}
 		}
 
-		public Players SetPlayerData
+		public Player SetPlayerData
 		{
 			set{this.player = value;}
 		}

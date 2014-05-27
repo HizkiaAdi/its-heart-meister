@@ -6,14 +6,14 @@ namespace SocialModule
 {
 	public class PlayerManager : MonoBehaviour
 	{
-		Dictionary<string, Players> players;
+		Dictionary<string, Player> players;
 		List<string> playersKey;
 
 		public GameObject playerObject;
 		
 		void Start()
 		{
-			players = new Dictionary<string, Players> ();
+			players = new Dictionary<string, Player> ();
 			playersKey = new List<string> ();
 		}
 
@@ -22,7 +22,7 @@ namespace SocialModule
 		{
 			List<System.Object> resultList;
 			Dictionary<string, System.Object> resultDict;
-			Players player;
+			Player player;
 
 			Debug.Log("Parsing jsonstring: " + jsonString);
 			resultDict = (Dictionary<string, System.Object>)Json.Deserialize(jsonString);
@@ -38,7 +38,7 @@ namespace SocialModule
 				}
 				else
 				{
-					player = new Players((string)resultDict["id"], (string)resultDict["name"],
+					player = new Player((string)resultDict["id"], (string)resultDict["name"],
 					                    new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"])),
 					                    new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"])),
 					                    0);
@@ -48,7 +48,7 @@ namespace SocialModule
 			}
 		}
 
-		private void AddPlayer(Players player)
+		private void AddPlayer(Player player)
 		{
 			Debug.Log("Creating game object");
 			GameObject obj = (GameObject)Instantiate (playerObject, this.transform.position, Quaternion.identity);
