@@ -48,6 +48,10 @@ namespace SocialModule.Auction
 		
 		public void Draw()
 		{
+			if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && scrollViewRect.Contains(Input.GetTouch(0).position))
+			{
+				scrollPos.y += Input.GetTouch(0).deltaPosition.y;
+			}
 			searchText = GUI.TextField(searchFieldRect, searchText);
 			if(GUI.Button(searchButtonRect, "Search"))
 			{
