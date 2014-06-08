@@ -17,22 +17,22 @@ namespace DungeonGenerator
                                                     };
 
         private static readonly int[,] gridStatus2 = {
-                                                        {0, 0, 0, 1, 0, 0, 0},
                                                         {0, 0, 0, 0, 0, 0, 0},
-                                                        {0, 1, 0, 0, 0, 1, 0},
+                                                        {0, 0, 1, 0, 1, 0, 0},
                                                         {0, 0, 0, 0, 0, 0, 0},
-                                                        {0, 1, 0, 0, 0, 1, 0},
+                                                        {1, 0, 0, 0, 0, 0, 1},
                                                         {0, 0, 0, 0, 0, 0, 0},
-                                                        {0, 0, 0, 1, 0, 0, 0}
+                                                        {0, 0, 1, 0, 1, 0, 0},
+                                                        {0, 0, 0, 0, 0, 0, 0}
                                                     };
         private static readonly int[,] gridStatus3 = {
-                                                        {0, 0, 0, 1, 0, 0, 0},
                                                         {0, 0, 0, 0, 0, 0, 0},
-                                                        {0, 0, 0, 1, 0, 0, 0},
-                                                        {0, 1, 0, 0, 0, 1, 0},
+                                                        {0, 0, 1, 0, 1, 0, 0},
                                                         {0, 0, 0, 0, 0, 0, 0},
-                                                        {0, 1, 0, 0, 0, 1, 0},
-                                                        {0, 0, 0, 1, 0, 0, 0}
+                                                        {1, 1, 0, 0, 0, 0, 1},
+                                                        {0, 0, 0, 0, 0, 0, 0},
+                                                        {0, 0, 1, 0, 1, 0, 0},
+                                                        {0, 0, 0, 0, 0, 0, 0}
                                                     };
         private static readonly int[,] gridStatus4 = {
                                                         {0, 0, 0, 0, 0, 0, 0},
@@ -84,27 +84,13 @@ namespace DungeonGenerator
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (gridStatus[j,i] == 1)
+                    if (gridStatus[j, i] == 1)
                     {
                         Node node = new Node();
-                        node.Index = new Vector2(j, i);
+                        //node.Index = new Vector2(j, i);
                         listNode.Add(node);
                     }
                 }
-
-                Debug.Log(listNode.Count);
-
-                listNode[0].Destination.Add(listNode[1]);
-                listNode[0].Destination.Add(listNode[2]);
-                listNode[0].Destination.Add(listNode[3]);
-
-                listNode[1].Destination.Add(listNode[2]);
-                listNode[1].Destination.Add(listNode[4]);
-
-                listNode[2].Destination.Add(listNode[4]);
-
-                listNode[3].Destination.Add(listNode[2]);
-                listNode[3].Destination.Add(listNode[4]);
             }
             return listNode;
         }
