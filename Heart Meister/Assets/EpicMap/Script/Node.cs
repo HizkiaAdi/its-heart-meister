@@ -6,26 +6,28 @@ namespace DungeonGenerator
 {
     public class Node
     {
-        Vector2 index;
-        int stat;
+        int id;
 
-        public int Stat
+        public int Id
         {
-            get { return stat; }
-            set { stat = value; }
-        }
-        List<Node> destination;
-
-        public List<Node> Destination
-        {
-            get { return destination; }
-            set { destination = value; }
+            get { return id; }
+            set { id = value; }
         }
 
-        public Vector2 Index
+        List<Node> connection;
+
+        public List<Node> Connection
         {
-            get { return index; }
-            set { index = value; }
+            get { return connection; }
+            set { connection = value; }
+        }
+
+        int weight;
+
+        public int Weight
+        {
+            get { return weight; }
+            set { weight = value; }
         }
 
     }
