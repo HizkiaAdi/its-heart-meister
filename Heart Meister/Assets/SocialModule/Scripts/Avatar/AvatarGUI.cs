@@ -56,6 +56,11 @@ namespace SocialModule.Avatar
 		{
 			selectionVal = GUI.SelectionGrid(selectionRect,selectionVal,selectionStrings,3);
 			GUI.Window(0,windowRect,WindowCallback,selectionStrings[selectionVal]);
+
+            if (GUI.Button(new Rect(90 * xUnit, 90 * yUnit, 7 * xUnit, 7 * yUnit), "Home"))
+            {
+                Application.LoadLevel("Home");
+            }
 		}
 		
 		void WindowCallback(int id)
