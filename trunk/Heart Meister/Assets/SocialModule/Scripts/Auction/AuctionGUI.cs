@@ -53,6 +53,10 @@ namespace SocialModule.Auction
 			GUI.Label(titleRect, "Auction House", skin.label);
 			selectionVal = GUI.SelectionGrid(selectionRect,selectionVal,selectionStrings,4);
 			GUI.Window(0,windowRect,WindowCallback,selectionStrings[selectionVal]);
+            if (GUI.Button(new Rect(90 * xUnit, 90 * yUnit, 7 * xUnit, 7 * yUnit), "Home"))
+            {
+                Application.LoadLevel("Home");
+            }
 			
 			if(showModal)
 			{

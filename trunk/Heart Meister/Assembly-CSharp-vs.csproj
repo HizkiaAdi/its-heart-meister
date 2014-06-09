@@ -53,8 +53,12 @@
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
      <Compile Include="Assets\EpicMap\Script\BaseMapModel.cs" />
+     <Compile Include="Assets\EpicMap\Script\GraphData.cs" />
      <Compile Include="Assets\EpicMap\Script\Node.cs" />
+     <Compile Include="Assets\EpicMap\Script\TileBehaviour.cs" />
      <Compile Include="Assets\EpicMap\Script\TileMap.cs" />
+     <Compile Include="Assets\EpicMap\Script\dijkstra.cs" />
+     <Compile Include="Assets\EpicMap\Script\mbohlahyo.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
@@ -171,14 +175,11 @@
      <Compile Include="Assets\SocialModule\Scripts\Auction\PlaceAuctionGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Auction\SearchGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\Avatars.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\BaseAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\BottomAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\Avatar\IAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
