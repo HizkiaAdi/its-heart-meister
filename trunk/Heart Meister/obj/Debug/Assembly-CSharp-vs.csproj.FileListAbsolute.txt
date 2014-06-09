@@ -22,18 +22,6 @@ C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\Temp\bin\Debug\ICSharpCode
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp.dll
 C:\Users\Raey\Documents\HeartMeisterSVN\Heart Meister\obj\Debug\Assembly-CSharp.pdb
-F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
-F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\IFacebook.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEngine.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.framework.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
-F:\SVN Repo\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
-F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp.pdb
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Assembly-CSharp.dll
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\IFacebook.dll
@@ -46,3 +34,15 @@ E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Temp\bin\Debug\ICSharpCode.NR
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\ResolveAssemblyReference.cache
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.dll
 E:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.pdb
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\IFacebook.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEditor.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\UnityEngine.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Mono.Cecil.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.framework.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Unity.DataContract.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp.dll
+F:\SVN Repo\Heart Meister\obj\Debug\Assembly-CSharp.pdb

@@ -110,51 +110,9 @@ namespace SocialModule
 			
 			if (drawModal)
 				GUI.enabled = false;
-			
-			mousePos = Input.mousePosition;
-			mousePos.y = screenHeight - mousePos.y;
 
-			if(!drawModal)
-			{
-				/*if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
-				{
-					int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
-					selectedMessage = messageList [index];
-					senderString = selectedMessage.SenderName;
-					dateString = selectedMessage.Date;
-					messageString = selectedMessage.MessageString;
-				}*/
+            TouchHandler();
 
-				if (Input.touchCount > 0 && scrollViewRect.Contains(new Vector2(Input.GetTouch(0).position.x, screenHeight - Input.GetTouch(0).position.y)))
-				{
-					touch = Input.GetTouch(0);
-
-					if(touch.phase == TouchPhase.Began)
-					{
-						selectedIndex = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
-					}
-					else if(touch.phase == TouchPhase.Moved)
-					{
-						if(Mathf.Abs(touch.deltaPosition.y) > 1)
-						{
-							scrollPos.y += touch.deltaPosition.y;
-							selectedIndex = -1;
-						}
-					}
-					else if(touch.phase == TouchPhase.Canceled)
-					{
-						selectedIndex = -1;
-					}
-					else if(touch.phase == TouchPhase.Ended && selectedIndex != -1)
-					{
-						lastSellectedMessage = messageList[selectedIndex];
-						senderString = lastSellectedMessage.SenderName;
-						dateString = lastSellectedMessage.Date;
-						messageString = lastSellectedMessage.MessageString;
-					}
-				}
-			}
-			
 			viewWindowRect.height = messageList.Count * rowHeight * yUnit;
 			
 			GUI.skin = skin;
@@ -168,6 +126,53 @@ namespace SocialModule
 			GUI.EndScrollView ();
 		}
 		
+        void TouchHandler()
+        {
+            if (!drawModal)
+            {
+                mousePos = Input.mousePosition;
+                mousePos.y = screenHeight - mousePos.y;
+
+                /*if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
+                {
+                    int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
+                    selectedMessage = messageList [index];
+                    senderString = selectedMessage.SenderName;
+                    dateString = selectedMessage.Date;
+                    messageString = selectedMessage.MessageString;
+                }*/
+
+                if (Input.touchCount > 0 && scrollViewRect.Contains(new Vector2(Input.GetTouch(0).position.x, screenHeight - Input.GetTouch(0).position.y)))
+                {
+                    touch = Input.GetTouch(0);
+
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        selectedIndex = Mathf.CeilToInt(((screenHeight - touch.position.y) + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
+                    }
+                    else if (touch.phase == TouchPhase.Moved)
+                    {
+                        if (Mathf.Abs(touch.deltaPosition.y) > 1)
+                        {
+                            scrollPos.y += touch.deltaPosition.y;
+                            selectedIndex = -1;
+                        }
+                    }
+                    else if (touch.phase == TouchPhase.Canceled)
+                    {
+                        selectedIndex = -1;
+                    }
+                    else if (touch.phase == TouchPhase.Ended && selectedIndex != -1)
+                    {
+                        lastSellectedMessage = messageList[selectedIndex];
+                        senderString = lastSellectedMessage.SenderName;
+                        dateString = lastSellectedMessage.Date;
+                        messageString = lastSellectedMessage.MessageString;
+                    }
+                }
+            }
+        }
+
 		void DrawDescriptionWindow ()
 		{
 			if (drawModal)

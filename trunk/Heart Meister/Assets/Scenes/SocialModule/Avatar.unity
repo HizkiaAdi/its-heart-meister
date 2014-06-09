@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3865da9b2db08498e6312d8a2c57e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  equipedIndex: 
 --- !u!1 &184988776
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &184988777
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &556156402
 Camera:
   m_ObjectHideFlags: 0
@@ -574,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1315484807
 Transform:
   m_ObjectHideFlags: 0
@@ -637,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1385583416
 Transform:
   m_ObjectHideFlags: 0
@@ -693,6 +694,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1563907353}
   - 114: {fileID: 1563907354}
+  - 114: {fileID: 1563907355}
   m_Layer: 10
   m_Name: GUI
   m_TagString: Untagged
@@ -725,7 +727,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1563907352}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff4c81fb6061c364589187ba8d91a9b5, type: 3}
   m_Name: 
@@ -737,6 +739,19 @@ MonoBehaviour:
   dataContainer: {fileID: 158694336}
   avatar: {fileID: 1738322724}
   avatarIcon: {fileID: 100000, guid: aae5c76041b150b419a9d308f13f317d, type: 2}
+--- !u!114 &1563907355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1563907352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f042a239ac591c49b588e754d203e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skin: {fileID: 11400000, guid: 75e28a8ffe87bca43bd2bc4220311eec, type: 2}
+  avatarScript: {fileID: 1738322726}
 --- !u!1 &1579872341
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1671280879
 SpriteRenderer:
   m_ObjectHideFlags: 0
