@@ -50,6 +50,6 @@ namespace SocialModule.Avatar
 
 		public int Gender { get { return this.gender; } }
 
-		public int IsEquiped { get { return this.isEquiped; } }
+        public int IsEquiped { get { return this.isEquiped; } set { this.isEquiped = value; } }
     }
 }

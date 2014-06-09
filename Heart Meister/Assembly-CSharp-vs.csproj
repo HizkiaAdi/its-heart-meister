@@ -52,6 +52,9 @@
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\GUITextField.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\CustomGUI\IGUIElement.cs" />
      <Compile Include="Assets\CustomGUI\Scripts\GUIScript.cs" />
+     <Compile Include="Assets\EpicMap\Script\BaseMapModel.cs" />
+     <Compile Include="Assets\EpicMap\Script\Node.cs" />
+     <Compile Include="Assets\EpicMap\Script\TileMap.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebook.cs" />
      <Compile Include="Assets\Facebook\Scripts\AndroidFacebookLoader.cs" />
@@ -147,6 +150,10 @@
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversing.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversingEX.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\HospitalBehaviour.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\LoaderBehavior.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\Node.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
@@ -163,6 +170,7 @@
      <Compile Include="Assets\SocialModule\Scripts\Auction\ModalGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Auction\PlaceAuctionGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Auction\SearchGUI.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarGUIScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarIconScript.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\AvatarScript.cs" />
@@ -174,16 +182,13 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\DungeonNode.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenu.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleResult.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\GeneratedDungeonData.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\MapGenerator.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenuGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\ScrollViewClickHandler.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SlerpTest.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
