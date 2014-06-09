@@ -184,6 +184,7 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
      <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenuGUI.cs" />
+     <Compile Include="Assets\SocialModule\Scripts\Facebook\FacebookHandler.cs" />
      <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
