@@ -9,18 +9,23 @@ namespace MiniGame
     public class SpecialAttackGameManager : MonoBehaviour
     {
 
-        public GUIText progressText, timeText, completeText, failedText;
+        public GUIText progressText, timeText;
+        public GameObject result;
         public GameObject target, specialAttack;
         public static int progress;
         int finishTime, restTime;
-        bool isGameOver, isComplete, attackRelease;
+        bool isGameOver, isComplete, attackRelease, flag;
+
+        ResultCalculator calculator;
 
         // Use this for initialization
         void Start()
         {
+            calculator = new ResultCalculator();
+
             isGameOver = isComplete = false;
+            flag = false;
             attackRelease = false;
-            completeText.enabled = failedText.enabled = false;
             progress = 0;
             finishTime = (int)Time.time + 60;
         }
@@ -74,25 +79,12 @@ namespace MiniGame
         void GameOver()
         {
             isGameOver = true;
-            if (isComplete)
+            
+            if(!flag)
             {
-                completeText.enabled = true;
-            }
-            else
-            {
-                failedText.enabled = true;
-            }
-        }
-
-        void OnGUI()
-        {
-            float buttonSize = Screen.height / 9;
-            if (isGameOver)
-            {
-                if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
-                {
-                    Application.LoadLevel("Home");
-                }
+                flag = true;
+                Instantiate(result, result.transform.position, result.transform.rotation);
+                calculator.CalculateSpecialAttack(float.Parse(restTime.ToString()));
             }
         }
     }

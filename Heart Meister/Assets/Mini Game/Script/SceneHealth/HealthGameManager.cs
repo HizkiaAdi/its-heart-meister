@@ -8,20 +8,25 @@ namespace MiniGame
 {
     public class HealthGameManager : MonoBehaviour
     {
-        public GUIText completeText, failedText, scoreText;
+        public GUIText scoreText;
+        public GameObject result;
         public static int score;
-        bool isComplete, isGameOver;
+        bool isComplete, isGameOver, flag;
         public static bool playerFall;
+
+        TrainingPetAttributs petInfo;
+        ResultCalculator calculator;
 
         // Use this for initialization
         void Start()
         {
-            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+            petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
+            calculator = new ResultCalculator();
 
             HealthlevelManufacturer newManufacturer = new HealthlevelManufacturer();
             HealthLevelBuilder levelBuilder = null;
 
-            switch(level.Level)
+            switch(petInfo.GetTrainingLevel())
             {
                 case 1: levelBuilder = new Level1(); break;
                 case 2: levelBuilder = new Level2(); break;
@@ -50,10 +55,10 @@ namespace MiniGame
                 isComplete = true;
             }
 
-            if (score == 10 || playerFall)
+            if ((score == 10 || playerFall) && !flag)
             {
+                flag = true;
                 isGameOver = true;
-                //GameEventManager.TriggerGameOver();
                 GameOver();
             }
         }
@@ -64,33 +69,14 @@ namespace MiniGame
             isGameOver = false;
             isComplete = false;
             playerFall = false;
+            flag = false;
 
-            completeText.enabled = false;
-            failedText.enabled = false;
         }
 
         void GameOver()
         {
-            if (isComplete)
-            {
-                completeText.enabled = true;
-            }
-            else
-            {
-                failedText.enabled = true;
-            }
-        }
-
-        void OnGUI()
-        {
-            float buttonSize = Screen.height / 9;
-            if (isGameOver)
-            {
-                if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
-                {
-                    Application.LoadLevel("Home");
-                }
-            }
+            Instantiate(result, result.transform.position, result.transform.rotation);
+            calculator.CalculateHealth(score);
         }
     }
 }

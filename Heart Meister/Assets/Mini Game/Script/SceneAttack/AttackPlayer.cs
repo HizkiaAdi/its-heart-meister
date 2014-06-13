@@ -7,9 +7,15 @@ namespace MiniGame
     {
 
         public static int lives, points;
+        public GameObject bullet;
+        public float bulletSpeed;
+        int canShoot;
+        float nextShoot, shootDelay;
         // Use this for initialization
         void Start()
         {
+            nextShoot = 0;
+            shootDelay = 0.5f;
             canShoot = 0;
             lives = 3;
             points = 0;
@@ -20,12 +26,8 @@ namespace MiniGame
         // Update is called once per frame
         void Update()
         {
-            canShoot++;
+            nextShoot += Time.deltaTime;
         }
-
-        public GameObject bullet;
-        public float bulletSpeed;
-        int canShoot;
 
         void OnGUI()
         {
@@ -33,25 +35,23 @@ namespace MiniGame
 
             if (GUI.RepeatButton(new Rect(5, Screen.height - buttonSize - 5, buttonSize, buttonSize), "<"))
             {
-                if (transform.position.x > -(Screen.width / 2))
+                if (transform.localPosition.x > -7.5f)
                     transform.Translate(Vector2.right * -speed);
             }
 
             if (GUI.RepeatButton(new Rect(buttonSize + 10, Screen.height - buttonSize - 5, buttonSize, buttonSize), ">"))
             {
-                if (transform.right.x < Screen.width / 2)
+                if (transform.localPosition.x < 7.5f)
                     transform.Translate(Vector2.right * speed);
             }
 
-            if (GUI.Button(new Rect(Screen.width - buttonSize - 5, Screen.height - buttonSize - 5, buttonSize, buttonSize), "O") && canShoot >= 30)
+            if (GUI.Button(new Rect(Screen.width - buttonSize - 5, Screen.height - buttonSize - 5, buttonSize, buttonSize), "O") && nextShoot > shootDelay)
             {
-                canShoot = 0;
+                nextShoot = 0;
                 Vector2 target;
                 target.x = transform.position.x;
                 target.y = transform.position.y + 1.2f;
                 Instantiate(bullet, target, transform.rotation);
-                //shoot.transform.LookAt(target);
-                //shoot.rigidbody2D.AddForce(shoot.transform.forward * bulletSpeed);
             }
         }
     }
