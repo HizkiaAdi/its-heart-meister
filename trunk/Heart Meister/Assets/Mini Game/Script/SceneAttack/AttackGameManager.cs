@@ -8,16 +8,21 @@ namespace MiniGame
 {
     public class AttackGameManager : MonoBehaviour
     {
-        public GUIText completeText, failedText, timerText, chanceText, scoreText;
+        public GUIText timerText, chanceText, scoreText;
+        public GameObject result;
         int finishTime, restTime;
         bool isCompleted, isGameOver;
+
+        TrainingPetAttributs petInfo;
+        ResultCalculator calculator;
 
         // Use this for initialization
         void Start()
         {
-            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+            petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
+            calculator = new ResultCalculator();
 
-            if (level.Level != 1)
+            if (petInfo.GetTrainingLevel() != 1)
             {
                 // Create Director
                 AttackLevelManufacturer newManufacturer = new AttackLevelManufacturer();
@@ -25,8 +30,10 @@ namespace MiniGame
                 AttackLevelBuilder levelBuilder = null;
 
                 // Create level
-                if (level.Level == 2)
+                if (petInfo.GetTrainingLevel() == 2)
+                {
                     levelBuilder = new Level2();
+                }
                 else levelBuilder = new Level3();
 
                 newManufacturer.Construct(levelBuilder);
@@ -76,8 +83,6 @@ namespace MiniGame
         {
             isCompleted = false;
             isGameOver = false;
-            completeText.enabled = false;
-            failedText.enabled = false;
 
             finishTime = (int)Time.time + 30;
         }
@@ -85,21 +90,8 @@ namespace MiniGame
         void GameOver()
         {
             isGameOver = true;
-            if (isCompleted)
-                completeText.enabled = true;
-            else failedText.enabled = true;
-        }
-
-        void OnGUI()
-        {
-            float buttonSize = Screen.height / 9;
-            if (isGameOver)
-            {
-                if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
-                {
-                    Application.LoadLevel("Home");
-                }
-            }
+            Instantiate(result, result.transform.position, result.transform.rotation);
+            calculator.CalculateAttack(AttackPlayer.lives, AttackPlayer.points);
         }
     }
 }

@@ -1,15 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+using MiniGameModel;
 
 namespace MiniGame
 {
     public class DefensePlayer : MonoBehaviour
     {
+        public static float startPos, maxPos;
+
+        void Start()
+        {
+            startPos = maxPos = transform.localPosition.x;
+        }
+
         void Update()
         {
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
             {
-                transform.position = new Vector2(transform.position.x + 0.15f, transform.position.y);
+                transform.Translate(Vector2.right * 0.2f);
+
+                if(transform.localPosition.x>maxPos)
+                {
+                    maxPos = transform.localPosition.x;
+                }
             }
         }
 
@@ -17,7 +30,7 @@ namespace MiniGame
         {
             if (collider.tag == "Shoot")
             {
-                transform.position = new Vector2(transform.position.x - 0.4f, transform.position.y);
+                transform.Translate(Vector2.right * -0.4f);
             }
 
             if (collider.tag == "Enemy")

@@ -9,25 +9,25 @@ namespace MiniGame
     public class SpecialDefenseGameManager : MonoBehaviour
     {
 
-        public GameObject ballObject;
+        public GameObject ballObject, result;
         Transform ball;
         public static int specialDefense;
-        public GUIText completetext, failedText, scoreText, magicDefenseText;
-        bool isComplete, isGameOver, releaseBall;
+        public GUIText scoreText, magicDefenseText;
+        bool isGameOver, releaseBall;
         float delay, maxDelay;
         int playerScore, enemyScore;
 
         // Use this for initialization
         void Start()
         {
-            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+            TrainingPetAttributs petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
 
-            if (level.Level != 1)
+            if (petInfo.GetTrainingLevel() != 1)
             {
                 SDefenseLevelManufacturer newManufacturer = new SDefenseLevelManufacturer();
                 SDefenseLevelBuilder levelBuilder = null;
 
-                if (level.Level == 2)
+                if (petInfo.GetTrainingLevel() == 2)
                     levelBuilder = new Level2();
                 else
                     levelBuilder = new Level3();
@@ -46,23 +46,20 @@ namespace MiniGame
         // Update is called once per frame
         void Update()
         {
-            if (releaseBall)
-                ReleaseBall(delay += Time.deltaTime);
-
-            CheckBallPosition();
-
-            scoreText.text = playerScore.ToString() + " - " + enemyScore.ToString();
-            magicDefenseText.text = "S. Defense: " + specialDefense.ToString();
-
-            if (playerScore >= 2)
+            if (!isGameOver)
             {
-                isComplete = true;
-                GameOver();
-            }
+                if (releaseBall)
+                    ReleaseBall(delay += Time.deltaTime);
 
-            if (enemyScore >= 2)
-            {
-                GameOver();
+                CheckBallPosition();
+
+                scoreText.text = playerScore.ToString() + " - " + enemyScore.ToString();
+                magicDefenseText.text = "S. Defense: " + specialDefense.ToString();
+
+                if (playerScore >= 2 || enemyScore >= 2)
+                {
+                    GameOver();
+                }
             }
         }
 
@@ -100,9 +97,8 @@ namespace MiniGame
         {
             playerScore = enemyScore = 0;
             specialDefense = 3;
-            isComplete = isGameOver = false;
+            isGameOver = false;
             releaseBall = true;
-            completetext.enabled = failedText.enabled = false;
             delay = 0f;
             maxDelay = 1.0f;
         }
@@ -110,27 +106,9 @@ namespace MiniGame
         void GameOver()
         {
             isGameOver = true;
-            if (isComplete)
-            {
-                completetext.enabled = true;
-            }
-
-            else
-            {
-                failedText.enabled = true;
-            }
-        }
-
-        void OnGUI()
-        {
-            float buttonSize = Screen.height / 9;
-            if (isGameOver)
-            {
-                if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
-                {
-                    Application.LoadLevel("Home");
-                }
-            }
+            Instantiate(result, result.transform.position, result.transform.rotation);
+            ResultCalculator calculator = new ResultCalculator();
+            calculator.CalculateSpecialDefense(playerScore, specialDefense);
         }
     }
 }

@@ -14,25 +14,30 @@ namespace MiniGame
         int tileNow;
         SpriteRenderer tileSprite;
 
+        TileData tileData;
+        TileSolver solver;
+
         // Use this for initialization
         void Start()
         {
-            Tile tiles = new Tile();
+            tileData = TileData.CreateTileSingleton();
+            tileData.InitGrid();
+            solver = new TileSolver();
 
             GenerateGrid();
             InitTile();
             UpdatePresentTile();
-            Tile.SolveTheGrid();
+            solver.SolveTheGrid();
             UpdateGrid();
 
-            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+            TrainingPetAttributs petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
 
-            if (level.Level != 1)
+            if (petInfo.GetTrainingLevel() != 1)
             {
                 SAttackLevelManufacturer newManufacturer = new SAttackLevelManufacturer();
                 SAttackLevelBuilder levelBuilder = null;
 
-                if (level.Level == 2)
+                if (petInfo.GetTrainingLevel() == 2)
                     levelBuilder = new Level2();
                 else levelBuilder = new Level3();
 
@@ -42,10 +47,10 @@ namespace MiniGame
                 {
                     int x = Random.Range(0, 7);
                     int y = Random.Range(0, 6);
-                    Vector2 pos = Tile.GetPosition(x, y);
+                    Vector2 pos = tileData.GetPosition(x, y);
 
                     Instantiate(i, new Vector3(pos.x, pos.y, -1), i.transform.rotation);
-                    Tile.SetTileNumber(y, x, 99);
+                    tileData.GridTile[y, x] = 99;
                 }
             }
         }
@@ -56,7 +61,7 @@ namespace MiniGame
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
                 RaycastHit2D click = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-                Debug.Log(click.collider.tag);
+                
                 if (click.collider != null && click.collider.tag == "Grid")
                 {
                     selectedGrid = click.collider.gameObject.transform.position;
@@ -67,11 +72,11 @@ namespace MiniGame
                     {
                         tileSprite.sprite = spriteTile[tileNow];
 
-                        Vector2 tileIndex = Tile.GetTileIndex(selectedGrid.x, selectedGrid.y);
-                        Tile.SetTileNumber((int)tileIndex.x, (int)tileIndex.y, tileNow);
+                        Vector2 tileIndex = tileData.GetTileIndex(selectedGrid.x, selectedGrid.y);
+                        tileData.GridTile[(int)tileIndex.x, (int)tileIndex.y] = tileNow;
 
                         UpdatePresentTile();
-                        Tile.SolveTheGrid();
+                        solver.SolveTheGrid();
                         UpdateGrid();
                     }
                 }
@@ -84,7 +89,7 @@ namespace MiniGame
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    Vector2 gridPosition = Tile.GetPosition(j, i);
+                    Vector2 gridPosition = tileData.GetPosition(j, i);
                     Instantiate(grid, gridPosition, transform.rotation);
                 }
             }
@@ -96,9 +101,9 @@ namespace MiniGame
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    int tileNumber = Tile.GetTileNumber(i, j);
+                    int tileNumber = tileData.GridTile[i, j];
 
-                    Vector2 tilePosition = Tile.GetPosition(j, i);
+                    Vector2 tilePosition = tileData.GetPosition(j, i);
                     RaycastHit2D selectedTile = Physics2D.Raycast(tilePosition, Vector2.zero);
                     tileSprite = selectedTile.collider.gameObject.GetComponent<SpriteRenderer>();
 
@@ -117,11 +122,11 @@ namespace MiniGame
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    int tileNumber = Tile.GetTileNumber(i, j);
+                    int tileNumber = tileData.GridTile[i, j];
 
                     if (tileNumber == 99)
                     {
-                        RaycastHit2D selectedTile = Physics2D.Raycast(Tile.GetPosition(j, i), Vector2.zero);
+                        RaycastHit2D selectedTile = Physics2D.Raycast(tileData.GetPosition(j, i), Vector2.zero);
 
                         if (selectedTile.collider != null && selectedTile.collider.tag == "Grid")
                         {

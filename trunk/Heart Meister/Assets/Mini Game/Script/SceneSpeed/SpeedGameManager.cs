@@ -8,22 +8,22 @@ namespace MiniGame
 {
     public class SpeedGameManager : MonoBehaviour
     {
-
-        public GUIText completeText, failedText, chanceText, scoreText;
+        public GameObject result;
+        public GUIText chanceText, scoreText;
         public static int score, chance;
-        bool isComplete, isGameOver;
+        bool isGameOver;
 
         // Use this for initialization
         void Start()
         {
-            MiniGameLevel level = MiniGameLevel.CreateMiniGameSingleton();
+            TrainingPetAttributs petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
 
-            if(level.Level != 1)
+            if(petInfo.GetTrainingLevel() != 1)
             {
                 SpeedLevelManufacturer newManufacturer = new SpeedLevelManufacturer();
                 SpeedLevelBuilder levelBuilder = null;
 
-                if (level.Level == 2)
+                if (petInfo.GetTrainingLevel() == 2)
                     levelBuilder = new Level2();
                 else levelBuilder = new Level3();
 
@@ -35,83 +35,49 @@ namespace MiniGame
                 }
             }
 
-            GameStart();
+            score = 0;
+            chance = 3;
+            isGameOver = false;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (score < 30)
+            if (!isGameOver)
             {
-                scoreText.text = score.ToString() + "/30";
-            }
-            else
-            {
-                scoreText.text = "30/30";
-                isComplete = true;
-            }
+                scoreText.text = score + "/30";
+                chanceText.text = "Chance: " + chance;
 
-            if (chance > 0)
-                chanceText.text = "Chance: " + chance.ToString();
-            else chanceText.text = "Chance: 0";
-
-            if (score == 30 || chance <= 0)
-            {
-                isGameOver = true;
-                GameOver();
-                //GameEventManager.TriggerGameOver();
-            }
-
-            RaycastHit2D tapEnemy = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
-            if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && tapEnemy.collider != null)
-            {
-                if (tapEnemy.collider.tag == "Enemy")
+                if (score == 30 || chance <= 0)
                 {
-                    Destroy(tapEnemy.collider.gameObject);
-                    score++;
+                    GameOver();
                 }
 
-                else if (tapEnemy.collider.tag == "OtherObject")
+                RaycastHit2D tapEnemy = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+                if ((Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) && tapEnemy.collider != null)
                 {
-                    Destroy(tapEnemy.collider.gameObject);
-                    chance--;
+                    if (tapEnemy.collider.tag == "Enemy")
+                    {
+                        Destroy(tapEnemy.collider.gameObject);
+                        score++;
+                    }
+
+                    else if (tapEnemy.collider.tag == "OtherObject")
+                    {
+                        Destroy(tapEnemy.collider.gameObject);
+                        chance--;
+                    }
                 }
             }
-        }
-
-        void GameStart()
-        {
-            completeText.enabled = false;
-            failedText.enabled = false;
-            score = 0;
-            chance = 3;
-            isComplete = false;
-            isGameOver = false;
         }
 
         void GameOver()
         {
-            if (isComplete)
-            {
-                completeText.enabled = true;
-            }
-            else
-            {
-                failedText.enabled = true;
-            }
-        }
-
-        void OnGUI()
-        {
-            float buttonSize = Screen.height / 9;
-            if (isGameOver)
-            {
-                if (GUI.Button(new Rect(Screen.width / 2 - buttonSize / 2, Screen.height / 2, buttonSize, buttonSize), "OK"))
-                {
-                    Application.LoadLevel("Home");
-                }
-            }
+            isGameOver = true;
+            Instantiate(result, result.transform.position, result.transform.rotation);
+            ResultCalculator calculator = new ResultCalculator();
+            calculator.CalculateSpeed(chance, score);
         }
     }
 }
