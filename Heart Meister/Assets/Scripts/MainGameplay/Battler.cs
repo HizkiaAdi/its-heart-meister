@@ -17,6 +17,7 @@ namespace MainGameplay
         public bool isMagic;
         public bool isEnemy;
         public int type;
+        //0 is humanoid, 1 is cool, 2 is cute
 
         public Battler(string n, int mHP, int cHP, int at, int df, int ma, int md, int sp, int lk, bool isM, bool isE, int tp)
         {

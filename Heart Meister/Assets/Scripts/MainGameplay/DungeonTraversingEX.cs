@@ -23,7 +23,7 @@ namespace MainGameplay
         private Vector3 targetPos;
         private int targetNode;
         public float speed;
-        private bool collideFlag = false;
+        public bool collideFlag = false;
         private int playerPos;
 
         public GUITexture dgPlayer;
@@ -79,7 +79,9 @@ namespace MainGameplay
         // Update is called once per frame
         void Update()
         {
-            playerLoc = Camera.main.ViewportToWorldPoint(playerSpawner.transform.position);
+            Debug.Log("playerSpawner = " + playerSpawner.transform.position);
+            //playerLoc = Camera.main.ViewportToWorldPoint(playerSpawner.transform.position);
+            playerLoc = playerSpawner.transform.position;
             Move(speed);
         }
 
@@ -154,6 +156,7 @@ namespace MainGameplay
                 {
                     GameObject nodeSpawner = (GameObject)Instantiate(StartNode, nodePos, Quaternion.identity);
                     Vector3 tempe = nodeSpawner.transform.position;
+                    Debug.Log("Start Node = " + tempe);
                     tempe.z = 0f;
                     nodeSpawner.transform.position = tempe;
                     startPos = tempe;
@@ -246,11 +249,6 @@ namespace MainGameplay
                 //Call event scene
                 Time.timeScale = 1.0f;
             }
-        }
-
-        void OnCollisionEnter2D(Collision2D cd)
-        {
-            collideFlag = true;
         }
     }
 }
