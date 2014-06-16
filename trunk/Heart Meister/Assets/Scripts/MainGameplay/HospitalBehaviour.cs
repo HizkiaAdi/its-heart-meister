@@ -97,8 +97,8 @@ public class HospitalBehaviour : MonoBehaviour {
 	void Update ()
     {
         counter += Time.deltaTime;
-        percentText1 = (percentage1).ToString();
-        percentText2 = (percentage2).ToString();
+        percentText1 = (percentage1).ToString() + "%";
+        percentText2 = (percentage2).ToString() + "%";
         ppercent1.text = percentText1;
         ppercent2.text = percentText2;
         Progress1.transform.localScale = new Vector3(percentage1 * 15 / 1000, 1.5f);
