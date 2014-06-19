@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_0;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -112,6 +112,9 @@
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevel.cs" />
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelBuilder.cs" />
      <Compile Include="Assets\Mini Game\Model\SpeedGameLevel\SpeedLevelManufacturer.cs" />
+     <Compile Include="Assets\Mini Game\Model\TileData.cs" />
+     <Compile Include="Assets\Mini Game\Model\TileSolver.cs" />
+     <Compile Include="Assets\Mini Game\Model\TrainingPetAttributs.cs" />
      <Compile Include="Assets\Mini Game\Script\LevelOption.cs" />
      <Compile Include="Assets\Mini Game\Script\MiniGameMenu.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneAttack\AttackGameManager.cs" />
@@ -150,6 +153,7 @@
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedGameManager.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObject.cs" />
      <Compile Include="Assets\Mini Game\Script\SceneSpeed\SpeedOtherObjectSpawner.cs" />
+     <Compile Include="Assets\Mini Game\Script\TrainingResult.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
@@ -182,16 +186,12 @@
      <Compile Include="Assets\SocialModule\Scripts\Avatar\HeadAvatar.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\PlayerAvatarData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Avatar\TopAvatar.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\CobaJSON.cs" />
      <Compile Include="Assets\SocialModule\Scripts\EpicBattle\EpicBattleMenuGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Facebook\FacebookHandler.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\ObjectScale.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PlayerData.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\Message.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" />
      <Compile Include="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\ScrollViewClickHandler.cs" />
-     <Compile Include="Assets\SocialModule\Scripts\SlerpTest.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatItem.cs" />
      <Compile Include="Assets\SocialModule\Scripts\SocialArea\ChatListener.cs" />
