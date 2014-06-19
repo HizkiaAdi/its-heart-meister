@@ -6,13 +6,34 @@ namespace DungeonGenerator
 {
     public class mbohlahyo : MonoBehaviour
     {
-
+        Node vertex, temp;
         // Use this for initialization
         void Start()
         {
             GraphData graphData = GraphData.CreateGraphSingleton();
 
+            for (int i = 0; i < 5; i++)
+            {
+                vertex = new Node();
+                vertex.Id = i;
+                vertex.Weight = Random.Range(1, 10);
+                graphData.Nodes.Add(vertex);
+            }
 
+            graphData.Nodes[0].Connection.Add(graphData.Nodes[1]);
+            graphData.Nodes[0].Connection.Add(graphData.Nodes[2]);
+
+            graphData.Nodes[1].Connection.Add(graphData.Nodes[3]);
+            graphData.Nodes[2].Connection.Add(graphData.Nodes[4]);
+
+            foreach (Node i in graphData.Nodes)
+            {
+                Debug.Log("Node: " + i.Id + ", Weight: " + i.Weight);
+                foreach (Node j in i.Connection)
+                {
+                    Debug.Log("Connection: " + j.Id);
+                }
+            }
         }
 
         // Update is called once per frame

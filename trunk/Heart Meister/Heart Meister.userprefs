@@ -1,0 +1,38 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\EpicMap\Script\TileMap.cs">
+    <Files>
+      <File FileName="Assets\EpicMap\Script\TileMap.cs" Line="1" Column="1" />
+      <File FileName="Assets\EpicMap\Script\BaseMapModel.cs" Line="1" Column="1" />
+      <File FileName="Assets\SocialModule\Scripts\PrivateMessage\PrivateMessageGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\SocialModule\Scripts\PrivateMessage\MessageChecker.cs" Line="1" Column="1" />
+      <File FileName="Assets\EpicMap\Script\TileMap.cs" Line="39" Column="15" />
+      <File FileName="e:\kuliah\Semester 8\TA\HeartMeister\Heart Meister\Assets\Facebook\Scripts\AndroidFacebook.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="EpicMap" expanded="True">
+              <Node name="Script" expanded="True">
+                <Node name="TileMap.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Facebook" expanded="True">
+              <Node name="Scripts" expanded="True" />
+            </Node>
+            <Node name="SocialModule" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="PrivateMessage" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
