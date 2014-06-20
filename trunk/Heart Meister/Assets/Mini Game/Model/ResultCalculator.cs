@@ -46,7 +46,7 @@ namespace MiniGameModel
 
         public void CalculateSpecialDefense(int score, int sDefense)
         {
-            trainingResult = score + sDefense > 0 ? 1 : 0;
+            trainingResult = score + (sDefense > 0 ? 1 : 0);
             attribut.SpecialDefense += trainingResult;
         }
     }

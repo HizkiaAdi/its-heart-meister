@@ -46,6 +46,7 @@ namespace MiniGame
             if (isGameOver && !flag)
             {
                 flag = true;
+                audio.enabled = false;
                 Instantiate(result, result.transform.position, result.transform.rotation);
                 calculator.CalculateDefense(DefensePlayer.maxPos - DefensePlayer.startPos);
             }

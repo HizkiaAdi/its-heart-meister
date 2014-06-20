@@ -83,6 +83,7 @@ namespace MiniGame
             if(!flag)
             {
                 flag = true;
+                audio.enabled = false;
                 Instantiate(result, result.transform.position, result.transform.rotation);
                 calculator.CalculateSpecialAttack(float.Parse(restTime.ToString()));
             }

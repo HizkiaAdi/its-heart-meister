@@ -75,6 +75,7 @@ namespace MiniGame
 
         void GameOver()
         {
+            audio.enabled = false;
             Instantiate(result, result.transform.position, result.transform.rotation);
             calculator.CalculateHealth(score);
         }

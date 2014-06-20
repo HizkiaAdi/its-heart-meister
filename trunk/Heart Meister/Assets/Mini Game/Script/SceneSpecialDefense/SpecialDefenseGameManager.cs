@@ -106,6 +106,7 @@ namespace MiniGame
         void GameOver()
         {
             isGameOver = true;
+            audio.enabled = false;
             Instantiate(result, result.transform.position, result.transform.rotation);
             ResultCalculator calculator = new ResultCalculator();
             calculator.CalculateSpecialDefense(playerScore, specialDefense);
