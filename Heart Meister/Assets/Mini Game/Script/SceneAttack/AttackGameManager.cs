@@ -19,6 +19,7 @@ namespace MiniGame
         // Use this for initialization
         void Start()
         {
+
             petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
             calculator = new ResultCalculator();
 
@@ -92,6 +93,7 @@ namespace MiniGame
             isGameOver = true;
             Instantiate(result, result.transform.position, result.transform.rotation);
             calculator.CalculateAttack(AttackPlayer.lives, AttackPlayer.points);
+            audio.enabled = false;
         }
     }
 }
