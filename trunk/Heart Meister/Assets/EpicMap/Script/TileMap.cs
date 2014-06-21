@@ -21,7 +21,6 @@ public class TileMap : MonoBehaviour {
         Generate();
         ShowDestination();
         //ShowDestination2();
-        //List<Node> listNode = new List<Node>();
 	}
 
     void ShowDestination()
@@ -73,7 +72,7 @@ public class TileMap : MonoBehaviour {
     void Generate()
     {
         node = new List<GameObject>();
-        level = 3;
+        level = 43;
         int[,] gridTile = new int[7, 7];
         float x = -3, y = 3;
         int c=0, count=0;
@@ -97,8 +96,6 @@ public class TileMap : MonoBehaviour {
                         graphData.Nodes.Add(vertex);
                         RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
                         node.Add(selectedGrid.transform.gameObject);
-                        //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index=c;
-                        //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = vertex.Weight;
                         
                         //generate disini
                         if (selectedGrid.collider != null)
@@ -146,8 +143,6 @@ public class TileMap : MonoBehaviour {
                             //graphData.Weight = vertex.Weight;
                             graphData.Nodes.Add(vertex);
                             RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
-                            //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index = c;
-                            //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = Random.Range(0, 5);
                             node.Add(selectedGrid.transform.gameObject);
                             
                             //generate disini
@@ -193,12 +188,11 @@ public class TileMap : MonoBehaviour {
                             if (BaseMapModel.GetGridStatus3(i, j) == 1)
                             {
                                 vertex = new Node();
-                                vertex.Id = i;
-                                vertex.Weight = Random.Range(1, 10);
+                                vertex.Id = count;
+                                count++;
+                                vertex.Weight = Random.Range(1, 10); ;
                                 graphData.Nodes.Add(vertex);
                                 RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
-                                selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index = c;
-                                selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = Random.Range(0, 5);
                                 node.Add(selectedGrid.transform.gameObject);
                                 //generate disini
                                 if (selectedGrid.collider != null)
@@ -245,12 +239,11 @@ public class TileMap : MonoBehaviour {
                                 if (BaseMapModel.GetGridStatus4(i, j) == 1)
                                 {
                                     vertex = new Node();
-                                    vertex.Id = i;
+                                    vertex.Id = count;
+                                    count++;
                                     vertex.Weight = Random.Range(1, 10);
                                     graphData.Nodes.Add(vertex);
                                     RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
-                                    selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index = c;
-                                    selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = Random.Range(0, 5);
                                     node.Add(selectedGrid.transform.gameObject);
                                     //generate disini
                                     if (selectedGrid.collider != null)
@@ -299,13 +292,15 @@ public class TileMap : MonoBehaviour {
                                     if (BaseMapModel.GetGridStatus5(i, j) == 1)
                                     {
                                         vertex = new Node();
-                                        vertex.Id = i;
+                                        vertex.Id = count;
+                                        count++;
                                         vertex.Weight = Random.Range(1, 10);
                                         graphData.Nodes.Add(vertex);
                                         RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
-                                        selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index = c;
-                                        selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = Random.Range(0, 5);
                                         node.Add(selectedGrid.transform.gameObject);
+                                        //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().index = c;
+                                        //selectedGrid.transform.gameObject.GetComponent<TileBehaviour>().Weight = Random.Range(0, 5);
+                                        
                                         //generate disini
                                         if (selectedGrid.collider != null)
                                         {
@@ -346,10 +341,5 @@ public class TileMap : MonoBehaviour {
 
                             graphData.Nodes[7].Connection.Add(graphData.Nodes[8]);
                         }
-    }
-
-    public void SetDestination(int originNode,int destinationNode)
-    {
-        node[originNode].GetComponent<TileBehaviour>().Destination.Add(node[destinationNode]);
     }
 }
