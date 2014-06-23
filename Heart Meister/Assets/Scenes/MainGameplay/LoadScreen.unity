@@ -278,6 +278,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2022164774}
+  - 114: {fileID: 2022164775}
   m_Layer: 0
   m_Name: Loader
   m_TagString: Untagged
@@ -296,3 +297,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &2022164775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022164773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc3ee9b58fc1944f9c6d8c69b3977b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: 
+  loadObject: {fileID: 30934571}
+  speed: {x: 0, y: 0}

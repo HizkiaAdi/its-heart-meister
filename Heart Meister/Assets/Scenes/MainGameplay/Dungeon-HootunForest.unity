@@ -602,13 +602,13 @@ MonoBehaviour:
   Player: {fileID: 100000, guid: a7db9236b0f13ec4d989103d6363997c, type: 2}
   playerSpawner: {fileID: 0}
   speed: 0
-  dgPlayer: {fileID: 230052621}
-  start: {fileID: 342556751}
-  a: {fileID: 1295736028}
-  b: {fileID: 327740885}
-  c: {fileID: 1100173833}
-  d: {fileID: 1047968783}
-  boss: {fileID: 1176901321}
+  dgPlayer: {fileID: 0}
+  start: {fileID: 0}
+  a: {fileID: 0}
+  b: {fileID: 0}
+  c: {fileID: 0}
+  d: {fileID: 0}
+  boss: {fileID: 0}
   nodes: []
   justStart: 1
 --- !u!1 &1574174147
