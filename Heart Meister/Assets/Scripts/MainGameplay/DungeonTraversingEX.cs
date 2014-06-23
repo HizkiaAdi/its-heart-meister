@@ -23,7 +23,7 @@ namespace MainGameplay
         private Vector3 targetPos;
         private int targetNode;
         public float speed;
-        public bool collideFlag = false;
+        public static bool collideFlag = false;
         private int playerPos;
 
         public GUITexture dgPlayer;
@@ -79,7 +79,7 @@ namespace MainGameplay
         // Update is called once per frame
         void Update()
         {
-            Debug.Log("playerSpawner = " + playerSpawner.transform.position);
+            //Debug.Log("playerSpawner = " + playerSpawner.transform.position);
             //playerLoc = Camera.main.ViewportToWorldPoint(playerSpawner.transform.position);
             playerLoc = playerSpawner.transform.position;
             Move(speed);
@@ -87,12 +87,15 @@ namespace MainGameplay
 
         public void Move(float moveSpd)
         {
+            Debug.Log("playerPos = " + playerPos);
+            //Debug.Log("collideFlag = " + collideFlag);
             if (!collideFlag)
             {
-                Debug.Log("playerLoc X = " + playerLoc.x);
-                Debug.Log("playerLoc Y = " + playerLoc.y);
-                Debug.Log("target X = " + targetPos.x);
-                Debug.Log("target Y = " + targetPos.x);
+                //Debug.Log("RACING");
+                //Debug.Log("playerLoc X = " + playerLoc.x);
+                //Debug.Log("playerLoc Y = " + playerLoc.y);
+                //Debug.Log("target X = " + targetPos.x);
+                //Debug.Log("target Y = " + targetPos.x);
                 //GameObject nodeSpawner = (GameObject)Instantiate(MysteryNode, targetPos, Quaternion.identity);
                 //Vector3 tempe = nodeSpawner.transform.position;
                 //tempe.z = 0f;
@@ -123,11 +126,13 @@ namespace MainGameplay
                     targetNode = dungeonNodes[playerPos].nodeChild[rand];
                     var preNodePos = new Vector3(dungeonNodes[targetNode].nodeLocX, dungeonNodes[targetNode].nodeLocY, 0.25f);
                     targetPos = Camera.main.ViewportToWorldPoint(preNodePos);
+                    playerPos = dungeonNodes[playerPos].nodeChild[rand];
                 }
                 else
                 {
                     var preNodePos = new Vector3(dungeonNodes[dungeonNodes[playerPos].nodeChild[0]].nodeLocX, dungeonNodes[dungeonNodes[playerPos].nodeChild[0]].nodeLocY, 0.25f);
                     targetPos = Camera.main.ViewportToWorldPoint(preNodePos);
+                    playerPos = dungeonNodes[playerPos].nodeChild[0];
                 }
                 collideFlag = false;
             }
@@ -156,7 +161,7 @@ namespace MainGameplay
                 {
                     GameObject nodeSpawner = (GameObject)Instantiate(StartNode, nodePos, Quaternion.identity);
                     Vector3 tempe = nodeSpawner.transform.position;
-                    Debug.Log("Start Node = " + tempe);
+                    //Debug.Log("Start Node = " + tempe);
                     tempe.z = 0f;
                     nodeSpawner.transform.position = tempe;
                     startPos = tempe;
@@ -215,11 +220,13 @@ namespace MainGameplay
                 targetNode = dungeonNodes[playerPos].nodeChild[rand];
                 var preNodePos = new Vector3(dungeonNodes[targetNode].nodeLocX, dungeonNodes[targetNode].nodeLocY, 0.25f);
                 targetPos = Camera.main.ViewportToWorldPoint(preNodePos);
+                playerPos = dungeonNodes[playerPos].nodeChild[rand];
             }
             else
             {
                 var preNodePos = new Vector3(dungeonNodes[dungeonNodes[playerPos].nodeChild[0]].nodeLocX, dungeonNodes[dungeonNodes[playerPos].nodeChild[0]].nodeLocY, 0.25f);
                 targetPos = Camera.main.ViewportToWorldPoint(preNodePos);
+                playerPos = 0;
             }
         }
 
