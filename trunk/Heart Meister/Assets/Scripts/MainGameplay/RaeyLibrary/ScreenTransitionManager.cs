@@ -5,7 +5,6 @@ namespace MainGameplay
 
     public class ScreenTransitionManager : MonoBehaviour
     {
-        public LoaderBehavior lb;
         public static string targetName;
 
         // Use this for initialization
