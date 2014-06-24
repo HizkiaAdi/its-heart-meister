@@ -33,6 +33,12 @@ public class TileMap : MonoBehaviour {
             {
                 Debug.Log(i.Id+" destination: " + j.Id);
             }
+            dijkstra jikstra = new dijkstra(graphData.Nodes[0]);
+           
+            if (i.Previous != null)
+            {
+                Debug.Log(i.Id + " is visited");
+            }
         }
     }
 
@@ -72,7 +78,7 @@ public class TileMap : MonoBehaviour {
     void Generate()
     {
         node = new List<GameObject>();
-        level = 43;
+        level = 3;
         int[,] gridTile = new int[7, 7];
         float x = -3, y = 3;
         int c=0, count=0;
@@ -101,12 +107,16 @@ public class TileMap : MonoBehaviour {
                         if (selectedGrid.collider != null)
                         {                           
                             mapSprite = selectedGrid.collider.gameObject.GetComponent<SpriteRenderer>();
-                            if (i == 6 || j == 6)
+                            if (i == 0 || j == 0)
+                            {
+                                mapSprite.sprite = mapTile[5]; 
+                            }
+                            else if (i == 6 || j == 6)
                             {
                                 mapSprite.sprite = mapTile[0];
                             }
-                            else
-                                mapSprite.sprite = mapTile[1];
+                            else 
+                                mapSprite.sprite = mapTile[Random.Range(1, 5)];
                         }
                         c++;
                     }
@@ -149,12 +159,16 @@ public class TileMap : MonoBehaviour {
                             if (selectedGrid.collider != null)
                             {
                                 mapSprite = selectedGrid.collider.gameObject.GetComponent<SpriteRenderer>();
-                                if (i == 6 || j == 6)
+                                if (i == 0 || j == 0)
+                                {
+                                mapSprite.sprite = mapTile[5]; 
+                                }
+                                else if (i == 6 || j == 6)
                                 {
                                     mapSprite.sprite = mapTile[0];
                                 }
                                 else
-                                    mapSprite.sprite = mapTile[1];
+                                    mapSprite.sprite = mapTile[Random.Range(1, 5)];
                             }
                             c++;
                         }
@@ -198,12 +212,16 @@ public class TileMap : MonoBehaviour {
                                 if (selectedGrid.collider != null)
                                 {
                                     mapSprite = selectedGrid.collider.gameObject.GetComponent<SpriteRenderer>();
-                                    if (i == 6 || j == 6)
+                                    if (i == 0 || j == 0)
+                                    {
+                                        mapSprite.sprite = mapTile[5];
+                                    }
+                                    else if (i == 6 || j == 6)
                                     {
                                         mapSprite.sprite = mapTile[0];
                                     }
                                     else
-                                        mapSprite.sprite = mapTile[1];
+                                        mapSprite.sprite = mapTile[Random.Range(1, 5)];
                                 }
                                 c++;
                             }
@@ -249,12 +267,16 @@ public class TileMap : MonoBehaviour {
                                     if (selectedGrid.collider != null)
                                     {
                                         mapSprite = selectedGrid.collider.gameObject.GetComponent<SpriteRenderer>();
-                                        if (i == 6 || j == 6)
+                                        if (i == 0 || j == 0)
+                                        {
+                                            mapSprite.sprite = mapTile[5];
+                                        }
+                                        else if (i == 6 || j == 6)
                                         {
                                             mapSprite.sprite = mapTile[0];
                                         }
                                         else
-                                            mapSprite.sprite = mapTile[1];
+                                            mapSprite.sprite = mapTile[Random.Range(1, 5)];
                                     }
                                     c++;
                                 }
@@ -305,12 +327,16 @@ public class TileMap : MonoBehaviour {
                                         if (selectedGrid.collider != null)
                                         {
                                             mapSprite = selectedGrid.collider.gameObject.GetComponent<SpriteRenderer>();
-                                            if (i == 6 || j == 6)
+                                            if (i == 0 || j == 0)
+                                            {
+                                                mapSprite.sprite = mapTile[5];
+                                            }
+                                            else if (i == 6 || j == 6)
                                             {
                                                 mapSprite.sprite = mapTile[0];
                                             }
                                             else
-                                                mapSprite.sprite = mapTile[1];
+                                                mapSprite.sprite = mapTile[Random.Range(1, 5)];
                                         }
                                         c++;
                                     }

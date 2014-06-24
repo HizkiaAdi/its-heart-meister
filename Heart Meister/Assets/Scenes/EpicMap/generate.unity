@@ -155,6 +155,10 @@ MonoBehaviour:
   mapTile:
   - {fileID: 21300000, guid: 96a23ccfe199cb44da66abdfd8bb7567, type: 3}
   - {fileID: 21300000, guid: b261e6beff07b134cb91440e3e7a2089, type: 3}
+  - {fileID: 21300000, guid: 136dcb79f328d2946824006436cc0f6e, type: 3}
+  - {fileID: 21300000, guid: 0dd9d84a28273eb4c8180a5bc6d288a9, type: 3}
+  - {fileID: 21300000, guid: 8bceb3d9fe316d044aa62536349e257e, type: 3}
+  - {fileID: 21300000, guid: 78e756d41784a8b4d8b9441dee1c6976, type: 3}
   level: 0
   node: []
 --- !u!4 &644500739

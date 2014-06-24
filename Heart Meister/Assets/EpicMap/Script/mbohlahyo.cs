@@ -34,6 +34,14 @@ namespace DungeonGenerator
                     Debug.Log("Connection: " + j.Id);
                 }
             }
+            dijkstra jikstra = new dijkstra(graphData.Nodes[0]);
+
+            Debug.Log("-------abis dijkstra--------");
+            foreach (Node i in graphData.Nodes)
+            {
+                if (i.Previous != null)
+                    Debug.Log(i.Id + " is visited");
+            }
         }
 
         // Update is called once per frame
