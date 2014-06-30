@@ -26,23 +26,30 @@ public class Player
         this.last = System.currentTimeMillis();
     }
     
-    public void SetNew(float xNew, float yNew, int newState)
+    public Player(String id, float x, float y)
+    {
+        this.id = id;
+        this.x = x;
+        this.y = y;
+        this.last = System.currentTimeMillis();
+    }
+    
+    public void SetNew(float xNew, float yNew)
     {
         Long now = System.currentTimeMillis();
         if(xNew - this.y != 0)
-            this.vectorX = (xNew - this.x) / 0.05f;
+            this.vectorX = (xNew - this.x) / 0.5f;
         else
             this.vectorX = 0.0f;
         if(yNew - this.y != 0)
-            this.vectorY = (xNew - this.y) / 0.05f;
+            this.vectorY = (xNew - this.y) / 0.5f;
         else
             this.vectorY = 0.0f;
         this.x = xNew;
         this.y = yNew;
-        this.state = newState;
         this.last = now;
         /*System.out.println("pos: (" + this.x + "," + this.y + ")\n" + 
-                "vector: (" + this.vectorX + "," + this.vectorY + ")");*/
+                "vector: (" + String.valueOf(this.vectorX) + "," + String.valueOf(this.vectorY) + ")");*/
     }
     
     public String getID() {return this.id;}

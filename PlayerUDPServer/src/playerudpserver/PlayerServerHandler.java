@@ -5,7 +5,6 @@ package playerudpserver;
  * @author Hizkia Simarmata
  */
 
-import java.net.DatagramPacket;
 import java.net.*;
 
 public class PlayerServerHandler
@@ -19,7 +18,6 @@ public class PlayerServerHandler
     {
         _host = address;
         _port = port;
-        //_id = new String(p.geData());
         _player = player;
     }
     
@@ -36,5 +34,10 @@ public class PlayerServerHandler
     public Player getPlayer()
     {
         return this._player;
+    }
+    
+    public Long getLastUpdateTime()
+    {
+        return this._player.getLastUpdateTime();
     }
 }
