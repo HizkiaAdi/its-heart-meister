@@ -5,7 +5,6 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 /**
- *
  * @author Hizkia Simarmata
  */
 

@@ -30,6 +30,7 @@ public class PlayerServerConnectionManager
     private static byte[] receivedBuffer;
     private static List<String> _handlersKey;
     private static Map<String, PlayerServerHandler> _handlers;
+    private static List<String> _removeQueue;
     private static String message;
     private static JSONObject _jsonObj;
     private static JSONObject _jsonFinalObj;
@@ -40,6 +41,8 @@ public class PlayerServerConnectionManager
     private static ObjectInputStream ois;
     private static ByteArrayOutputStream baos;
     private static ObjectOutputStream oos;
+    private static Thread listener;
+    private static Thread sender;
     
     public static void AddHandler(String id, PlayerServerHandler p)
     {
@@ -52,6 +55,7 @@ public class PlayerServerConnectionManager
         serverSocket = s;
         _handlersKey = new ArrayList<>();
         _handlers = new HashMap<>();
+        _removeQueue = new ArrayList<>();
         StartListener();
         StartBroadCast();
     }
@@ -64,7 +68,7 @@ public class PlayerServerConnectionManager
     
     private static void StartListener()
     {
-        new Thread()
+        listener = new Thread()
         {
             @Override
             public void run()
@@ -91,7 +95,8 @@ public class PlayerServerConnectionManager
                     //ex.printStackTrace();
                 }
             }
-        }.start();
+        };
+        listener.start();
     }
     
     private static void ProcessJSON(String jsonString, InetAddress address, int port) throws ParseException
@@ -107,87 +112,95 @@ public class PlayerServerConnectionManager
         {
             player = _handlers.get((String)jsonObj.get("id")).getPlayer();
             player.SetNew(Float.parseFloat((String)jsonObj.get("x")),
-                    Float.parseFloat((String)jsonObj.get("y")), 
-                    Integer.parseInt((String)jsonObj.get("state")));
+                    Float.parseFloat((String)jsonObj.get("y")));
         }
         else
         {
-            player = new Player((String)jsonObj.get("id"), (String)jsonObj.get("name"),
+            player = new Player((String)jsonObj.get("id"),
                     Float.parseFloat((String)jsonObj.get("x")),
-                    Float.parseFloat((String)jsonObj.get("y")),
-                    Integer.parseInt((String)jsonObj.get("state")));
+                    Float.parseFloat((String)jsonObj.get("y")));
             PlayerServerConnectionManager.AddPlayer(player, address, port);
         }            
     }
     
     private static void StartBroadCast()
     {
-        //new Thread()
-        //{
-            //@Override
-            //public void run()
-            //{
-                while(true)
-                {                            
-                    _start = System.currentTimeMillis();
-                    synchronized(_handlers)
+        while(true)
+        {   
+            RemovePlayerFromList();
+            _start = System.currentTimeMillis();
+            synchronized(_handlers)
+            {
+                _jsonFinalObj = new JSONObject();
+                _jsonArray = new JSONArray();
+                System.out.println(_handlersKey.size());
+                for(String key : _handlersKey)
+                {
+                    if(_start - _handlers.get(key).getLastUpdateTime() > 5000)
                     {
-                        _jsonFinalObj = new JSONObject();
-                        _jsonArray = new JSONArray();
-                        System.out.println(_handlersKey.size());
-                        for(String key : _handlersKey)
-                        {
-                            _jsonObj = new JSONObject();
-                            _jsonObj.put("id",_handlers.get(key).getPlayer().getID());
-                            _jsonObj.put("name",_handlers.get(key).getPlayer().getName());
-                            _jsonObj.put("vectorX",String.valueOf(_handlers.get(key).getPlayer().getVectorX()));
-                            _jsonObj.put("vectorY",String.valueOf(_handlers.get(key).getPlayer().getVectorY()));
-                            _jsonObj.put("x",String.valueOf(_handlers.get(key).getPlayer().getX()));
-                            _jsonObj.put("y",String.valueOf(_handlers.get(key).getPlayer().getY()));
-                            _jsonArray.add(_jsonObj);
-                        }
-                        _jsonFinalObj.put("data",_jsonArray);
-                        message = _jsonFinalObj.toJSONString();
-                        
-                        try
-                        {
-                            baos = new ByteArrayOutputStream();
-                            oos = new ObjectOutputStream(baos);
-                            oos.writeObject((Object)message);
-                            oos.flush();
-                            sentBuffer = baos.toByteArray();
-                        }
-                        catch(IOException ex)
-                        {
-                            System.err.println(ex.getLocalizedMessage());
-                        }
-                        
-                        for(String key : _handlersKey)
-                        {
-                            //System.out.println("Sending message to " + _handlers.get(key).GetAddress() + ":" + _handlers.get(key).GetPort());
-                            sentPacket = new DatagramPacket(sentBuffer, sentBuffer.length, _handlers.get(key).GetAddress(), _handlers.get(key).GetPort());
-                            try
-                            {
-                                serverSocket.send(sentPacket);
-                            }
-                            catch(IOException ex)
-                            {
-                                System.out.println("Error broadcasting message: " + ex.getLocalizedMessage());
-                            }
-                        }
+                        _removeQueue.add(key);
+                        continue;
                     }
-                    _end = System.currentTimeMillis();
+                    _jsonObj = new JSONObject();
+                    _jsonObj.put("id",_handlers.get(key).getPlayer().getID());
+                    _jsonObj.put("vectorX",String.valueOf(_handlers.get(key).getPlayer().getVectorX()));
+                    _jsonObj.put("vectorY",String.valueOf(_handlers.get(key).getPlayer().getVectorY()));
+                    _jsonObj.put("x",String.valueOf(_handlers.get(key).getPlayer().getX()));
+                    _jsonObj.put("y",String.valueOf(_handlers.get(key).getPlayer().getY()));
+                    _jsonArray.add(_jsonObj);
+                }
+                _jsonFinalObj.put("data",_jsonArray);
+                message = _jsonFinalObj.toJSONString();
+
+                try
+                {
+                    baos = new ByteArrayOutputStream();
+                    oos = new ObjectOutputStream(baos);
+                    oos.writeObject((Object)message);
+                    oos.flush();
+                    sentBuffer = baos.toByteArray();
+                }
+                catch(IOException ex)
+                {
+                    System.err.println(ex.getLocalizedMessage());
+                }
+
+                for(String key : _handlersKey)
+                {
+                    //System.out.println("Sending message to " + _handlers.get(key).GetAddress() + ":" + _handlers.get(key).GetPort());
+                    sentPacket = new DatagramPacket(sentBuffer, sentBuffer.length, _handlers.get(key).GetAddress(), _handlers.get(key).GetPort());
                     try
                     {
-                        if((_end - _start) <= 50)
-                            Thread.currentThread().sleep(50 - (_end - _start));
+                        serverSocket.send(sentPacket);
                     }
-                    catch(InterruptedException ex)
+                    catch(IOException ex)
                     {
-                        System.err.println("Thread error: " + ex.getLocalizedMessage());
+                        System.out.println("Error broadcasting message: " + ex.getLocalizedMessage());
                     }
                 }
-           //}
-        //}.start();
+            }
+            _end = System.currentTimeMillis();
+            try
+            {
+                if((_end - _start) <= 500)
+                    Thread.currentThread().sleep(500 - (_end - _start));
+            }
+            catch(InterruptedException ex)
+            {
+                System.err.println("Thread error: " + ex.getLocalizedMessage());
+            }
+        }
+    }
+    
+    private static void RemovePlayerFromList()
+    {
+        synchronized(_handlers)
+        {
+            for(String key : _removeQueue)
+            {
+                _handlers.remove(key);
+                _handlersKey.remove(key);
+            }
+        }
     }
 }
