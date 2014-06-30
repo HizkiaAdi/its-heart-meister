@@ -8,6 +8,7 @@ namespace SocialModule
 	{
 		Dictionary<string, Player> players;
 		List<string> playersKey;
+		PlayerData playerDataContainer;
 
 		public GameObject playerObject;
 		
@@ -15,6 +16,7 @@ namespace SocialModule
 		{
 			players = new Dictionary<string, Player> ();
 			playersKey = new List<string> ();
+			playerDataContainer = GameObject.Find("PlayerDataContainer").GetComponent<PlayerData>();
 		}
 
 		
@@ -33,15 +35,16 @@ namespace SocialModule
 				if(players.ContainsKey(resultDict["id"].ToString()))
 				{
 					player = players[(string)resultDict["id"]];
-					player.Vector = new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"]));
-					player.Position = new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"]));
+					player.PositionUpdate(new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"])),
+					                      new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"])));
+					//player.Vector = new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"]));
+					//player.Position = new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"]));
 				}
-				else
+				else if(!resultDict["id"].ToString().Equals(playerDataContainer.ID))
 				{
-					player = new Player((string)resultDict["id"], (string)resultDict["name"],
+					player = new Player((string)resultDict["id"],
 					                    new Vector2(float.Parse((string)resultDict["vectorX"]), float.Parse((string)resultDict["vectorY"])),
-					                    new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"])),
-					                    0);
+					                    new Vector2(float.Parse((string)resultDict["x"]), float.Parse((string)resultDict["y"])));
 					players.Add((string)resultDict["id"], player);
 					AddPlayer(player);
 				}

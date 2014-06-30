@@ -385,7 +385,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1563907353}
-  - 114: {fileID: 1563907354}
   - 114: {fileID: 1563907355}
   m_Layer: 10
   m_Name: GUI
@@ -405,17 +404,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &1563907354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1563907352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4c81fb6061c364589187ba8d91a9b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1563907355
 MonoBehaviour:
   m_ObjectHideFlags: 0

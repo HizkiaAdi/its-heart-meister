@@ -11,6 +11,7 @@ namespace SocialModule
 		Rect rightControl;
 		
 		public Vector2 speed;
+		public GameObject background;
 		Vector2 velocity;
 		
 		void Start ()
@@ -24,6 +25,7 @@ namespace SocialModule
 		void Update ()
 		{
 			velocity = rigidbody2D.velocity;
+			velocity.x = 0;
 			#if UNITY_EDITOR
 			if(Input.GetAxis("Horizontal") > 0)
 				velocity.x = speed.x;
@@ -38,6 +40,9 @@ namespace SocialModule
 					velocity.x = -speed.x;
 			}
 			#endif
+			Camera.main.transform.position = new Vector3(this.transform.position.x, 
+			                                             Camera.main.transform.position.y, 
+			                                             Camera.main.transform.position.z);
 		}
 		
 		void FixedUpdate()

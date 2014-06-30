@@ -13,7 +13,7 @@ namespace SocialModule
 		Rect buttonPos;
 		Vector2 chatScroll;
 		string input;
-		ChatListener csl;
+		PlayerSocketListener psl;
         PlayerData playerDataContainer;
 		
 		public GUISkin guiSkin;
@@ -35,7 +35,7 @@ namespace SocialModule
 			chatScroll.y = chatViewSize.height;
 			input = string.Empty;
 			
-			csl = GameObject.Find("ChatListener").GetComponent<ChatListener>();
+			psl = GameObject.Find("Player").GetComponent<PlayerSocketListener>();
             playerDataContainer = GameObject.Find("PlayerDataContainer").GetComponent<PlayerData>();
 		}
 		
@@ -63,25 +63,26 @@ namespace SocialModule
 			{
 				SendMessage();
 			}
-			
-			GUI.Label(new Rect(10, Screen.height * 0.4f, Screen.width * 0.3f, 30), "Server Address");
-			csl.host = GUI.TextField(new Rect(10, Screen.height * 0.4f + 30, Screen.width * 0.3f, 30), csl.host);
-			if(GUI.Button(new Rect(Screen.width * 0.3f + 20f, Screen.height * 0.4f + 30, 75, 30),"Connect"))
-			{
-				csl.Connect();
-			}
 		}
 		
-		public void AddChatItem(ChatItem item)
+		public void AddChatItem(string message)
 		{
+			ChatItem item;
+			item = JSONToChatItem(message);
 			chats.AddLast(new LinkedListNode<ChatItem>(item));
 			chatViewSize.height += 20;
 			chatScroll.y = chatViewSize.height;
 		}
-		
+
+		private ChatItem JSONToChatItem(string jsonString)
+		{
+			Dictionary<string, System.Object> dict = MiniJSON.Json.Deserialize(jsonString) as Dictionary<string, System.Object>;
+			return new ChatItem((string)dict["id"], (string)dict["name"], (string)dict["message"]);
+		}
+
 		private void SendMessage()
 		{
-			csl.SendMessage(new ChatItem(playerDataContainer.ID, playerDataContainer.PlayerName, input));
+			psl.SendChatMessage(new ChatItem(playerDataContainer.ID, playerDataContainer.PlayerName, input));
 			input = "";
 		}
 	}
