@@ -17,7 +17,7 @@ namespace MiniGame
         {
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
             {
-                transform.Translate(Vector2.right * 0.2f);
+                transform.Translate(Vector2.right * 0.15f);
 
                 if(transform.localPosition.x>maxPos)
                 {
@@ -35,14 +35,14 @@ namespace MiniGame
 
             if (collider.tag == "Enemy")
             {
-                DefenseGameManager.isComplete = true;
+                Rigidbody2D enemy = collider.GetComponent<Rigidbody2D>();
+                enemy.AddForce(new Vector2(100, 100) * 0.8f);
                 DefenseGameManager.isGameOver = true;
             }
 
             if (collider.tag == "Boundary" || collider.tag == "Ball")
             {
                 Destroy(gameObject);
-                DefenseGameManager.isComplete = false;
                 DefenseGameManager.isGameOver = true;
             }
         }

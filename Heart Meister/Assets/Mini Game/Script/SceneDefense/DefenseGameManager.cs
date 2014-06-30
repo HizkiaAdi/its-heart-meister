@@ -8,7 +8,7 @@ namespace MiniGame
     public class DefenseGameManager : MonoBehaviour
     {
         public GameObject result;
-        public static bool isGameOver, isComplete;
+        public static bool isGameOver;
         bool flag;
 
         TrainingPetAttributs petInfo;
@@ -17,6 +17,7 @@ namespace MiniGame
         void Start()
         {
             flag = false;
+            isGameOver = false;
             petInfo = TrainingPetAttributs.CreateTrainingAtributSingleton();
             calculator = new ResultCalculator();
 
@@ -37,7 +38,6 @@ namespace MiniGame
                 }
             }
 
-            GameStart();
         }
 
         // Update is called once per frame
@@ -50,12 +50,6 @@ namespace MiniGame
                 Instantiate(result, result.transform.position, result.transform.rotation);
                 calculator.CalculateDefense(DefensePlayer.maxPos - DefensePlayer.startPos);
             }
-        }
-
-        void GameStart()
-        {
-            isGameOver = false;
-            isComplete = false;
         }
     }
 }
