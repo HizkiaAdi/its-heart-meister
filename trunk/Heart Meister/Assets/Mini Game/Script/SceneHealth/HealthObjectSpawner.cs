@@ -34,7 +34,7 @@ namespace MiniGame
                 SpawnGround(transform.position.x, nextY);
                 SpawnHealth(transform.position.x, nextY + 2.5f);
 
-                interval = Random.Range(1.0f, 1.8f);
+                interval = Random.Range(1.0f, 1.7f);
             }
         }
 

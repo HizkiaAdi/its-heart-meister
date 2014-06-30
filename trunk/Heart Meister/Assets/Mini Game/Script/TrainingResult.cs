@@ -6,6 +6,7 @@ namespace MiniGame
 {
     public class TrainingResult : MonoBehaviour
     {
+        public Font newFont;
         public GUIText attack, defense, speed, sAttack, sDefense, health;
         public GUIText attackP, defenseP, speedP, sAttackP, sDefenseP, healthP;
         int attackPoint, defensePoint, speedPoint, sAttackPoint, sDefensePoint, healthPoint;
@@ -15,6 +16,7 @@ namespace MiniGame
         // Use this for initialization
         void Awake()
         {
+
             attribut = TrainingPetAttributs.CreateTrainingAtributSingleton();
             attackPoint = attribut.Attack;
             defensePoint = attribut.Defense;
@@ -22,15 +24,6 @@ namespace MiniGame
             sAttackPoint = attribut.SpecialAttack;
             sDefensePoint = attribut.SpecialDefense;
             healthPoint = attribut.Health;
-            /*
-            Debug.Log("attack: " + attribut.Attack);
-            Debug.Log("defense: " + attribut.Defense);
-            Debug.Log("speed: " + attribut.Speed);
-            Debug.Log("s.attack: " + attribut.SpecialAttack);
-            Debug.Log("s.defense: " + attribut.SpecialDefense);
-            Debug.Log("health: " + attribut.Health);*/
-
-            //Debug.Log("defense: " + defensePoint);
         }
 
         // Update is called once per frame
@@ -68,8 +61,6 @@ namespace MiniGame
             sAttackPointP = attribut.SpecialAttack - sAttackPoint;
             sDefensePointP = attribut.SpecialDefense - sDefensePoint;
             healthPointP = attribut.Health - healthPoint;
-
-            //Debug.Log(attribut.Defense + " - " + defensePoint);
         }
 
         void SetResultText()

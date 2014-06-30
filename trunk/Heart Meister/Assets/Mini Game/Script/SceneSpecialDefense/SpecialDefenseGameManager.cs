@@ -54,7 +54,7 @@ namespace MiniGame
                 CheckBallPosition();
 
                 scoreText.text = playerScore.ToString() + " - " + enemyScore.ToString();
-                magicDefenseText.text = "S. Defense: " + specialDefense.ToString();
+                magicDefenseText.text = ": " + specialDefense.ToString();
 
                 if (playerScore >= 2 || enemyScore >= 2)
                 {

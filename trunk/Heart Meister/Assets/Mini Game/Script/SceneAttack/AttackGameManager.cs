@@ -65,13 +65,13 @@ namespace MiniGame
                     GameOver();
                 }
 
-                chanceText.text = "Chance: " + AttackPlayer.lives.ToString();
+                chanceText.text = ": " + AttackPlayer.lives.ToString();
                 if (AttackPlayer.lives == 0)
                 {
                     GameOver();
                 }
 
-                scoreText.text = AttackPlayer.points + "/10";
+                scoreText.text = ": " + AttackPlayer.points + "/10";
                 if (AttackPlayer.points == 10)
                 {
                     isCompleted = true;

@@ -45,8 +45,8 @@ namespace MiniGame
         {
             if (!isGameOver)
             {
-                scoreText.text = score + "/30";
-                chanceText.text = "Chance: " + chance;
+                scoreText.text = ": " + score + "/30";
+                chanceText.text = ": " + chance;
 
                 if (score == 30 || chance <= 0)
                 {

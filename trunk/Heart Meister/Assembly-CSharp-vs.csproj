@@ -163,6 +163,11 @@
      <Compile Include="Assets\Scripts\MainGameplay\HospitalBehaviour.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\LoaderBehavior.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Node.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\PlayerCollideBehavior.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\RaeyLibrary\DataConnectionManager.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\RaeyLibrary\DataController.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\RaeyLibrary\ScreenTransitionManager.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\RaeyLibrary\SoundManager.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseDungeonMenu.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseHome.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />

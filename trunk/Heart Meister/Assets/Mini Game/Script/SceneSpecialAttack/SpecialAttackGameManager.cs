@@ -10,11 +10,11 @@ namespace MiniGame
     {
 
         public GUIText progressText, timeText;
-        public GameObject result;
+        public GameObject result, completeBoard;
         public GameObject target, specialAttack;
         public static int progress;
         int finishTime, restTime;
-        bool isGameOver, isComplete, attackRelease, flag;
+        bool isGameOver, attackRelease, flag;
 
         ResultCalculator calculator;
 
@@ -23,7 +23,7 @@ namespace MiniGame
         {
             calculator = new ResultCalculator();
 
-            isGameOver = isComplete = false;
+            isGameOver = false;
             flag = false;
             attackRelease = false;
             progress = 0;
@@ -36,10 +36,11 @@ namespace MiniGame
             if (!isGameOver)
             {
                 UpdateTime();
-                progressText.text = "S. Attack: " + (progress * 100 / 30).ToString() + "%";
+                progressText.text = ": " + (progress * 100 / 30).ToString() + "%";
                 if (progress >= 30)
                 {
-                    progressText.text = "S. Attack: 100%";
+                    Instantiate(completeBoard);
+                    progressText.text = ": 100%";
                     if (!attackRelease)
                     {
                         Instantiate(specialAttack, new Vector2(4.5f, -2.5f), transform.rotation);
@@ -71,7 +72,6 @@ namespace MiniGame
 
             if (targetPoint.collider == null)
             {
-                isComplete = true;
                 GameOver();
             }
         }

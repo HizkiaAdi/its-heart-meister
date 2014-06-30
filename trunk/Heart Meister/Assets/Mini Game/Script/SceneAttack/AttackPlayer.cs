@@ -29,7 +29,25 @@ namespace MiniGame
             nextShoot += Time.deltaTime;
         }
 
-        void OnGUI()
+        void Move(string param)
+        {
+            int direction = (param == "1" ? 1 : -1);
+            if (transform.localPosition.x > -7.5f && transform.localPosition.x < 7.5f)
+            {
+                transform.Translate(Vector2.right * (speed * direction));
+            }
+        }
+
+        void Shoot()
+        {
+            nextShoot = 0;
+            Vector2 target;
+            target.x = transform.position.x;
+            target.y = transform.position.y + 1.2f;
+            Instantiate(bullet, target, transform.rotation);
+        }
+
+        /*void OnGUI()
         {
             float buttonSize = Screen.height / 9;
 
@@ -53,6 +71,6 @@ namespace MiniGame
                 target.y = transform.position.y + 1.2f;
                 Instantiate(bullet, target, transform.rotation);
             }
-        }
+        }*/
     }
 }
