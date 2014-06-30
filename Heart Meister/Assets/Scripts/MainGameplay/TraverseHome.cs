@@ -27,6 +27,10 @@ public class TraverseHome : MonoBehaviour {
         {
             Application.LoadLevel("Shop");
         }
+		if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 4 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Auction House"))
+		{
+			Application.LoadLevel("Auction");
+		}
 
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 6 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "To Training Menu"))
         {

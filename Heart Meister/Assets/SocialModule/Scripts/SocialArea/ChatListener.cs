@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace SocialModule
 {
-	public class ChatListener : MonoBehaviour {
-		
-		public string host;
+	public class ChatListener : MonoBehaviour 
+	{
+		/*public string host;
 		public int port;
 		
 		private AndroidJavaClass _unityPlayer;
@@ -62,6 +62,6 @@ namespace SocialModule
 		{
 			Dictionary<string, System.Object> dict = MiniJSON.Json.Deserialize(jsonString) as Dictionary<string, System.Object>;
 			return new ChatItem((string)dict["id"], (string)dict["name"], (string)dict["message"]);
-		}
+		}*/
 	}
 }

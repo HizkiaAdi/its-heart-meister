@@ -38,8 +38,8 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mass: 1
-  m_LinearDrag: 5
-  m_AngularDrag: 5
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358a135e1fed5984ab1a515ed2754838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: 
-  port: 0
+  host: 192.168.0.51
+  port: 55555
+  chatPort: 55556
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -82,6 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 5, y: 0}
+  background: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
