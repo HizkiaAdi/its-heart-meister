@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6c3e4638437332e4d8eef090bda70c02
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - StartNode: {fileID: 100000, guid: bebbbc206116b1a4db9081224350d6b1, type: 2}
+  - IdleNode: {fileID: 100000, guid: 92689e150858b934f89739e25b6679f0, type: 2}
+  - BattleNode: {fileID: 100000, guid: 8d5a8256284df7146adf214c1c41cccc, type: 2}
+  - BossNode: {fileID: 100000, guid: 090847980bb83fd4bb36a86888d4ff8d, type: 2}
+  - EventNode: {fileID: 100000, guid: da55587ff0db09c43a55a9a1513cec45, type: 2}
+  - MysteryNode: {fileID: 100000, guid: d84d2f9c2d4ef87438b90ca72c18a4ac, type: 2}
+  - Player: {fileID: 100000, guid: a7db9236b0f13ec4d989103d6363997c, type: 2}
+  - playerSpawner: {instanceID: 0}
+  - dgPlayer: {instanceID: 0}
+  - start: {instanceID: 0}
+  - a: {instanceID: 0}
+  - b: {instanceID: 0}
+  - c: {instanceID: 0}
+  - d: {instanceID: 0}
+  - boss: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
