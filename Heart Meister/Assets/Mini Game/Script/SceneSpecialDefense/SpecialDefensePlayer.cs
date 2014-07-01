@@ -21,6 +21,24 @@ namespace MiniGame
 
         }
 
+        void Move(string param)
+        {
+            int direction = (param == "1" ? 1 : -1);
+            if ((transform.localPosition.y > -3.5f && direction == -1) || (transform.localPosition.y < 3.5f && direction == 1))
+            {
+                transform.Translate(Vector2.up * (speed * direction));
+            }
+        }
+
+        void Defense()
+        {
+            if (SpecialDefenseGameManager.specialDefense > 0)
+            {
+                Instantiate(shield, new Vector2(transform.position.x + 1.5f, 0), transform.rotation);
+                SpecialDefenseGameManager.specialDefense--;
+            }
+        }
+
         void OnCollisionEnter2D(Collision2D collision)
         {
             if (collision.gameObject.rigidbody2D != null)
@@ -35,7 +53,7 @@ namespace MiniGame
             }
         }
 
-        void OnGUI()
+        /*void OnGUI()
         {
             if (GUI.RepeatButton(new Rect(5, Screen.height - 2 * buttonSize - 5, buttonSize, buttonSize), "^"))
             {
@@ -57,6 +75,6 @@ namespace MiniGame
                     SpecialDefenseGameManager.specialDefense--;
                 }
             }
-        }
+        }*/
     }
 }

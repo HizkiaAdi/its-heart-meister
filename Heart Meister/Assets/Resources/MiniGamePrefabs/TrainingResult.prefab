@@ -528,9 +528,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -551,9 +551,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -574,9 +574,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -597,9 +597,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -620,9 +620,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -643,9 +643,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -666,9 +666,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -689,9 +689,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -712,9 +712,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -735,9 +735,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -758,9 +758,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2
@@ -781,9 +781,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 12800000, guid: 81770e6ae1f4ad243ab853ebc9f277c9, type: 3}
+  m_Font: {fileID: 12800000, guid: eb499a0eb72b18d42a6f26eb9895f703, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 23
+  m_FontSize: 20
   m_FontStyle: 1
   m_Color:
     serializedVersion: 2

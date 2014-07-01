@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 27427334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
+  m_Script: {fileID: 11500000, guid: b65348f9a90de0c43a2cbe906b9446b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1880294680}
@@ -112,7 +112,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 27427334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.80000019, y: -4.19999981, z: -1}
+  m_LocalPosition: {x: -5.80000019, y: -4.19999981, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 378405484}
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 27427334}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.20000005, y: 1.20000005}
   m_Center: {x: 0, y: 0}
 --- !u!1 &53018638
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 53018638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.19999981, y: -4.19999981, z: -1}
+  m_LocalPosition: {x: -7.19999981, y: -4.19999981, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 87977996}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 53018638}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
+  m_Script: {fileID: 11500000, guid: b65348f9a90de0c43a2cbe906b9446b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1880294680}
@@ -179,7 +179,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 53018638}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.20000005, y: 1.20000005}
   m_Center: {x: 0, y: 0}
 --- !u!1 &87977994
@@ -675,7 +675,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1116674262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.19999981, y: -4.19999981, z: -1}
+  m_LocalPosition: {x: 7.19999981, y: -4.19999981, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 754837131}
@@ -688,7 +688,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1116674262}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Size: {x: 1.20000005, y: 1.20000005}
   m_Center: {x: 0, y: 0}
 --- !u!1 &1202410926

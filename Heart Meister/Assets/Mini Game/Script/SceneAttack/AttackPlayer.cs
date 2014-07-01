@@ -32,7 +32,7 @@ namespace MiniGame
         void Move(string param)
         {
             int direction = (param == "1" ? 1 : -1);
-            if (transform.localPosition.x > -7.5f && transform.localPosition.x < 7.5f)
+            if ((transform.localPosition.x > -7.5f && direction == -1) || (transform.localPosition.x < 7.5f && direction == 1))
             {
                 transform.Translate(Vector2.right * (speed * direction));
             }
