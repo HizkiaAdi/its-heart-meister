@@ -27,7 +27,7 @@ namespace MiniGame
             {
                 ball = GameObject.FindWithTag("Ball").transform;
 
-                if (ball.position.x > 0)
+                if (ball.position.x > 1)
                 {
                     speed = Random.Range(0.01f, 0.1f);
 

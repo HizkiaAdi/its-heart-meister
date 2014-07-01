@@ -75,7 +75,7 @@ PlayerSettings:
     Others: 1
   iPhoneBundleIdentifier: com.its.hm
   productGUID: 95c6988778039f046a38992b02003d27
-  iPhoneBundleVersion: 0.5
+  iPhoneBundleVersion: 0.13
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 13
   AndroidPreferredInstallLocation: 1

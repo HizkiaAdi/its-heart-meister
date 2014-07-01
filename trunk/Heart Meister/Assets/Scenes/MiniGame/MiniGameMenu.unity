@@ -122,7 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 201174915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 493819289}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043522587}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
@@ -641,12 +641,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1127230434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
   functionName: NavigateTo
-  functionParam: SpecialDefenseMenu
+  functionParam: SpecialDefenseScene
 --- !u!1 &1230041712
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +745,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1267555804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1537042759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
@@ -902,7 +902,7 @@ AudioSource:
   m_GameObject: {fileID: 1622529614}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 28d247904db05544694e091939e4e1e7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1923116738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebc3be38b6fb2cf4b95726556de7590b, type: 3}
+  m_Script: {fileID: 11500000, guid: d7da9c8835df7ec43bb74615acdb9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}

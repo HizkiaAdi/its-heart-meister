@@ -158,6 +158,7 @@
      <Compile Include="Assets\Scripts\MainGameplay\BackgroundScaling.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\BattleInitializer.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\Battler.cs" />
+     <Compile Include="Assets\Scripts\MainGameplay\ButtonScript.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversing.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\DungeonTraversingEX.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\HospitalBehaviour.cs" />
@@ -173,6 +174,7 @@
      <Compile Include="Assets\Scripts\MainGameplay\TraverseShop.cs" />
      <Compile Include="Assets\Scripts\MainGameplay\TraverseSocial.cs" />
      <Compile Include="Assets\Scripts\MiniJSON.cs" />
+     <Compile Include="Assets\Scripts\RepeatedButtonScript.cs" />
      <Compile Include="Assets\Scripts\ResizeSprite.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionGUI.cs" />
      <Compile Include="Assets\SocialModule\Scripts\Auction\AuctionItem.cs" />
