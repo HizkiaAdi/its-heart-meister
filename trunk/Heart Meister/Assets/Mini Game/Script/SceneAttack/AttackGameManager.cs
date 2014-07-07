@@ -9,9 +9,9 @@ namespace MiniGame
     public class AttackGameManager : MonoBehaviour
     {
         public GUIText timerText, chanceText, scoreText;
-        public GameObject result;
+        public GameObject result, tutorial;
         int finishTime, restTime;
-        bool isCompleted, isGameOver;
+        bool isGameOver;
 
         TrainingPetAttributs petInfo;
         ResultCalculator calculator;
@@ -45,7 +45,8 @@ namespace MiniGame
                 }
             }
 
-            GameStart();
+            isGameOver = false;
+            finishTime = (int)Time.time + 30;
         }
 
         // Update is called once per frame
@@ -74,18 +75,9 @@ namespace MiniGame
                 scoreText.text = ": " + AttackPlayer.points + "/10";
                 if (AttackPlayer.points == 10)
                 {
-                    isCompleted = true;
                     GameOver();
                 }
             }
-        }
-
-        void GameStart()
-        {
-            isCompleted = false;
-            isGameOver = false;
-
-            finishTime = (int)Time.time + 30;
         }
 
         void GameOver()

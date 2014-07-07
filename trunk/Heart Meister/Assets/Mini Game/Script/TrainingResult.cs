@@ -38,9 +38,21 @@ namespace MiniGame
                 RaycastHit2D click = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
                 if (click.collider != null && click.collider.tag == "TrainingResult")
                 {
-                    Application.LoadLevel("Home");
+                    UpdateStatus();
+                    Application.LoadLevel("PetOption");
                 }
             }
+        }
+
+        void UpdateStatus()
+        {
+            PetDB petDB = PetDB.CreatePetDB();
+            petDB.PetData[petDB.Id].Attack = attribut.Attack;
+            petDB.PetData[petDB.Id].Defense = attribut.Defense;
+            petDB.PetData[petDB.Id].Speed = attribut.Speed;
+            petDB.PetData[petDB.Id].SpecialAttack = attribut.SpecialAttack;
+            petDB.PetData[petDB.Id].SpecialDefense = attribut.SpecialDefense;
+            petDB.PetData[petDB.Id].Health = attribut.Health;
         }
 
         void SetFinalPoint()
