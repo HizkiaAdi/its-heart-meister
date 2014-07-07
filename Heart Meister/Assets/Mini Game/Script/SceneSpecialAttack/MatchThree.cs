@@ -118,6 +118,7 @@ namespace MiniGame
 
         void UpdateGrid()
         {
+            bool flag = false;
             for (int i = 0; i < 6; i++)
             {
                 for (int j = 0; j < 7; j++)
@@ -134,12 +135,18 @@ namespace MiniGame
                             if (tileSprite.sprite != null)
                             {
                                 SpecialAttackGameManager.progress++;
+                                flag = true;
 
                                 tileSprite.sprite = null;
                             }
                         }
                     }
                 }
+            }
+
+            if(flag)
+            {
+                this.audio.Play();
             }
         }
 

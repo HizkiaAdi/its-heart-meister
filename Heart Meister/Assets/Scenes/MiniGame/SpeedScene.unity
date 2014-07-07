@@ -439,7 +439,7 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: ': 3'
-  m_Anchor: 0
+  m_Anchor: 5
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
@@ -460,7 +460,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1241756911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0700000003, y: .975000024, z: 0}
+  m_LocalPosition: {x: .100000001, y: .939999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1321548435}
@@ -487,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1284506511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .985000014, y: .975000024, z: 0}
+  m_LocalPosition: {x: .985000014, y: .939999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1321548435}
@@ -500,7 +500,7 @@ GUIText:
   m_Enabled: 1
   serializedVersion: 3
   m_Text: ': 30/30'
-  m_Anchor: 2
+  m_Anchor: 5
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
