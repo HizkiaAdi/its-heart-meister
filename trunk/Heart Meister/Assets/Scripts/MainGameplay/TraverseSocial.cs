@@ -19,7 +19,7 @@ public class TraverseSocial : MonoBehaviour {
     {
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 1 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Home"))
         {
-            Application.LoadLevel("Home");
+            Application.LoadLevel("HomeSceneTemp");
         }
         if (GUI.Button(new Rect(Screen.width * 3 / 4, Screen.height * 2 / 8, Screen.width * 3 / 16, Screen.height * 3 / 32), "Dungeon"))
         {
