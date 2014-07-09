@@ -73,7 +73,6 @@
      <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel.cs" />
-     <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevel2.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelBuilder.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\AttackLevelManufacturer.cs" />
      <Compile Include="Assets\Mini Game\Model\AttackGameLevel\Level2.cs" />

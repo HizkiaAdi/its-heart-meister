@@ -12,7 +12,7 @@ namespace MiniGameModel
         {
             attribut = TrainingPetAttributs.CreateTrainingAtributSingleton();
         }
-
+        
         public void CalculateAttack(int chance, int score)
         {
             trainingResult = (score / 5) + (score / 10 * (chance / 3));
