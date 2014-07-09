@@ -79,7 +79,8 @@ namespace MiniGame
                 }
             }
         }
-
+        
+        
         void GameOver()
         {
             isGameOver = true;
@@ -87,5 +88,6 @@ namespace MiniGame
             calculator.CalculateAttack(AttackPlayer.lives, AttackPlayer.points);
             audio.enabled = false;
         }
+
     }
 }

@@ -9,14 +9,12 @@ namespace MiniGame
         public static int lives, points;
         public GameObject bullet;
         public float bulletSpeed;
-        int canShoot;
         float nextShoot, shootDelay;
         // Use this for initialization
         void Start()
         {
-            nextShoot = 0;
             shootDelay = 0.5f;
-            canShoot = 0;
+            nextShoot = 0;
             lives = 3;
             points = 0;
         }
@@ -40,11 +38,11 @@ namespace MiniGame
 
         void Shoot()
         {
-            nextShoot = 0;
-            Vector2 target;
-            target.x = transform.position.x;
-            target.y = transform.position.y + 1.2f;
-            Instantiate(bullet, target, transform.rotation);
+            if (nextShoot > shootDelay)
+            {
+                nextShoot = 0;
+                Instantiate(bullet, new Vector2(transform.position.x, transform.position.y + 1.2f), transform.rotation);
+            }
         }
 
         /*void OnGUI()
