@@ -84,7 +84,8 @@ namespace MiniGame
         void GameOver()
         {
             isGameOver = true;
-            Instantiate(result, result.transform.position, result.transform.rotation);
+            GameObject tResult = Instantiate(result, result.transform.position, result.transform.rotation) as GameObject;
+            tResult.SendMessage("SetAttribut", "attack");
             calculator.CalculateAttack(AttackPlayer.lives, AttackPlayer.points);
             audio.enabled = false;
         }

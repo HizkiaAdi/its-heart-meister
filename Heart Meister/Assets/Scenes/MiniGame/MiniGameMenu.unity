@@ -604,7 +604,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: bb7b15f4380ccc942995722ec4ca111b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 849e3fa300dc85949b2e1d4a2482b56b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &1106968524
 Transform:
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1622529614}
   functionName: NavigateTo
-  functionParam: HomeSceneTemp
+  functionParam: PetOption
 --- !u!1 &2081735329
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,7 +47,8 @@ namespace MiniGame
             {
                 flag = true;
                 audio.enabled = false;
-                Instantiate(result, result.transform.position, result.transform.rotation);
+                GameObject tResult = Instantiate(result, result.transform.position, result.transform.rotation) as GameObject;
+                tResult.SendMessage("SetAttribut", "defense");
                 calculator.CalculateDefense(DefensePlayer.maxPos - DefensePlayer.startPos);
             }
         }
