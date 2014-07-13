@@ -76,7 +76,8 @@ namespace MiniGame
         void GameOver()
         {
             audio.enabled = false;
-            Instantiate(result, result.transform.position, result.transform.rotation);
+            GameObject tResult = Instantiate(result, result.transform.position, result.transform.rotation) as GameObject;
+            tResult.SendMessage("SetAttribut", "health");
             calculator.CalculateHealth(score);
         }
     }

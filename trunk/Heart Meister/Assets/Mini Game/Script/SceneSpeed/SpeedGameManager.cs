@@ -76,7 +76,8 @@ namespace MiniGame
         {
             isGameOver = true;
             audio.enabled = false;
-            Instantiate(result, result.transform.position, result.transform.rotation);
+            GameObject tResult = Instantiate(result, result.transform.position, result.transform.rotation) as GameObject;
+            tResult.SendMessage("SetAttribut", "speed");
             ResultCalculator calculator = new ResultCalculator();
             calculator.CalculateSpeed(chance, score);
         }

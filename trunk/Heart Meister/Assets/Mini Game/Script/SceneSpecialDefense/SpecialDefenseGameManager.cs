@@ -107,7 +107,8 @@ namespace MiniGame
         {
             isGameOver = true;
             audio.enabled = false;
-            Instantiate(result, result.transform.position, result.transform.rotation);
+            GameObject tResult = Instantiate(result, result.transform.position, result.transform.rotation) as GameObject;
+            tResult.SendMessage("SetAttribut", "special defense");
             ResultCalculator calculator = new ResultCalculator();
             calculator.CalculateSpecialDefense(playerScore, specialDefense);
         }

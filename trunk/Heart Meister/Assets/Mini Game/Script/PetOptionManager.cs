@@ -59,5 +59,10 @@ namespace MiniGame
 
             Application.LoadLevel("MiniGameMenu");
         }
+
+        void GoHome()
+        {
+            Application.LoadLevel("HomeSceneTemp");
+        }
     }
 }

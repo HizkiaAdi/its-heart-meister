@@ -6,17 +6,14 @@ namespace MiniGame
 {
     public class TrainingResult : MonoBehaviour
     {
-        public Font newFont;
-        public GUIText attack, defense, speed, sAttack, sDefense, health;
-        public GUIText attackP, defenseP, speedP, sAttackP, sDefenseP, healthP;
+        public GUIText attributText, pointText, pointPText, pointFText;
         int attackPoint, defensePoint, speedPoint, sAttackPoint, sDefensePoint, healthPoint;
-        int attackPointP, defensePointP, speedPointP, sAttackPointP, sDefensePointP, healthPointP;
+        string attributName;
 
         TrainingPetAttributs attribut;
         // Use this for initialization
         void Awake()
         {
-
             attribut = TrainingPetAttributs.CreateTrainingAtributSingleton();
             attackPoint = attribut.Attack;
             defensePoint = attribut.Defense;
@@ -24,14 +21,23 @@ namespace MiniGame
             sAttackPoint = attribut.SpecialAttack;
             sDefensePoint = attribut.SpecialDefense;
             healthPoint = attribut.Health;
+
+            SetTextSize();
         }
 
         // Update is called once per frame
         void Update()
         {
-            SetFinalPoint();
-            SetResultPoint();
-            SetResultText();
+            attributText.text = attributName;
+            switch (attributName)
+            {
+                case "attack": SetAttack(); break;
+                case "defense": SetDefense(); break;
+                case "speed": SetSpeed(); break;
+                case "special attack": SetSpecialAttack(); break;
+                case "special defense": SetSpecialDefense(); break;
+                case "health": SetHealth(); break;
+            }
 
             if (Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
             {
@@ -42,6 +48,18 @@ namespace MiniGame
                     Application.LoadLevel("PetOption");
                 }
             }
+        }
+
+        void SetTextSize()
+        {
+            int size;
+            size = Screen.height / 22;
+            Debug.Log(size);
+
+            attributText.fontSize = size;
+            pointText.fontSize = size;
+            pointPText.fontSize = size;
+            pointFText.fontSize = size;
         }
 
         void UpdateStatus()
@@ -55,34 +73,51 @@ namespace MiniGame
             petDB.PetData[petDB.Id].Health = attribut.Health;
         }
 
-        void SetFinalPoint()
+        void SetAttribut(string param)
         {
-            attack.text = attribut.Attack.ToString();
-            defense.text = attribut.Defense.ToString();
-            speed.text = attribut.Speed.ToString();
-            sAttack.text = attribut.SpecialAttack.ToString();
-            sDefense.text = attribut.SpecialDefense.ToString();
-            health.text = attribut.Health.ToString();
+            attributName = param;
         }
 
-        void SetResultPoint()
+        void SetAttack()
         {
-            attackPointP = attribut.Attack - attackPoint;
-            defensePointP = attribut.Defense - defensePoint;
-            speedPointP = attribut.Speed - speedPoint;
-            sAttackPointP = attribut.SpecialAttack - sAttackPoint;
-            sDefensePointP = attribut.SpecialDefense - sDefensePoint;
-            healthPointP = attribut.Health - healthPoint;
+            pointText.text = attackPoint.ToString();
+            pointPText.text = "+" + (attribut.Attack-attackPoint).ToString();
+            pointFText.text = attribut.Attack.ToString();
         }
 
-        void SetResultText()
+        void SetDefense()
         {
-            attackP.text = "+" + attackPointP.ToString();
-            defenseP.text = "+" + defensePointP.ToString();
-            speedP.text = "+" + speedPointP.ToString();
-            sAttackP.text = "+" + sAttackPointP.ToString();
-            sDefenseP.text = "+" + sDefensePointP.ToString();
-            healthP.text = "+" + healthPointP.ToString();
+            pointText.text = defensePoint.ToString();
+            pointPText.text = "+" + (attribut.Defense-defensePoint).ToString();
+            pointFText.text = attribut.Defense.ToString();
+        }
+
+        void SetSpeed()
+        {
+            pointText.text = speedPoint.ToString();
+            pointPText.text = "+" + (attribut.Speed - speedPoint).ToString();
+            pointFText.text = attribut.Speed.ToString();
+        }
+
+        void SetSpecialAttack()
+        {
+            pointText.text = sAttackPoint.ToString();
+            pointPText.text = "+" + (attribut.SpecialAttack - sAttackPoint).ToString();
+            pointFText.text = attribut.SpecialAttack.ToString();
+        }
+
+        void SetSpecialDefense()
+        {
+            pointText.text = sDefensePoint.ToString();
+            pointPText.text = "+" + (attribut.SpecialDefense - sDefensePoint).ToString();
+            pointFText.text = attribut.SpecialDefense.ToString();
+        }
+
+        void SetHealth()
+        {
+            pointText.text = healthPoint.ToString();
+            pointPText.text = "+" + (attribut.Health - healthPoint).ToString();
+            pointFText.text = attribut.Health.ToString();
         }
     }
 }
