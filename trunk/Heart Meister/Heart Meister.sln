@@ -5,6 +5,8 @@ Project("{02EDF175-3BDF-39A9-7659-F715E0257266}") = "Heart Meister", "Assembly-C
 EndProject
 Project("{02EDF175-3BDF-39A9-7659-F715E0257266}") = "Heart Meister", "Assembly-CSharp-Editor.csproj", "{8475E346-69F9-57B7-46B1-815EDDE58A48}"
 EndProject
+Project("{02EDF175-3BDF-39A9-7659-F715E0257266}") = "Heart Meister", "Assembly-UnityScript.unityproj", "{947FE57D-A85B-40E8-06B8-C237E73C0F45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{8475E346-69F9-57B7-46B1-815EDDE58A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8475E346-69F9-57B7-46B1-815EDDE58A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8475E346-69F9-57B7-46B1-815EDDE58A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947FE57D-A85B-40E8-06B8-C237E73C0F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947FE57D-A85B-40E8-06B8-C237E73C0F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947FE57D-A85B-40E8-06B8-C237E73C0F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947FE57D-A85B-40E8-06B8-C237E73C0F45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																																																																																																																														GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																																																																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																							GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> .r16

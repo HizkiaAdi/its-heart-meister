@@ -6,6 +6,12 @@ namespace MainGameplay
 {
     public class DungeonTraversingEX : MonoBehaviour
     {
+        public GameObject target;
+        public string functionName;
+        public string functionParam;
+
+        public bool isClicked = false;
+
         public int nodeCount;
         public List<Node> dungeonNodes = new List<Node>();
         public GameObject StartNode;
@@ -26,14 +32,6 @@ namespace MainGameplay
         public static bool collideFlag = false;
         private int playerPos;
 
-        public GUITexture dgPlayer;
-        public GUITexture start;
-        public GUITexture a;
-        public GUITexture b;
-        public GUITexture c;
-        public GUITexture d;
-        public GUITexture boss;
-        public List<GUITexture> nodes = new List<GUITexture>();
         private int targetIndex;
         private float startTime;
         private Vector3 tempPos;
@@ -45,21 +43,16 @@ namespace MainGameplay
         // Use this for initialization
         void Start()
         {
+            target = GameObject.Find("RaeyScreenManager");
             dungeonDataInsertion();
             dungeonNodePlacing();
             if (justStart)
             {
                 playerPos = 0; //memberi tanda bahwa posisi player berada di start node ber ID 0
+                Storage.playerPosition = playerPos;
                 dungeonPositionStart();
 
-                nodes.Add(start);
-                nodes.Add(a);
-                nodes.Add(b);
-                nodes.Add(c);
-                nodes.Add(d);
-                nodes.Add(boss);
-
-               //Memindahkan sprite player ke start sprite
+                //Memindahkan sprite player ke start sprite
 
                 //startPos = start.transform.position;
                 //startPos.z = 2.0f;
@@ -72,13 +65,17 @@ namespace MainGameplay
             else
             {
                 //Mengembalikan sprite player ke lokasi sebelumnya
-                dgPlayer.transform.position = currPos;
+                //dgPlayer.transform.position = currPos;
             }
         }
 
         // Update is called once per frame
         void Update()
         {
+            //Debug.Log("isClicked = " + isClicked);
+            //Debug.Log(Storage.playerPosition);
+            //Debug.Log("Time.timeScale = " + Time.timeScale);
+            //Debug.Log(dungeonNodes[playerPos].nodeType);
             //Debug.Log("playerSpawner = " + playerSpawner.transform.position);
             //playerLoc = Camera.main.ViewportToWorldPoint(playerSpawner.transform.position);
             playerLoc = playerSpawner.transform.position;
@@ -87,7 +84,7 @@ namespace MainGameplay
 
         public void Move(float moveSpd)
         {
-            Debug.Log("playerPos = " + playerPos);
+            //Debug.Log("playerPos = " + playerPos);
             //Debug.Log("collideFlag = " + collideFlag);
             if (!collideFlag)
             {
@@ -119,7 +116,20 @@ namespace MainGameplay
             }
             else
             {
-                //NodeEventHandler();
+                //temporary
+                if (dungeonNodes[playerPos].nodeType == 4)
+                {
+                    functionName = "EndScene";
+                    functionParam = "HomeTempScene";
+                    target.SendMessage(functionName, functionParam, SendMessageOptions.DontRequireReceiver);
+                }
+                if (dungeonNodes[playerPos].nodeType == 1)
+                {
+                    var preNodePos = new Vector3(dungeonNodes[1].nodeLocX, dungeonNodes[1].nodeLocY, 0.25f);
+                    targetPos = Camera.main.ViewportToWorldPoint(preNodePos);
+                    playerPos = 0;
+                }
+                NodeEventHandler();
                 if (dungeonNodes[playerPos].nodeChild.Count > 1)
                 {
                     int rand = Random.Range(0, dungeonNodes[playerPos].nodeChild.Count);
@@ -230,32 +240,58 @@ namespace MainGameplay
             }
         }
 
+        void OnMouseDown()
+        {
+            isClicked = true;
+            StartCoroutine(MessageDelayer());
+        }
+
         public void NodeEventHandler()
         {
+            //Debug.Log("BABAAAAAAAAAAAAAAAAM");
+            Storage.playerPosition = dungeonNodes[targetNode].nodeID;
             if (dungeonNodes[targetNode].nodeType == 2) //if idle node
             {
-                Time.timeScale = 0f;
                 Debug.Log("There's nothing here...");
-                Time.timeScale = 1.0f;
+                Time.timeScale = 0f;
+                if (isClicked)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
             else if (dungeonNodes[targetNode].nodeType == 3) //if battle node
             {
-                Time.timeScale = 0f;
                 //Call battle scene
-                Time.timeScale = 1.0f;
+                Time.timeScale = 0f;
+                if (isClicked)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
             else if (dungeonNodes[targetNode].nodeType == 4) //if boss node
             {
                 Time.timeScale = 0f;
                 Application.LoadLevel("LoadScreen");// me load loadscreen yang untuk sementara masuk ke node battle coba2
-                Time.timeScale = 1.0f;
+                if (isClicked)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
             else if (dungeonNodes[targetNode].nodeType == 5) //if event node
             {
-                Time.timeScale = 0f;
                 //Call event scene
-                Time.timeScale = 1.0f;
+                Time.timeScale = 0f;
+                if (isClicked)
+                {
+                    Time.timeScale = 1.0f;
+                }
             }
+        }
+
+        IEnumerator MessageDelayer()
+        {
+            yield return new WaitForSeconds(0.5f);
+            isClicked = false;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Holoville.HOTween;
 namespace MainGameplay
 {
 
@@ -9,6 +10,16 @@ namespace MainGameplay
     {
 
         #region Variable Declaration
+
+        public GameObject player1Bar;
+        public GameObject player2Bar;
+        public GameObject player3Bar;
+        public GameObject enemy1Bar;
+        public GameObject enemy2Bar;
+        public GameObject enemy3Bar;
+
+        Vector3 currentBarPosition = new Vector3(0f, 0f, 0f);
+        Vector3 difference = new Vector3(0f, 0f, 0f);
 
         Battler p1;
         Battler p2;
@@ -21,6 +32,8 @@ namespace MainGameplay
         List<Battler> listPlayer = new List<Battler>();
         List<Battler> listEnemy = new List<Battler>();
         List<Battler> listTemp = new List<Battler>();
+        //List<GameObject> listBarPlayer = new List<GameObject>();
+        //List<GameObject> listBarEnemy = new List<GameObject>();
 
         public int p1CurrHealth = 0;
         public int p2CurrHealth = 0;
@@ -240,6 +253,14 @@ namespace MainGameplay
             e3mdf = 31;
             e3spd = 27;
             e3luk = 40;
+
+            //listBarPlayer.Add(player1Bar);
+            //listBarPlayer.Add(player2Bar);
+            //listBarPlayer.Add(player3Bar);
+
+            //listBarEnemy.Add(enemy1Bar);
+            //listBarEnemy.Add(enemy2Bar);
+            //listBarEnemy.Add(enemy3Bar);
         }
 
         void AssignStatus()
@@ -303,19 +324,41 @@ namespace MainGameplay
         void Battle()
         {
             //Implementasi Random Battle sementara
+            //Debug.Log("Im inside the battle!");
             Battler attacker = order[turn];
             //Pengecekan apakah turn battler masih hidup atau tidak
             if (attacker.currHP == 0)
             {
                 return;
             }
-            Debug.Log("attacker = " + attacker.name);
+            //Debug.Log("attacker = " + attacker.name);
             Battler target = null;
             int randomTarget = 0;
+            int spriteFinder = 0;
             listTemp = new List<Battler>();
             //menentukan target serangnnya musuh atau player
             if (!attacker.isEnemy)
             {
+                //memajukan sprite
+                spriteFinder = listPlayer.FindIndex(item => item.name.Equals(attacker.name));
+                if (spriteFinder == 0)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player1Bar.transform.position + difference;
+                    HOTween.To(player1Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 1)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player2Bar.transform.position + difference;
+                    HOTween.To(player2Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 2)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player3Bar.transform.position + difference;
+                    HOTween.To(player3Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
                 //Meng add isi listEnemy ke listTemporary
                 foreach (var obj in listEnemy)
                 {
@@ -329,6 +372,26 @@ namespace MainGameplay
             }
             else
             {
+                //memajukan sprite
+                spriteFinder = listEnemy.FindIndex(item => item.name.Equals(attacker.name));
+                if (spriteFinder == 0)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy1Bar.transform.position + difference;
+                    HOTween.To(enemy1Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 1)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy2Bar.transform.position + difference;
+                    HOTween.To(enemy2Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 2)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy3Bar.transform.position + difference;
+                    HOTween.To(enemy3Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
                 //Meng add isi listPlayer ke listTemporary
                 foreach (var obj in listPlayer)
                 {
@@ -340,8 +403,8 @@ namespace MainGameplay
                 randomTarget = Random.Range(0, listTemp.Count);
                 target = listTemp[randomTarget];
             }
-            Debug.Log("randomTarget = " + randomTarget);
-            Debug.Log("Target = " + target.name);
+            //Debug.Log("randomTarget = " + randomTarget);
+            //Debug.Log("Target = " + target.name);
             damage = damageCalculator(attacker, target);
             target.currHP = target.currHP - damage;
             if (target.currHP < 0)
@@ -349,19 +412,84 @@ namespace MainGameplay
                 target.currHP = 0;
             }
             announce.text = attacker.name + " attacks " + target.name + " for " + damage + " damage!!";
-            announceSpc.text = "Cortical Hit is not yet implemented ;p";
+            //animasi getar bar
             //memasukan musuh kembali ke habitatnya
             int returnTarget = 0;
             if (!attacker.isEnemy)
             {
                 returnTarget = listEnemy.FindIndex(item => item.name.Equals(target.name));
                 listEnemy[returnTarget] = target;
+                //animasi getar bar
+                //menentukan bar mana yang bergetar
+                if (returnTarget == 0)
+                {
+                    StartCoroutine(HitAnimation(enemy1Bar));
+                }
+                else if (returnTarget == 1)
+                {
+                    StartCoroutine(HitAnimation(enemy2Bar));
+                }
+                else if (returnTarget == 2)
+                {
+                    StartCoroutine(HitAnimation(enemy3Bar));
+                }
+                if (spriteFinder == 0)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player1Bar.transform.position + difference;
+                    HOTween.To(player1Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 1)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player2Bar.transform.position + difference;
+                    HOTween.To(player2Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 2)
+                {
+                    difference = new Vector3(0.5f, 0f, 0f);
+                    currentBarPosition = player3Bar.transform.position + difference;
+                    HOTween.To(player3Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
             }
             else
             {
                 returnTarget = listPlayer.FindIndex(item => item.name.Equals(target.name));
                 listPlayer[randomTarget] = target;
+                //animasi getar bar
+                //menentukan bar mana yang bergetar
+                if (returnTarget == 0)
+                {
+                    StartCoroutine(HitAnimation(player1Bar));
+                }
+                else if (returnTarget == 1)
+                {
+                    StartCoroutine(HitAnimation(player2Bar));
+                }
+                else if (returnTarget == 2)
+                {
+                    StartCoroutine(HitAnimation(player3Bar));
+                }
+                if (spriteFinder == 0)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy1Bar.transform.position + difference;
+                    HOTween.To(enemy1Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 1)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy2Bar.transform.position + difference;
+                    HOTween.To(enemy2Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
+                else if (spriteFinder == 2)
+                {
+                    difference = new Vector3(-0.5f, 0f, 0f);
+                    currentBarPosition = enemy3Bar.transform.position + difference;
+                    HOTween.To(enemy3Bar.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+                }
             }
+
         }
 
         int damageCalculator(Battler attacker, Battler target)
@@ -392,8 +520,63 @@ namespace MainGameplay
             {
                 damage = damage * 75 / 100;
             }
-            result = (int)damage;
+            int luckFactor = attacker.luk - target.luk;
+            result = (int)criticalModifier(damage, luckFactor);
             return result;
+        }
+
+        float criticalModifier(float currentDamage, int luckDifference)
+        {
+            if (luckDifference >= 0)
+            {
+                if (luckDifference > 90)
+                {
+                    luckDifference = 90; //prevent formula error when going over 100
+                }
+                int criticalRange = 10 + luckDifference; //base crit rate 10%, + for each diff in luck
+                int criticalIndicator = Random.Range(0, 101);
+
+                if (criticalIndicator > 100 - criticalRange)
+                {
+                    currentDamage = currentDamage * 150 / 100;
+                    announceSpc.text = "It's a Cortical Hit!!";
+                }
+                else
+                {
+                    announceSpc.text = "";
+                }
+
+            }
+            else
+            {
+                announceSpc.text = "";
+            }
+
+            return currentDamage;
+        }
+
+        IEnumerator HitAnimation(GameObject victim)
+        {
+            currentBarPosition = victim.transform.position;
+            difference = new Vector3(0f, 0f, 0f);
+
+            difference = new Vector3(0.5f, 0f, 0f);
+            currentBarPosition = currentBarPosition + difference;
+            HOTween.To(victim.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition));
+            difference = new Vector3(-1f, 0f, 0f);
+            currentBarPosition = currentBarPosition + difference;
+            HOTween.To(victim.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition).Delay(0.1f));
+            difference = new Vector3(0.75f, 0f, 0f);
+            currentBarPosition = currentBarPosition + difference;
+            HOTween.To(victim.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition).Delay(0.1f));
+            difference = new Vector3(-0.5f, 0f, 0f);
+            currentBarPosition = currentBarPosition + difference;
+            HOTween.To(victim.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition).Delay(0.1f));
+            difference = new Vector3(0.25f, 0f, 0f);
+            currentBarPosition = currentBarPosition + difference;
+            HOTween.To(victim.transform, 0.1f, new TweenParms().Prop("position", currentBarPosition).Delay(0.1f));
+
+            yield return null;
         }
 
         void EndChecker()
@@ -408,7 +591,7 @@ namespace MainGameplay
             }
             if (winCheck == 1)
             {
-                Application.LoadLevel("Home");
+                Application.LoadLevel("HomeSceneTemp");
             }
             totalHealth = e1.currHP + e2.currHP + e3.currHP;
             if (totalHealth == 0)

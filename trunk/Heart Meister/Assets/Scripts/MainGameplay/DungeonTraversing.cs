@@ -124,7 +124,7 @@ public class DungeonTraversing : MonoBehaviour
             }
             else if (playerPos == 5)
             {
-                Application.LoadLevel("DG1TEST");
+                Application.LoadLevel("Dungeon-HootunForestBATTLE");
                 targetIndex = 0;
                 target = nodes[targetIndex].transform.position;
                 playerPos = targetIndex;

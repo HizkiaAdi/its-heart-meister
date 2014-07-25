@@ -1,33 +1,44 @@
 ﻿using UnityEngine;
 using System.Collections;
 using Holoville.HOTween;
-
-public class ButtonSript : MonoBehaviour 
+namespace MainGameplay
 {
-    public GameObject target;
-    public string functionName;
-    public string functionParam;
 
-	// Use this for initialization
-	void Start () 
+    public class ButtonSript : MonoBehaviour
     {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	    
-	}
+        public GameObject target;
+        public string functionName;
+        public string functionParam;
+        public static bool buttonsEnabled = false;
 
-    void OnMouseDown()
-    {
-        HOTween.To(transform, 0.2f, new TweenParms()
-            .Prop("localScale", new Vector3(0.8f, 0.8f))
-            .OnComplete(target, functionName, functionParam, SendMessageOptions.DontRequireReceiver));
+        // Use this for initialization
+        void Start()
+        {
+            target = GameObject.Find("RaeyScreenManager");
+        }
 
-        HOTween.To(transform, 0.2f, new TweenParms()
-            .Prop("localScale", new Vector3(1f, 1f))
-            .Delay(0.2f));
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        void OnMouseDown()
+        {
+            if (buttonsEnabled)
+            {
+                var audio = GetComponent<AudioSource>();
+                audio.enabled = true;
+                audio.Play();
+
+                HOTween.To(transform, 0.2f, new TweenParms()
+                    .Prop("localScale", new Vector3(0.8f, 0.8f))
+                    .OnComplete(target, functionName, functionParam, SendMessageOptions.DontRequireReceiver));
+
+                HOTween.To(transform, 0.2f, new TweenParms()
+                    .Prop("localScale", new Vector3(1f, 1f, 1f))
+                    .Delay(0.2f));
+            }
+        }
     }
 }

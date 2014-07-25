@@ -55,7 +55,7 @@ namespace SocialModule.Auction
 			GUI.Window(0,windowRect,WindowCallback,selectionStrings[selectionVal]);
             if (GUI.Button(new Rect(90 * xUnit, 90 * yUnit, 7 * xUnit, 7 * yUnit), "Home"))
             {
-                Application.LoadLevel("Home");
+                Application.LoadLevel("HomeSceneTemp");
             }
 			
 			if(showModal)
