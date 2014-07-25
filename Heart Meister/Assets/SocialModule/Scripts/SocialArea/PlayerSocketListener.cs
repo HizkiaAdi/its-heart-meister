@@ -70,7 +70,7 @@ namespace SocialModule
 					host = callbackRes["text"];
 					break;
 				case 3:
-					Application.LoadLevel("Home");
+					Application.LoadLevel("HomeSceneTemp");
 					break;
 			}
 		}

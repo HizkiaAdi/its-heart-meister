@@ -57,6 +57,10 @@ namespace MiniGame
             attributs.Health = petDB.PetData[petDB.Id].Health;
             attributs.Level = petDB.PetData[petDB.Id].Level;
 
+
+            GameObject go = GameObject.Find("RaeySoundManager");
+            go.audio.enabled = false;
+
             Application.LoadLevel("MiniGameMenu");
         }
 

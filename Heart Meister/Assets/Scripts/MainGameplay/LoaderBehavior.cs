@@ -10,6 +10,10 @@ namespace MainGameplay
         public Vector2 speed;
         private float counter = 0;
 
+        public GameObject target;
+        public string functionName = "FadeBlack";
+        public string functionParam;
+
         // Use this for initialization
         void Start()
         {
@@ -18,6 +22,8 @@ namespace MainGameplay
             this.targetScene = ScreenTransitionManager.targetName;
             speed = new Vector2(10f, 0f);
             loadObject.rigidbody2D.velocity = speed;
+
+            target = GameObject.Find("RaeyScreenManager");
         }
 
         // Update is called once per frame
@@ -36,7 +42,11 @@ namespace MainGameplay
             }
             if (counter >= 2)
             {
-                Application.LoadLevel(targetScene);
+                target.SendMessage(functionName, functionParam, SendMessageOptions.DontRequireReceiver);
+                if (counter >= 3)
+                {
+                    Application.LoadLevel(targetScene);
+                }
             }
             //Debug.Log(loadObject.transform.position.x);
             //if (Application.GetStreamProgressForLevel(targetScene) == 1)

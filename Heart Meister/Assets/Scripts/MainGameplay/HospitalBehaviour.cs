@@ -139,7 +139,7 @@ public class HospitalBehaviour : MonoBehaviour {
     {
         if (GUI.Button(new Rect(Screen.width * 1 / 8, Screen.height * 1 / 8, Screen.width * 4 / 16, Screen.height * 24 / 32), "Back"))
         {
-            Application.LoadLevel("Home");
+            Application.LoadLevel("HomeSceneTemp");
         }
     }
 }
