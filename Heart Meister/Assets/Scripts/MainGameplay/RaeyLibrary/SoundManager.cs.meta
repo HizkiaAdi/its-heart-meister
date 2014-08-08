@@ -1,19 +1,8 @@
-<<<<<<< .mine
 fileFormatVersion: 2
-guid: 95a4b4891f89767408b434c1ec8f9f2e
+guid: bc432775a65353b47bb1d6226b38d70f
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
-=======
-fileFormatVersion: 2
-guid: 8a663dd028fe6754794b4a10d159f191
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
->>>>>>> .r104

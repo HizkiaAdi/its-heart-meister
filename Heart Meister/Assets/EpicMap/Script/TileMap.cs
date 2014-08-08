@@ -12,6 +12,8 @@ public class TileMap : MonoBehaviour {
     public List<GameObject> node;
     Node vertex;
     GraphData graphData;
+    public bool done = false;
+    public GameObject player;
 
 	// Use this for initialization
 	void Start() 
@@ -25,40 +27,55 @@ public class TileMap : MonoBehaviour {
 
     void ShowDestination()
     {
+        Debug.Log("--------abis dijkstra gan--------");
         foreach (var i in graphData.Nodes)
         {
             //Debug.Log("connection count: " + i.Connection.Count);
             Debug.Log("node: " + i.Id + " weight: " + i.Weight);
-            foreach (var j in i.Connection)
-            {
-                Debug.Log(i.Id+" destination: " + j.Id);
-            }
-            dijkstra jikstra = new dijkstra(graphData.Nodes[0]);
-           
+            //foreach (var j in i.Connection)
+            //{
+            //    Debug.Log(i.Id+" destination: " + j.Id);
+            //}
+            //dijkstra jikstra = new dijkstra(graphData.Nodes[0]);
+            
             if (i.Previous != null)
             {
-                Debug.Log(i.Id + " is visited");
+                Debug.Log("node " + i.Id + " visited gan");
+                
             }
-        }
-    }
-
-    public void showDestination2()
-    {
-        foreach (var i in node)
-        {
-            foreach (var j in i.GetComponent<TileBehaviour>().Destination)
-            {
-                Debug.Log("Origin "+i.GetComponent<TileBehaviour>().index+",  destination"+j.GetComponent<TileBehaviour>().index);
-                Debug.Log("Weight "+i.GetComponent<TileBehaviour>().Weight);
-            }
+            Debug.Log("distance: " + i.Distance);
         }
     }
 	
     // Update is called once per frame
-	void Update () 
+    void Update () 
     {
+        if (done)
+        {
+            //if (player.transform.position.x < )
+            //{
+            //    playerSpawner.transform.Translate(Vector3.right * moveSpd);
+            //}
+            //if (playerLoc.y < targetPos.y)
+            //{
+            //    playerSpawner.transform.Translate(Vector3.up * moveSpd);
+            //}
+            //if (playerLoc.x > targetPos.x)
+            //{
+            //    playerSpawner.transform.Translate(Vector3.right * -moveSpd);
+            //}
+            //if (playerLoc.y > targetPos.y)
+            //{
+            //    playerSpawner.transform.Translate(Vector3.up * -moveSpd);
+            //}
+        }
 	
-	}
+    }
+
+    void OnMouseDown() 
+    {
+        done = true;
+    }
 
     void InitGridMap()
     {
@@ -92,12 +109,13 @@ public class TileMap : MonoBehaviour {
                 x = -4;
                 for (int j = 0; j < 7; j++)
                 {
-                    if (BaseMapModel.GetGridStatus(j, i) == 1)
+                    if (BaseMapModel.GetGridStatus(i, j) == 1)
                     {
                         vertex = new Node();
                         vertex.Id = count;
                         count++;
                         vertex.Weight = Random.Range(1, 10);
+                        Debug.Log("node " + vertex.Id + " weight: " + vertex.Weight);
                         //graphData.Weight = vertex.Weight;
                         graphData.Nodes.Add(vertex);
                         RaycastHit2D selectedGrid = Physics2D.Raycast(new Vector2(x, y), Vector2.zero);
@@ -144,7 +162,7 @@ public class TileMap : MonoBehaviour {
                     x = -4;
                     for (int j = 0; j < 7; j++)
                     {
-                        if (BaseMapModel.GetGridStatus2(j, i) == 1)
+                        if (BaseMapModel.GetGridStatus2(i, j) == 1)
                         {
                             vertex = new Node();
                             vertex.Id = count;
@@ -367,5 +385,6 @@ public class TileMap : MonoBehaviour {
 
                             graphData.Nodes[7].Connection.Add(graphData.Nodes[8]);
                         }
+        dijkstra jikstra = new dijkstra(graphData.Nodes[0]);
     }
 }
