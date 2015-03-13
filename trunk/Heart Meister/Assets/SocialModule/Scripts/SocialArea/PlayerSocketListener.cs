@@ -5,45 +5,36 @@ using CustomGUI;
 namespace SocialModule
 {
 	public class PlayerSocketListener : MonoBehaviour 
-	{
-		public string host;
-		public int port;
-		public int chatPort;
-		
+	{	
 		private AndroidJavaClass unityPlayer;
 		private AndroidJavaObject activity;
 		private AndroidJavaObject playerClient;
 		private AndroidJavaObject chatClient;
 
-		private GUIButton button;
-		private GUITextField textField;
-		private GUITextField textField2;
-		private GUILabel label;
-		private GUILabel label2;
-		private GUIButton backButton;
-        PlayerData playerDataContainer;
+        /*private GUIButton button;
+        private GUITextField textField;
+        private GUITextField textField2;
+        private GUILabel label;
+        private GUILabel label2;
+        private GUIButton backButton;*/
+        PlayerData playerData;
 		ChatGUI chatGUI;
 		
 		void Start ()
 		{
-			label = new GUILabel(55, 5, 14, 8, "ID");
-			textField = new GUITextField(1, 70, 5, 25, 8, "5110100082", CallbackMethod);
-			label2 = new GUILabel(55, 15, 14, 8, "Server IP");
-			textField2 = new GUITextField(2, 70, 15, 25, 8, host, CallbackMethod);
-			button = new GUIButton(0, 70, 25, 25, 8, "Connect", CallbackMethod);
-			backButton = new GUIButton(3, 80, 90, 18, 8, "Back", CallbackMethod);
-            playerDataContainer = GameObject.Find("PlayerDataContainer").GetComponent<PlayerData>();
+            playerData = GameObject.Find("PlayerDataContainner").GetComponent<PlayerData>();
 			chatGUI = GameObject.Find("ChatGUI").GetComponent<ChatGUI>();
+            ConnectToServer();
 		}
 
 		void ConnectToServer()
 		{
 			string[] args = new string[2];
 			string[] args2 = new string[2];
-			args[0] = host;
-			args[1] = port.ToString();
-			args2[0] = host;
-			args2[1] = chatPort.ToString();
+            args[0] = playerData.ServerAddress;
+			args[1] = playerData.ServerPort.ToString();
+			args2[0] = playerData.ServerAddress;
+			args2[1] = (playerData.ServerPort + 1).ToString();
 			unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
 			activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
 			activity.Call("runOnUiThread", new AndroidJavaRunnable(()=>
@@ -64,13 +55,13 @@ namespace SocialModule
 					ConnectToServer();
 					break;
 				case 1:
-					playerDataContainer.ID = callbackRes["text"];
+					playerData.ID = callbackRes["text"];
 					break;
-				case 2:
+				/*case 2:
 					host = callbackRes["text"];
-					break;
+					break;*/
 				case 3:
-					Application.LoadLevel("HomeSceneTemp");
+					Application.LoadLevel("Home");
 					break;
 			}
 		}
@@ -79,6 +70,7 @@ namespace SocialModule
 		{
 			if(chatClient != null)
 			{
+                Debug.Log(item.Message);
 				bool success = false;
 				string jsonString = ChatItemToJSON(item);
 				success = chatClient.Call<bool>("sendMessage", jsonString);
@@ -128,7 +120,7 @@ namespace SocialModule
 			Dictionary<string,string> dict = new Dictionary<string, string>();
 			dict["x"] = transform.position.x.ToString();
 			dict["y"] = transform.position.y.ToString();
-			dict["id"] = playerDataContainer.ID;
+			dict["id"] = playerData.ID;
 			return MiniJSON.Json.Serialize(dict);
 		}
 	}

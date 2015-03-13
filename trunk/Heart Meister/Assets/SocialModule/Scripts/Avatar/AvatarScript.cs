@@ -20,7 +20,7 @@ namespace SocialModule.Avatar
 			
 		}
 		
-		void Start()
+		/*void Start()
 		{
 			avatarData = GameObject.Find("DataContainer").GetComponent<PlayerAvatarData>();
 			baseAvatar = avatarData.baseAvatar;
@@ -52,7 +52,7 @@ namespace SocialModule.Avatar
 		public void setBottomSprite(Sprite sprite)
 		{
 			this.bottomSprite.sprite = sprite;
-		}
+		}*/
 	}
 
 }	

@@ -6,13 +6,17 @@ namespace SocialModule.Avatar
 	public class AvatarGUI : MonoBehaviour 
 	{
 		public GUISkin skin;
-        public AvatarScript avatarScript;
+        //public AvatarScript avatarScript;
+        public GameObject avatarAnchor;
 		
 		float xUnit;
 		float yUnit;
 		float itemHeight;
 		int selectionVal;
         int selectedIndex;
+        int headcount;
+        int topcount;
+        int bottomcount;
         int[] equipedIndex;
 		Rect selectionRect;
 		Rect windowRect;
@@ -22,9 +26,17 @@ namespace SocialModule.Avatar
 		Vector2 scrollPos;
         Vector2 mousePos;
 		string[] selectionStrings;
-		PlayerAvatarData data;
+		PlayerData playerData;
 		List<Avatars>[] avatars;
+        GameObject baseAvatar;
+        Transform headAnchor;
+        Transform topAnchor;
+        Transform bottomAnchor;
+        GameObject headAvatar;
+        GameObject topAvatar;
+        GameObject bottomAvatar;
         Touch touch;
+        PerformanceCounter pc;
 		
 		void Start()
 		{
@@ -44,30 +56,85 @@ namespace SocialModule.Avatar
 			scrollWindowRect = new Rect(1 * xUnit, 1 * yUnit, 4 * xUnit, 100 * yUnit);
             handlerRect = new Rect(windowRect.x + scrollViewRect.x, windowRect.y + scrollViewRect.y, scrollViewRect.width, scrollViewRect.height);
 
-			data = GameObject.Find("DataContainer").GetComponent<PlayerAvatarData>();
+            playerData = GameObject.Find("PlayerDataContainner").GetComponent<PlayerData>();
+            if (playerData.IsMale == 1)
+            {
+                baseAvatar = (GameObject)Instantiate(Resources.Load<GameObject>("SocialPrefabs/AvatarMale"),avatarAnchor.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                baseAvatar = (GameObject)Instantiate(Resources.Load<GameObject>("SocialPrefabs/AvatarFemale"),avatarAnchor.transform.position, Quaternion.identity);
+            }
+            baseAvatar.transform.parent = avatarAnchor.transform;
+            baseAvatar.transform.position = new Vector3(baseAvatar.transform.position.x,
+                baseAvatar.transform.position.y,
+                baseAvatar.transform.position.z + 1);
+            headAnchor = baseAvatar.transform.FindChild("Sprite/Hair");
+            topAnchor = baseAvatar.transform.FindChild("Sprite/Top");
+            bottomAnchor = baseAvatar.transform.FindChild("Sprite/Bottom");
  			avatars = new List<Avatars>[3];
-			avatars[0] = data.ownedHeadAvatar;
-			avatars[1] = data.ownedTopAvatar;
-			avatars[2] = data.ownedBottomAvatar;
-            equipedIndex = data.equipedIndex;
+            avatars[0] = new List<Avatars>();
+            avatars[1] = new List<Avatars>();
+            avatars[2] = new List<Avatars>();
+            headcount = 0;
+            topcount = 0;
+            bottomcount = 0;
+            equipedIndex = new int[3];
+            foreach (Avatars i in playerData.Avatars)
+            {
+                if (i.InAuction == 1)
+                    continue;
+                if (i is HeadAvatar && i.Gender == playerData.IsMale)
+                {
+                    avatars[0].Add(i);
+                    if (i.IsEquiped == 1)
+                    {
+                        equipedIndex[0] = headcount;
+                        SetSprite(0);
+                    }
+                    headcount++;
+                }
+                else if (i is TopAvatar && i.Gender == playerData.IsMale)
+                {
+                    avatars[1].Add(i);
+                    if (i.IsEquiped == 1)
+                    {
+                        equipedIndex[1] = topcount;
+                        SetSprite(1);
+                    }
+                    topcount++;
+                }
+                else if (i is BottomAvatar && i.Gender == playerData.IsMale)
+                {
+                    avatars[2].Add(i);
+                    if (i.IsEquiped == 1)
+                    {
+                        equipedIndex[2] = bottomcount;
+                        SetSprite(2);
+                    }
+                    bottomcount++;
+                }
+            }
 		}
 		
 		void OnGUI()
 		{
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.LoadLevel("Home");
+            }
 			selectionVal = GUI.SelectionGrid(selectionRect,selectionVal,selectionStrings,3);
 			GUI.Window(0,windowRect,WindowCallback,selectionStrings[selectionVal]);
-
-            if (GUI.Button(new Rect(90 * xUnit, 90 * yUnit, 7 * xUnit, 7 * yUnit), "Home"))
+            TouchHandler();
+            /*if (GUI.Button(new Rect(90 * xUnit, 90 * yUnit, 7 * xUnit, 7 * yUnit), "Home"))
             {
-                Application.LoadLevel("HomeSceneTemp");
-            }
+                Application.LoadLevel("Home");
+            }*/
 		}
 		
 		void WindowCallback(int id)
 		{
-            TouchHandler();
-
-			scrollPos = GUI.BeginScrollView(scrollViewRect, scrollPos, scrollWindowRect);
+            scrollPos = GUI.BeginScrollView(scrollViewRect, scrollPos, scrollWindowRect);
 
 			for(int i = 0; i < avatars[selectionVal].Count; i++)
 			{
@@ -91,10 +158,11 @@ namespace SocialModule.Avatar
 
             if (Input.GetMouseButtonDown (0) && handlerRect.Contains (mousePos)) 
             {
-                int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - handlerRect.y) / (itemHeight * yUnit)) - 1;
-                //Debug.Log(mousePos);
-                //Debug.Log(scrollViewRect);
-                Debug.Log(index);
+                selectedIndex = Mathf.CeilToInt ((mousePos.y + scrollPos.y - handlerRect.y) / (itemHeight * yUnit)) - 1;
+                if(selectedIndex != equipedIndex[selectionVal] && selectedIndex < avatars[selectionVal].Count)
+                {
+                    ChangeAvatar();
+                }   
             }
 
             if (Input.touchCount > 0 && handlerRect.Contains(new Vector2(Input.GetTouch(0).position.x, Screen.height - Input.GetTouch(0).position.y)))
@@ -119,28 +187,47 @@ namespace SocialModule.Avatar
                 }
                 else if (touch.phase == TouchPhase.Ended && selectedIndex != -1)
                 {
-                    /*
-                     * To-do: Change data in webservice
-                     */
-                    avatars[selectionVal][selectedIndex].IsEquiped = 0;
-                    avatars[selectionVal][selectedIndex].IsEquiped = 1;
-                    SetSprite();
+                    if (selectedIndex != equipedIndex[selectionVal] && selectedIndex < avatars[selectionVal].Count)
+                    {
+                        ChangeAvatar();
+                    } 
                 }
             }
         }
 
-        void SetSprite()
+        void ChangeAvatar()
         {
-            switch (selectionVal)
+            pc = new PerformanceCounter();
+            pc.Start();
+            avatars[selectionVal][equipedIndex[selectionVal]].IsEquiped = 0;
+            avatars[selectionVal][selectedIndex].IsEquiped = 1;
+            playerData.ChangeAvatar(avatars[selectionVal][selectedIndex], avatars[selectionVal][equipedIndex[selectionVal]]);
+            equipedIndex[selectionVal] = selectedIndex;
+            SetSprite(selectionVal);
+            Debug.Log("Ganti avatar: " + pc.End() + "ms");
+        }
+
+        void SetSprite(int selection)
+        {
+            switch (selection)
             {
                 case 0:
-                    avatarScript.setHeadSprite(avatars[selectionVal][selectedIndex].GetEditorSprite());
+                    DestroyImmediate(headAvatar);
+                    headAvatar = (GameObject)Instantiate(avatars[0][equipedIndex[0]].GetEditorSprite());
+                    headAvatar.transform.position = headAnchor.position;
+                    headAvatar.transform.parent = headAnchor;
                     break;
                 case 1:
-                    avatarScript.setTopSprite(avatars[selectionVal][selectedIndex].GetEditorSprite());
+                    DestroyImmediate(topAvatar);
+                    topAvatar = (GameObject)Instantiate(avatars[1][equipedIndex[1]].GetEditorSprite());
+                    topAvatar.transform.position = topAnchor.position;
+                    topAvatar.transform.parent = topAnchor;
                     break;
                 case 2:
-                    avatarScript.setBottomSprite(avatars[selectionVal][selectedIndex].GetEditorSprite());
+                    DestroyImmediate(bottomAvatar);
+                    bottomAvatar = (GameObject)Instantiate(avatars[2][equipedIndex[2]].GetEditorSprite());
+                    bottomAvatar.transform.position = bottomAnchor.position;
+                    bottomAvatar.transform.parent = bottomAnchor;
                     break;
             }
         }
