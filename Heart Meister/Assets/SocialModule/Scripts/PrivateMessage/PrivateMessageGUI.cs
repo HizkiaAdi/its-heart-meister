@@ -7,6 +7,7 @@ namespace SocialModule
 	{
 		public GameObject container;
 		public GUISkin skin;
+
 		List<Message> messageList;
 		Rect scrollViewRect;
 		Rect viewWindowRect;
@@ -88,19 +89,23 @@ namespace SocialModule
 		void Start ()
 		{
 			//Get message from container object
-			container.GetComponent<MessageChecker> ().GetMessageList (out messageList);
+			container.GetComponent<MessageChecker>().GetMessageList (out messageList);
 		}
 
 		void OnGUI ()
 		{
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.LoadLevel("Home");
+            }
 			DrawMessageList ();
 			DrawDescriptionWindow ();
 			if (drawModal)
 				DrawModalWindow ();
-			if(GUI.Button(new Rect(0*xUnit,0*yUnit,10*xUnit,5*yUnit),"Home"))
+			/*if(GUI.Button(new Rect(0*xUnit,0*yUnit,10*xUnit,5*yUnit),"Home"))
 			{
-                Application.LoadLevel("HomeSceneTemp");
-			}
+                Application.LoadLevel("Home");
+			}*/
 		}
 		
 		void DrawMessageList ()
@@ -121,7 +126,7 @@ namespace SocialModule
 			for (int i = 0; i < messageList.Count; i++) 
 			{
 				GUI.Box (new Rect (0, rowHeight * i * yUnit, viewWindowRect.width, rowHeight * yUnit), 
-				         "Date: " + messageList [i].Date + "\nSender: " + messageList [i].MessageString);
+				         "Date: " + messageList [i].Date + "\nSender: " + messageList [i].SenderName);
 			}
 			GUI.EndScrollView ();
 		}
@@ -133,14 +138,18 @@ namespace SocialModule
                 mousePos = Input.mousePosition;
                 mousePos.y = screenHeight - mousePos.y;
 
-                /*if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
+                if (Input.GetMouseButtonDown (0) && scrollViewRect.Contains (mousePos)) 
                 {
                     int index = Mathf.CeilToInt ((mousePos.y + scrollPos.y - scrollViewRect.y) / (rowHeight * yUnit)) - 1;
-                    selectedMessage = messageList [index];
-                    senderString = selectedMessage.SenderName;
-                    dateString = selectedMessage.Date;
-                    messageString = selectedMessage.MessageString;
-                }*/
+                    if (index < messageList.Count)
+                    {
+                        selectedIndex = index;
+                        lastSellectedMessage = messageList[selectedIndex];
+                        senderString = lastSellectedMessage.SenderName;
+                        dateString = lastSellectedMessage.Date;
+                        messageString = lastSellectedMessage.MessageString;
+                    }
+                }
 
                 if (Input.touchCount > 0 && scrollViewRect.Contains(new Vector2(Input.GetTouch(0).position.x, screenHeight - Input.GetTouch(0).position.y)))
                 {
@@ -204,7 +213,8 @@ namespace SocialModule
 		
 		void DeleteSelectedMessage ()
 		{
-			messageList.Remove (lastSellectedMessage);
+            container.GetComponent<MessageChecker>().DeletePM(lastSellectedMessage.Id);
+			messageList.Remove(lastSellectedMessage);
 			lastSellectedMessage = null;
 		}
 		
@@ -230,6 +240,7 @@ namespace SocialModule
 				GUI.Label (sentMessageLabel, "Message:");
 				sentMessageString = GUI.TextArea (sentMessageFieldRect, sentMessageString);
 				if (GUI.Button (modalSendRect, "Send!")) {
+                    container.GetComponent<MessageChecker>().SendPM(receiverString, sentMessageString);
 					receiverString = string.Empty;
 					sentMessageString = string.Empty;
 					drawModal = false;

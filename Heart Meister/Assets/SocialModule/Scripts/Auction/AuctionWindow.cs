@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
+using Webservice;
 
 namespace SocialModule.Auction
 {
@@ -13,6 +14,11 @@ namespace SocialModule.Auction
 		protected float xUnit;
 		protected float yUnit;
 		protected float itemHeight;
+        protected WebService webService;
+        protected List<System.Object> resultList;
+        protected Dictionary<string, System.Object> resultDict;
+        protected PlayerData playerData;
+        protected WebService ws;
 		
 		public AuctionWindow(Rect windowRect, GUIStyle style)
 		{

@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1420490054}
   - 212: {fileID: 1420490053}
+  - 114: {fileID: 1420490055}
   m_Layer: 0
   m_Name: HM-bg1
   m_TagString: Untagged
@@ -254,6 +255,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1420490055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1420490052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc7b486aa748bb4d809cadf61246b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648595026
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,3 +304,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ece821aed04c324ca55d1f6ef27f016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDataContainner: {fileID: 100000, guid: 04a764d53578a8243be42b7304c86355, type: 2}
+  facebookManager: {fileID: 100000, guid: d07886c30cca8df4ba3ee27607100fe6, type: 2}

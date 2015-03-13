@@ -101,3 +101,11 @@ C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\Unity.
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\HOTween.xml
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Assembly-UnityScript.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\HOTween.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\HOTweenV1_Editor.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\NSubstitute.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.core.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\nunit.core.interfaces.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\HOTween.xml

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using Webservice;
 
 namespace SocialModule.Auction
 {
@@ -17,10 +18,12 @@ namespace SocialModule.Auction
 		int selectedIndex;
 		GUIStyle cBoxStyle;
 		ShowModal showmodal;
+        PerformanceCounter pc;
 		
-		public SearchGUI(Rect windowRect, GUIStyle boxStyle, ShowModal showmodal)
+		public SearchGUI(Rect windowRect, GUIStyle boxStyle, ShowModal showmodal, PlayerData playerData)
 			: base(windowRect, boxStyle)
 		{
+            this.playerData = playerData;
 			cBox = new ComboBox();
 			
 			auctionList = new List<AuctionItem>();
@@ -55,10 +58,7 @@ namespace SocialModule.Auction
 			searchText = GUI.TextField(searchFieldRect, searchText);
 			if(GUI.Button(searchButtonRect, "Search"))
 			{
-				for(int i = 0; i < 15; i++)
-				{
-					auctionList.Add(new AuctionItem(i, i * 100 + 100, "HW101", "bla " + i, i % 2, null, System.DateTime.Now.ToString(), 0));
-				}
+                SearchAvatar();
 				scrollWindowRect = new Rect(1 * xUnit, 1 * yUnit, 92 * xUnit, (itemHeight + 1) * auctionList.Count * yUnit);
 			}
 			
@@ -93,7 +93,29 @@ namespace SocialModule.Auction
 		{
 			get { return (selectedIndex >= 0) ? auctionList[selectedIndex] : null; }
 		}
-		
+
+        void SearchAvatar()
+        {
+            pc = new PerformanceCounter();
+            pc.Start();
+            ws = new WebService();
+            auctionList.Clear();
+            resultList = ws.GetAuctionList(comboBoxSelection - 1, searchText);
+            foreach (System.Object o in resultList)
+            {
+                resultDict = o as Dictionary<string, System.Object>;
+                auctionList.Add(new AuctionItem
+                    (
+                        int.Parse((string)resultDict["auctionid"]), int.Parse((string)resultDict["lowestbid"]),
+                        int.Parse((string)resultDict["currentbid"]), (string)resultDict["playername"],
+                        (string)resultDict["avatarname"], int.Parse((string)resultDict["gender"]),
+                        Resources.Load<Texture2D>("Textures/" + (string)resultDict["iconsprite"]), (string)resultDict["expiretime"]
+                    )
+                );
+            }
+            Debug.Log("Search auction: " + pc.End() + "ms");
+        }
+
 		void ButtonCallback(int i)
 		{
 			selectedIndex = i;

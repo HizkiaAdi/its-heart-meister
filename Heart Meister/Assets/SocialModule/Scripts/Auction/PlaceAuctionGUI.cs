@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using SocialModule.Avatar;
+using Webservice;
 
 namespace SocialModule.Auction
 {
@@ -10,17 +11,19 @@ namespace SocialModule.Auction
 		List<Avatars> avatarList;
 		int selectedIndex;
 		
-		public PlaceAuctionGUI(Rect windowRect, GUIStyle style, ShowModal showmodal)
+		public PlaceAuctionGUI(Rect windowRect, GUIStyle style, ShowModal showmodal, PlayerData playerData)
 			: base(windowRect, style)
 		{
+            this.playerData = playerData;
 			scrollWindowRect = new Rect(2 * xUnit, 5 * yUnit, 96 * xUnit, 90 * yUnit);
 			scrollViewRect = new Rect(1 * xUnit, 1 * yUnit, 92 * xUnit, (itemHeight + 1) * 15 * yUnit);
 
 			avatarList = new List<Avatars>();
-			for(int i = 0; i < 15; i++)
-			{
-				avatarList.Add(new TopAvatar(i, "bla " + i, null, null, Resources.Load<Texture2D>("Textures/SocialModule/Avatar/Icon/AvatarPlaceholder"),i%2,0));
-			}
+            foreach(Avatars a in playerData.Avatars)
+            {
+                if (a.IsEquiped == 0)
+                    avatarList.Add(a);
+            }
 			this.showmodal = showmodal;
 			scrollViewRect = new Rect(1 * xUnit, 1 * yUnit, 92 * xUnit, (itemHeight + 1) * avatarList.Count * yUnit);
 			selectedIndex = -1;
@@ -39,7 +42,7 @@ namespace SocialModule.Auction
 		        new GUIContent
 		        (
 					"  Avatar name : " + avatarList[i].AvatarName + 
-					"\n  Gender : " + avatarList[i].Gender
+					"\n  Gender : " + ((avatarList[i].Gender == 1) ? "cowok" : "cewek")
 					, avatarList[i].GetIconTexture()
 				), 
 		        	boxStyle

@@ -64,3 +64,5 @@ C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\Temp\bin\Debug\HOTwee
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.dll
 C:\Users\Afrizal Kudo\Documents\HeartMeister\Heart Meister\obj\Debug\Assembly-CSharp.pdb
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\HOTween.dll
+F:\SVN Repo\Heart Meister\Temp\bin\Debug\HOTween.xml

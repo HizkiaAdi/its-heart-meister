@@ -5,15 +5,17 @@ namespace SocialModule.Avatar
 {
     public abstract class Avatars
     {
+        protected int avatarId;
 		protected int ownershipId;
 		protected string avatarName;
-		protected Sprite sprite;
-        protected Sprite editorSprite;
+		protected GameObject sprite;
+        protected GameObject editorSprite;
 		protected Texture2D iconSprite;
 		protected int gender;
 		protected int isEquiped;
+        protected int inAuction;
 
-		public Avatars(int ownershipId, string avatarName, Sprite sprite, Sprite editorSprite, Texture2D iconSprite, int gender, int isEquiped)
+		public Avatars(int ownershipId, string avatarName, GameObject sprite, GameObject editorSprite, Texture2D iconSprite, int gender, int isEquiped, int inAuction)
         {
 			this.sprite = sprite;
             this.editorSprite = editorSprite;
@@ -22,14 +24,15 @@ namespace SocialModule.Avatar
             this.avatarName = avatarName;
 			this.gender = gender;
 			this.isEquiped = isEquiped;
+            this.inAuction = inAuction;
         }
 
-		public Sprite GetSprite()
+		public GameObject GetSprite()
 		{
 			return this.sprite;
 		}
 
-        public Sprite GetEditorSprite()
+        public GameObject GetEditorSprite()
         {
             return this.editorSprite;
         }
@@ -44,6 +47,8 @@ namespace SocialModule.Avatar
 			return this.iconSprite;
 		}
 
+        public int AvatarID { get { return this.avatarId; } }
+
         public int OwnershipID { get { return this.ownershipId; } }
 
         public string AvatarName { get { return this.avatarName; } }
@@ -51,5 +56,7 @@ namespace SocialModule.Avatar
 		public int Gender { get { return this.gender; } }
 
         public int IsEquiped { get { return this.isEquiped; } set { this.isEquiped = value; } }
+
+        public int InAuction { get { return this.inAuction; } set { this.inAuction = value; } }
     }
 }

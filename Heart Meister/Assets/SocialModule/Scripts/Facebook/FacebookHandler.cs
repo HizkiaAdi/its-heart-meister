@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SocialModule
 {
-	public class FacebookHandler
+	public class FacebookHandler : MonoBehaviour
     {
         private bool isInit = false;
 		private bool lastResponse = false;
@@ -21,7 +21,7 @@ namespace SocialModule
         public string FeedReference = "";
         public bool IncludeFeedProperties = false;
         private Dictionary<string, string[]> FeedProperties = new Dictionary<string, string[]>();
-        public string ApiQuery = "/me/friends?fields=id,name";
+        public string ApiQuery = "/me/friends?fields=id,name,installed";
 
         #region FB.Init()
 
@@ -158,15 +158,4 @@ namespace SocialModule
 
 		public string AccessToken { get { return FB.AccessToken; } }
     }
-
-	public class FBFriends
-	{
-		public List<FBFriendsItem> data { get; set; }
-	}
-
-	public class FBFriendsItem
-	{
-		public string id {get;set;}
-		public string name {get;set;}
-	}
 }
